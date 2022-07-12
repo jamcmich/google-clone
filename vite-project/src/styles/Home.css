@@ -1,0 +1,41 @@
+.home__header {
+    @apply flex flex-row justify-between items-center;
+    @apply h-3.75rem;
+    @apply p-0.5rem;
+
+    @apply font-arial;
+}
+
+.header--left, .header--right {
+    @apply flex flex-row items-center;
+    @apply px-5 space-x-5;
+}
+
+.header--right {
+    @apply text-g:white;
+}
+
+.link {
+    @apply text-inherit;
+    @apply no-underline;
+}
+
+.icon {
+    @apply w-1.4rem h-1.4rem;
+}
+
+.icon--user__wrapper {
+    @apply flex flex-row justify-center items-center;
+	@apply border-2 rounded-full;
+	@apply mx-1;
+
+	border-right-color: #4285f4;
+	border-top-color: #db4437;
+	border-bottom-color: #0f9d58;
+	border-left-color: #f4b400;
+}
+
+.icon--user {
+    @apply w-2.25rem h-2.25rem;
+    @apply border-2 border-transparent rounded-full;
+}
