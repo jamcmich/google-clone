@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "$libs": ["src/libs"],
+        "$libs/*": ["src/libs/*"],
+        "@components": ["src/components"],
+        "@styles": ["src/styles"],
+      }
+    },
+    "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.css"],
+    "exclude": ["node_modules", "**/node_modules", "dist"]
+  }
