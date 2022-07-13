@@ -1,18 +1,21 @@
-.search {
+.search-form {
     @apply flex flex-col justify-center items-center;
 }
 
-.search__input-wrapper {
+.search-form__input-wrapper {
     @apply flex flex-row justify-around items-center;
     @apply border-1 border-g:light_gray rounded-full;
+    @apply w-37rem h-2.75rem;
 }
 
-.search__input {
-    @apply px-15rem py-1.5rem;
+.search-form__input {
+    @apply self-stretch;
     @apply bg-transparent;
-    @apply h-2.5rem;
+    @apply w-30rem;
 }
 
-.search__icon {
-    @apply text-red-500;
+.search-form__icon {
+    @apply flex-1 self-center;
+    @apply text-g:light-gray;
+    @apply h-1.25rem;
 }

@@ -1,4 +1,5 @@
 .app__wrapper {
     @apply text-0.9rem font-roboto text-g:light_gray tracking-tight;
     @apply bg-g:dark_gray;
+    @apply h-screen;
 }

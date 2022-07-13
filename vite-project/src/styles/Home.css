@@ -1,4 +1,9 @@
-.home__header {
+.home-header {
+    @apply flex flex-col place-content-between;
+    @apply h-full;
+}
+
+.home-header__wrapper {
     @apply flex flex-row justify-between items-center;
     @apply h-3.75rem;
     @apply p-0.5rem;
@@ -6,25 +11,25 @@
     @apply font-arial;
 }
 
-.header--left, .header--right {
+.home-header__wrapper-left, .home-header__wrapper-right {
     @apply flex flex-row items-center;
     @apply px-5 space-x-5;
 }
 
-.header--right {
+.home-header__wrapper-right {
     @apply text-g:white;
 }
 
-.link {
+.home-header__link {
     @apply text-inherit;
     @apply no-underline;
 }
 
-.icon {
+.home-header__icon {
     @apply w-1.4rem h-1.4rem;
 }
 
-.icon--user__wrapper {
+.home-header__icon-wrapper {
     @apply flex flex-row justify-center items-center;
 	@apply border-2 rounded-full;
 	@apply mx-1;
@@ -35,15 +40,15 @@
 	border-left-color: #f4b400;
 }
 
-.icon--user {
+.home-header__icon-profile {
     @apply w-2.25rem h-2.25rem;
     @apply border-2 border-transparent rounded-full;
 }
 
-.home__body {
+.home-body__wrapper {
     @apply flex flex-col justify-center items-center;
 }
 
-.logo--google {
+.home-body__image-logo {
     @apply w-20rem;
 }

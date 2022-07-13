@@ -6,16 +6,16 @@ import '@styles/Search.css';
 
 const Search = () => {
 	return (
-		<form className='search'>
-			<div className='search__input-wrapper'>
-				<HiOutlineSearch className='search__icon search__icon-search' />
-				<input className='search__input' />
-				<FaMicrophone className='search__icon search__icon-mic' />
+		<form className='search-form'>
+			<div className='search-form__input-wrapper'>
+				<HiOutlineSearch className='search-form__icon' />
+				<input className='search-form__input' />
+				<FaMicrophone className='search-form__icon' />
 			</div>
 
-			<div className='search__buttons-wrapper'>
-				<button className='search__buttons'>Google Search</button>
-				<button className='search__buttons'>I'm Feeling Lucky</button>
+			<div className='search-form__buttons-wrapper'>
+				<button className='search-form__button'>Google Search</button>
+				<button className='search-form__button'>I'm Feeling Lucky</button>
 			</div>
 		</form>
 	);
