@@ -1,5 +1,4 @@
 import { defineConfig } from 'windicss/helpers';
-import colors from 'windicss/colors';
 
 export default defineConfig({
 	theme: {
@@ -9,9 +8,17 @@ export default defineConfig({
 				arial: ['Arial', 'sans-serif'],
 			},
 			colors: {
-				'g:dark_gray': '#202124',
-				'g:light_gray': '#BDC1C6',
+				'g:cod': '#3C4043',
+				'g:silver': '#BDC1C6',
+				'g:shark': '#303134',
+				'g:charcoal': '#202124',
 				'g:white': '#FFFFFF',
+				'g:athens_gray': '#E8EAED',
+				'g:athens_gray_faded': '#E8EAED14',
+			},
+			boxShadow: {
+				'g:xs_shadow:': '0 1px 4px 0 rgba(0, 0, 0, 0.2)',
+				'g:sm_shadow': '0 1px 6px 0 rgba(23, 23, 23, 1)',
 			},
 		},
 	},

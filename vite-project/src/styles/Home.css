@@ -1,36 +1,61 @@
+.home {
+	@apply flex flex-col place-content-between;
+	@apply h-full;
+}
+
 .home-header {
-    @apply flex flex-col place-content-between;
-    @apply h-full;
+	@apply flex flex-row justify-between items-center;
+	@apply h-3.75rem;
+	@apply p-0.5rem;
+
+	@apply font-arial;
 }
 
-.home-header__wrapper {
-    @apply flex flex-row justify-between items-center;
-    @apply h-3.75rem;
-    @apply p-0.5rem;
-
-    @apply font-arial;
+.home-header__left,
+.home-header__right {
+	@apply flex flex-row items-center;
+	@apply pl-5 pr-2 space-x-5;
 }
 
-.home-header__wrapper-left, .home-header__wrapper-right {
-    @apply flex flex-row items-center;
-    @apply px-5 space-x-5;
-}
-
-.home-header__wrapper-right {
-    @apply text-g:white;
+.home-header__right {
+	@apply text-g:white;
 }
 
 .home-header__link {
-    @apply text-inherit;
-    @apply no-underline;
+	@apply text-current;
+	@apply no-underline;
+}
+
+.home-header__link:hover {
+	@apply underline;
+    @apply cursor-pointer;
 }
 
 .home-header__icon {
-    @apply w-1.4rem h-1.4rem;
+	@apply w-1.4rem h-1.4rem;
+	@apply cursor-pointer;
 }
 
-.home-header__icon-wrapper {
-    @apply flex flex-row justify-center items-center;
+.home-header__icon-grid:hover {
+	@apply ring-9 ring-g:athens_gray_faded rounded-full;
+	@apply bg-g:athens_gray_faded;
+}
+
+.home-header__tooltip {
+    @apply ml-0 mt-0.9rem !important;
+    @apply border-1 border-g:shark rounded-4px !important;
+    @apply font-roboto text-0.75rem font-normal tracking-wider !important;
+	@apply bg-g:shark !important;
+    @apply px-0.5rem py-0.25rem !important;
+}
+
+.home-header__tooltip::before, .home-header__tooltip::after {
+    border-right: none !important;
+    @apply border-none border-transparent !important;
+}
+
+.home-header__image {
+	@apply flex flex-row justify-center items-center;
 	@apply border-2 rounded-full;
 	@apply mx-1;
 
@@ -40,15 +65,16 @@
 	border-left-color: #f4b400;
 }
 
-.home-header__icon-profile {
-    @apply w-2.25rem h-2.25rem;
-    @apply border-2 border-transparent rounded-full;
+.home-header__image-profile {
+	@apply w-2.25rem h-2.25rem;
+	@apply border-2 border-transparent rounded-full;
 }
 
-.home-body__wrapper {
-    @apply flex flex-col justify-center items-center;
+.home-header__image-profile:hover {
+	@apply bg-g:athens_gray_faded;
+	@apply cursor-pointer;
 }
 
-.home-body__image-logo {
-    @apply w-20rem;
+.home-body {
+	@apply flex flex-col justify-center items-center space-y-8;
 }

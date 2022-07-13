@@ -1,21 +1,58 @@
-.search-form {
-    @apply flex flex-col justify-center items-center;
+.search__image-logo {
+	@apply w-20rem;
 }
 
-.search-form__input-wrapper {
-    @apply flex flex-row justify-around items-center;
-    @apply border-1 border-g:light_gray rounded-full;
-    @apply w-37rem h-2.75rem;
+.search-form {
+	@apply flex flex-col justify-center items-center;
 }
 
 .search-form__input {
-    @apply self-stretch;
-    @apply bg-transparent;
-    @apply w-30rem;
+	@apply flex flex-row justify-around items-center;
+	@apply border-1 border-g:silver rounded-full;
+	@apply w-37rem h-2.75rem;
+}
+
+.search-form__input:hover {
+	@apply border-g:shark;
+	@apply bg-g:shark;
+	@apply shadow-g:sm_shadow;
+}
+
+.search-form__input-elem {
+	@apply self-stretch;
+	@apply bg-transparent;
+	@apply w-30rem;
 }
 
 .search-form__icon {
-    @apply flex-1 self-center;
-    @apply text-g:light-gray;
-    @apply h-1.25rem;
+	@apply flex-1 self-center;
+	@apply text-g:light-gray;
+	@apply h-1.25rem;
+}
+
+.search-form__icon-mic {
+	@apply cursor-pointer;
+}
+
+.search-form__tooltip {
+	@apply rounded-none !important;
+	@apply font-roboto text-0.75rem font-medium !important;
+	@apply px-10px !important;
+	@apply shadow-g:xs_shadow !important;
+}
+
+.search__buttons {
+	@apply flex flex-row justify-center items-center;
+	@apply font-roboto;
+	@apply space-x-3;
+}
+
+.search__button {
+	@apply border-1 border-g:shark rounded-4px;
+	@apply bg-g:shark;
+	@apply px-1rem;
+	@apply h-2.25rem;
+}
+
+.search__button:hover {
 }
