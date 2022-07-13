@@ -1,0 +1,18 @@
+.search {
+    @apply flex flex-col justify-center items-center;
+}
+
+.search__input-wrapper {
+    @apply flex flex-row justify-around items-center;
+    @apply border-1 border-g:light_gray rounded-full;
+}
+
+.search__input {
+    @apply px-15rem py-1.5rem;
+    @apply bg-transparent;
+    @apply h-2.5rem;
+}
+
+.search__icon {
+    @apply text-red-500;
+}

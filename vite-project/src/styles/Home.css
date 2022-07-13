@@ -39,3 +39,11 @@
     @apply w-2.25rem h-2.25rem;
     @apply border-2 border-transparent rounded-full;
 }
+
+.home__body {
+    @apply flex flex-col justify-center items-center;
+}
+
+.logo--google {
+    @apply w-20rem;
+}

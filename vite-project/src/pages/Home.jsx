@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { TbGridDots } from 'react-icons/tb';
 
+import Search from '@components/Search';
 import '@styles/Home.css';
 
 const Home = () => {
@@ -36,7 +37,17 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
-			<div className='home__body'></div>
+
+			<div className='home__body'>
+				<img
+					className='logo--google'
+					src='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
+					alt='logo'
+				/>
+				<div className='home__inputContainer'>
+					<Search />
+				</div>
+			</div>
 		</div>
 	);
 };
