@@ -4,7 +4,8 @@ import { TbGridDots } from 'react-icons/tb';
 import ReactTooltip from 'react-tooltip';
 
 import Search from '@components/Search';
-import profile from '@assets/profile.png'
+import Footer from '@components/Footer';
+import profile from '@assets/profile.png';
 import '@styles/Home.css';
 
 const Home = () => {
@@ -66,6 +67,10 @@ const Home = () => {
 
 			<div className='home-body'>
 				<Search />
+			</div>
+
+			<div className='home-footer'>
+				<Footer />
 			</div>
 		</div>
 	);

@@ -28,7 +28,7 @@
 
 .home-header__link:hover {
 	@apply underline;
-    @apply cursor-pointer;
+	@apply cursor-pointer;
 }
 
 .home-header__icon {
@@ -42,16 +42,17 @@
 }
 
 .home-header__tooltip {
-    @apply ml-0 mt-0.9rem !important;
-    @apply border-1 border-g:shark rounded-4px !important;
-    @apply font-roboto text-0.75rem font-normal tracking-wider !important;
+	@apply ml-0 mt-0.9rem !important;
+	@apply border-1 border-g:shark rounded-4px !important;
+	@apply font-roboto text-0.75rem font-normal tracking-wider !important;
 	@apply bg-g:shark !important;
-    @apply px-0.5rem py-0.25rem !important;
+	@apply px-0.5rem py-0.25rem !important;
 }
 
-.home-header__tooltip::before, .home-header__tooltip::after {
-    border-right: none !important;
-    @apply border-none border-transparent !important;
+.home-header__tooltip::before,
+.home-header__tooltip::after {
+	border-right: none !important;
+	@apply border-none border-transparent !important;
 }
 
 .home-header__image {
@@ -77,4 +78,9 @@
 
 .home-body {
 	@apply flex flex-col justify-center items-center space-y-8;
+	@apply mb-60;
+}
+
+.home-footer {
+	@apply min-h-3rem;
 }

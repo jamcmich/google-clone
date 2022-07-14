@@ -16,6 +16,9 @@ export default defineConfig({
 				'g:athens_gray': '#E8EAED',
 				'g:athens_gray_faded': '#E8EAED14',
 				'g:shuttle_gray': '#5F6368',
+				'g:malibu': '#8AB4F8',
+				'g:rolling_stone': '#757B80',
+				'g:gray_chateau': '#9AA0A6',
 			},
 			boxShadow: {
 				'g:xs_shadow:': '0 1px 4px 0 rgba(0, 0, 0, 0.2)',

@@ -12,18 +12,13 @@
 }
 
 .search-form {
-	@apply flex flex-col justify-center items-center;
+	@apply flex flex-col justify-center items-center grow;
 }
 
 .search-form__input {
 	@apply flex flex-row justify-around items-center;
-	@apply border-1 border-g:silver rounded-full;
-	@apply w-43rem h-2.75rem;
-}
-
-.search-form__input--fill {
-	@apply border-g:shark;
-	@apply bg-g:shark;
+	@apply border-1 border-g:shuttle_gray rounded-full;
+	@apply w-145 h-2.8rem;
 }
 
 .search-form__input:focus-within,
@@ -33,14 +28,20 @@
 	@apply shadow-g:sm_shadow;
 }
 
-.search-form__input--fill:hover {
+.search-form__input--styled {
+	@apply justify-center;
+	@apply border-g:shark;
+	@apply bg-g:shark;
+	@apply w-43rem h-2.8rem;
+}
+
+.search-form__input--styled:hover {
 	@apply shadow-g:md_shadow;
 }
 
 .search-form__input-elem {
-	@apply self-stretch;
+	@apply self-center basis-3/4;
 	@apply bg-transparent;
-	@apply w-36rem;
 	@apply text-1rem text-g:athens_gray;
 }
 
@@ -48,13 +49,31 @@
 	@apply outline-none;
 }
 
+.search-form__input--border {
+	@apply border-r-1 border-transparent;
+}
+
+input[type='text']:not([value='']) + svg + .search-form__input--border {
+	@apply border-r-1 border-g:shuttle_gray;
+	@apply h-7;
+}
+
+.search-form__input-elem::-webkit-search-cancel-button {
+	@apply text-red-500;
+}
+
 .search-form__input-elem--styled {
 	@apply self-center;
 	@apply text-g:athens_gray;
 	@apply border-r-1 border-g:shuttle_gray;
 	@apply bg-g:shark;
-	@apply w-8/10 h-7;
-	@apply ml-6;
+	@apply w-full ml-5;
+}
+
+.search-form__icon-container {
+	@apply flex flex-row flex-1 self-stretch space-x-5;
+	@apply px-4;
+	@apply cursor-pointer;
 }
 
 .search-form__icon {
@@ -63,8 +82,30 @@
 	@apply h-1.25rem;
 }
 
-.search-form__icon-mic {
+.search-form__search-icon--gray {
+	@apply text-g:gray_chateau;
+}
+
+.search-form__cancel-icon {
+	@apply text-g:rolling_stone;
+	@apply h-1.5rem;
+	@apply invisible;
+}
+
+input[type='text']:not([value='']) ~ .search-form__cancel-icon {
+	@apply visible;
+}
+
+.search-form__mic-icon {
 	@apply cursor-pointer;
+}
+
+.search-form__search-icon--blue {
+	@apply text-g:malibu;
+}
+
+.search-form__icon--resize {
+	@apply w-5;
 }
 
 .search-form__tooltip {

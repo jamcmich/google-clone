@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { HiOutlineSearch } from 'react-icons/hi';
 import { FaMicrophone } from 'react-icons/fa';
+import { MdClear } from 'react-icons/md';
 import ReactTooltip from 'react-tooltip';
 
 import '@styles/Search.css';
@@ -29,15 +30,18 @@ const Search = () => {
 
 			<form className='search-form' onSubmit={getSearchResults}>
 				<div className='search-form__input'>
-					<HiOutlineSearch className='search-form__icon' />
+					<HiOutlineSearch className='search-form__icon search-form__search-icon--gray' />
 					<input
 						className='search-form__input-elem'
 						value={input}
+						type='text'
 						onChange={(event) => setInput(event.target.value)}
 					/>
+					<MdClear className='search-form__icon search-form__cancel-icon' />
+					<span className='search-form__input--border'></span>
 
 					<FaMicrophone
-						className='search-form__icon search-form__icon-mic'
+						className='search-form__icon search-form__mic-icon'
 						data-tip='Search by voice'
 						data-for='mic-icon'
 						onMouseEnter={() => showTooltip(true)}
@@ -82,37 +86,40 @@ const Search = () => {
 			/>
 
 			<form className='search-form' onSubmit={getSearchResults}>
-				<div className='search-form__input search-form__input--fill'>
+				<div className='search-form__input search-form__input--styled'>
 					<input
 						className='search-form__input-elem search-form__input-elem--styled'
+						type='text'
 						value={input}
 						onChange={(event) => setInput(event.target.value)}
 					/>
 
-					<FaMicrophone
-						className='search-form__icon search-form__icon-mic'
-						data-tip='Search by voice'
-						data-for='mic-icon'
-						onMouseEnter={() => showTooltip(true)}
-						onMouseLeave={() => {
-							showTooltip(false);
-							setTimeout(() => showTooltip(true), 50);
-						}}
-					/>
-					{tooltip && (
-						<ReactTooltip
-							id='mic-icon'
-							className='search-form__tooltip'
-							textColor='#BDC1C6'
-							border
-							borderColor='#3C4043'
-							backgroundColor='#202124'
-							place='bottom'
-							type='info'
-							effect='solid'
+					<div className='search-form__icon-container'>
+						<FaMicrophone
+							className='search-form__icon search-form__mic-icon search-form__icon--resize'
+							data-tip='Search by voice'
+							data-for='mic-icon'
+							onMouseEnter={() => showTooltip(true)}
+							onMouseLeave={() => {
+								showTooltip(false);
+								setTimeout(() => showTooltip(true), 50);
+							}}
 						/>
-					)}
-					<HiOutlineSearch className='search-form__icon' />
+						{tooltip && (
+							<ReactTooltip
+								id='mic-icon'
+								className='search-form__tooltip'
+								textColor='#BDC1C6'
+								border
+								borderColor='#3C4043'
+								backgroundColor='#202124'
+								place='bottom'
+								type='info'
+								effect='solid'
+							/>
+						)}
+						<HiOutlineSearch className='search-form__icon search-form__search-icon search-form__search-icon--blue search-form__icon--resize' />
+					</div>
 				</div>
 			</form>
 
