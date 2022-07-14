@@ -4,6 +4,7 @@ import { TbGridDots } from 'react-icons/tb';
 import ReactTooltip from 'react-tooltip';
 
 import Search from '@components/Search';
+import profile from '@assets/profile.png'
 import '@styles/Home.css';
 
 const Home = () => {
@@ -56,7 +57,7 @@ const Home = () => {
 					<div className='home-header__image'>
 						<img
 							className='home-header__image-profile'
-							src='https://lh3.googleusercontent.com/ogw/ADea4I4Na4Z7vyX-O7bThVKay2u0FeSIh0SVZW13w9M_gK8=s32-c-mo'
+							src={profile}
 							alt='Jacob McMichael'
 						></img>
 					</div>
