@@ -12,7 +12,8 @@ const Search = () => {
 	const navigate = useNavigate();
 
 	const [input, setInput] = useState('');
-	const [tooltip, showTooltip] = useState(true);
+	const [clearTooltip, showClearTooltip] = useState(true);
+	const [micTooltip, showMicTooltip] = useState(true);
 
 	const getSearchResults = (event) => {
 		event.preventDefault();
@@ -37,20 +38,43 @@ const Search = () => {
 						type='text'
 						onChange={(event) => setInput(event.target.value)}
 					/>
-					<MdClear className='search-form__icon search-form__cancel-icon' />
-					<span className='search-form__input--border'></span>
+					<MdClear
+						className='search-form__icon search-form__cancel-icon'
+						data-tip='Clear'
+						data-for='clear-icon'
+						onMouseEnter={() => showClearTooltip(true)}
+						onMouseLeave={() => {
+							showClearTooltip(false);
+							setTimeout(() => showClearTooltip(true), 50);
+						}}
+						onClick={() => setInput('')}
+					/>
+					{clearTooltip && (
+						<ReactTooltip
+							id='clear-icon'
+							className='search-form__tooltip'
+							textColor='#BDC1C6'
+							border
+							borderColor='#3C4043'
+							backgroundColor='#202124'
+							place='bottom'
+							type='info'
+							effect='solid'
+						/>
+					)}
+					<span className='search-form__input search-form__input--border'></span>
 
 					<FaMicrophone
 						className='search-form__icon search-form__mic-icon'
 						data-tip='Search by voice'
 						data-for='mic-icon'
-						onMouseEnter={() => showTooltip(true)}
+						onMouseEnter={() => showMicTooltip(true)}
 						onMouseLeave={() => {
-							showTooltip(false);
-							setTimeout(() => showTooltip(true), 50);
+							showMicTooltip(false);
+							setTimeout(() => showMicTooltip(true), 50);
 						}}
 					/>
-					{tooltip && (
+					{micTooltip && (
 						<ReactTooltip
 							id='mic-icon'
 							className='search-form__tooltip'
@@ -89,23 +113,48 @@ const Search = () => {
 				<div className='search-form__input search-form__input--styled'>
 					<input
 						className='search-form__input-elem search-form__input-elem--styled'
-						type='text'
 						value={input}
+						type='text'
 						onChange={(event) => setInput(event.target.value)}
 					/>
+					<MdClear
+						className='search-form__icon search-form__cancel-icon'
+						data-tip='Clear'
+						data-for='clear-icon'
+						onMouseEnter={() => showClearTooltip(true)}
+						onMouseLeave={() => {
+							showClearTooltip(false);
+							setTimeout(() => showClearTooltip(true), 50);
+						}}
+						onClick={() => setInput('')}
+					/>
+					{clearTooltip && (
+						<ReactTooltip
+							id='clear-icon'
+							className='search-form__tooltip'
+							textColor='#BDC1C6'
+							border
+							borderColor='#3C4043'
+							backgroundColor='#202124'
+							place='bottom'
+							type='info'
+							effect='solid'
+						/>
+					)}
+					<span className='search-form__span search-form__span--border search-form__span--padding'></span>
 
-					<div className='search-form__icon-container'>
+					<div className='search-form__icons--spacing'>
 						<FaMicrophone
-							className='search-form__icon search-form__mic-icon search-form__icon--resize'
+							className='search-form__icon search-form__mic-icon'
 							data-tip='Search by voice'
 							data-for='mic-icon'
-							onMouseEnter={() => showTooltip(true)}
+							onMouseEnter={() => showMicTooltip(true)}
 							onMouseLeave={() => {
-								showTooltip(false);
-								setTimeout(() => showTooltip(true), 50);
+								showMicTooltip(false);
+								setTimeout(() => showMicTooltip(true), 50);
 							}}
 						/>
-						{tooltip && (
+						{micTooltip && (
 							<ReactTooltip
 								id='mic-icon'
 								className='search-form__tooltip'
@@ -118,7 +167,7 @@ const Search = () => {
 								effect='solid'
 							/>
 						)}
-						<HiOutlineSearch className='search-form__icon search-form__search-icon search-form__search-icon--blue search-form__icon--resize' />
+						<HiOutlineSearch className='search-form__icon search-form__search-icon--blue' />
 					</div>
 				</div>
 			</form>

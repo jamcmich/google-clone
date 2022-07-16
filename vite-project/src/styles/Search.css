@@ -4,11 +4,7 @@
 }
 
 .search__image-logo {
-	@apply w-18rem;
-}
-
-.search__image-logo--small {
-	@apply w-6rem;
+	@apply w-17rem;
 }
 
 .search-form {
@@ -28,17 +24,6 @@
 	@apply shadow-g:sm_shadow;
 }
 
-.search-form__input--styled {
-	@apply justify-center;
-	@apply border-g:shark;
-	@apply bg-g:shark;
-	@apply w-43rem h-2.8rem;
-}
-
-.search-form__input--styled:hover {
-	@apply shadow-g:md_shadow;
-}
-
 .search-form__input-elem {
 	@apply self-center basis-3/4;
 	@apply bg-transparent;
@@ -49,25 +34,13 @@
 	@apply outline-none;
 }
 
-.search-form__input--border {
-	@apply border-r-1 border-transparent;
-}
-
-input[type='text']:not([value='']) + svg + .search-form__input--border {
+input[type='text']:not([value='']) ~ .search-form__span--border {
 	@apply border-r-1 border-g:shuttle_gray;
 	@apply h-7;
 }
 
 .search-form__input-elem::-webkit-search-cancel-button {
-	@apply text-red-500;
-}
-
-.search-form__input-elem--styled {
-	@apply self-center;
-	@apply text-g:athens_gray;
-	@apply border-r-1 border-g:shuttle_gray;
-	@apply bg-g:shark;
-	@apply w-full ml-5;
+	@apply hidden;
 }
 
 .search-form__icon-container {
@@ -82,30 +55,23 @@ input[type='text']:not([value='']) + svg + .search-form__input--border {
 	@apply h-1.25rem;
 }
 
-.search-form__search-icon--gray {
-	@apply text-g:gray_chateau;
-}
-
 .search-form__cancel-icon {
 	@apply text-g:rolling_stone;
 	@apply h-1.5rem;
 	@apply invisible;
 }
 
+.search-form__cancel-icon:focus {
+	@apply outline-none;
+}
+
 input[type='text']:not([value='']) ~ .search-form__cancel-icon {
 	@apply visible;
+	@apply cursor-pointer;
 }
 
 .search-form__mic-icon {
 	@apply cursor-pointer;
-}
-
-.search-form__search-icon--blue {
-	@apply text-g:malibu;
-}
-
-.search-form__icon--resize {
-	@apply w-5;
 }
 
 .search-form__tooltip {
@@ -121,10 +87,6 @@ input[type='text']:not([value='']) ~ .search-form__cancel-icon {
 	@apply space-x-3;
 }
 
-.search__buttons--hidden {
-	@apply hidden;
-}
-
 .search__button {
 	@apply border-1 border-g:shark rounded-4px;
 	@apply bg-g:shark;
@@ -134,4 +96,55 @@ input[type='text']:not([value='']) ~ .search-form__cancel-icon {
 
 .search__button:hover {
 	@apply border-g:shuttle_gray;
+}
+
+.search__image-logo--small {
+	@apply w-5.75rem;
+}
+
+.search-form__input--styled {
+	@apply justify-center;
+	@apply border-g:shark;
+	@apply bg-g:shark;
+	@apply w-43rem h-2.9rem;
+}
+
+.search-form__input--styled:hover {
+	@apply shadow-g:md_shadow;
+}
+
+.search-form__span--border {
+	@apply border-r-1 border-transparent;
+}
+
+.search-form__span--padding {
+	@apply px-0 mx-0;
+}
+
+.search-form__icons--spacing {
+	@apply flex flex-row flex-1 self-stretch space-x-4;
+	@apply px-5;
+}
+
+.search-form__input-elem--styled {
+	@apply self-center;
+	@apply text-g:athens_gray;
+	@apply bg-g:shark;
+	@apply w-full ml-5;
+}
+
+.search-form__search-icon--gray {
+	@apply text-g:gray_chateau;
+}
+
+.search-form__search-icon--blue {
+	@apply text-g:malibu;
+}
+
+.search-form__icon--resize {
+	@apply w-5;
+}
+
+.search__buttons--hidden {
+	@apply hidden;
 }
