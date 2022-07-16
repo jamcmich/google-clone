@@ -5,6 +5,7 @@
 
 .search__image-logo {
 	@apply w-17rem;
+	@apply cursor-pointer;
 }
 
 .search-form {
@@ -98,6 +99,10 @@ input[type='text']:not([value='']) ~ .search-form__cancel-icon {
 	@apply border-g:shuttle_gray;
 }
 
+.search--styled {
+	@apply space-x-11;
+}
+
 .search__image-logo--small {
 	@apply w-5.75rem;
 }
@@ -123,7 +128,7 @@ input[type='text']:not([value='']) ~ .search-form__cancel-icon {
 
 .search-form__icons--spacing {
 	@apply flex flex-row flex-1 self-stretch space-x-4;
-	@apply px-5;
+	@apply px-4;
 }
 
 .search-form__input-elem--styled {
