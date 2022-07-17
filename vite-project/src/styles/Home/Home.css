@@ -1,0 +1,4 @@
+.home {
+	@apply flex flex-col place-content-between;
+	@apply h-full;
+}

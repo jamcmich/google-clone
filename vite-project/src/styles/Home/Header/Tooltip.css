@@ -1,0 +1,12 @@
+.home-header__icon-tooltip {
+	@apply ml-0 mt-0.9rem !important;
+	@apply border-1 border-g:shark rounded-4px !important;
+	@apply font-roboto text-0.75rem text-g:white font-normal tracking-wider !important;
+	@apply bg-g:shark !important;
+	@apply px-0.5rem py-0.25rem !important;
+}
+
+.home-header__icon-tooltip::before,
+.home-header__icon-tooltip::after {
+	@apply border-none border-transparent !important;
+}

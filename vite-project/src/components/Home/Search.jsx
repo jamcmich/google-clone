@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
+
 import { useStateValue } from '@contexts/StateProvider';
 import { actionTypes } from '@contexts/reducer';
 import { HiOutlineSearch } from 'react-icons/hi';
@@ -7,7 +8,7 @@ import { FaMicrophone } from 'react-icons/fa';
 import { MdClear } from 'react-icons/md';
 import ReactTooltip from 'react-tooltip';
 
-import '@styles/Search.css';
+import '@styles/Home/Search.css';
 
 const Search = () => {
 	const location = useLocation();
@@ -35,13 +36,13 @@ const Search = () => {
 
 	return location.pathname === '/' ? (
 		<React.Fragment>
-			<a href='./'>
+			<Link to='/'>
 				<img
 					className='search__image-logo'
 					src='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
 					alt='logo'
 				/>
-			</a>
+			</Link>
 
 			<form className='search-form' onSubmit={getSearchResults}>
 				<div className='search-form__input'>

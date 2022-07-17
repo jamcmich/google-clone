@@ -1,77 +1,16 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { TbGridDots } from 'react-icons/tb';
-import ReactTooltip from 'react-tooltip';
+import React from 'react';
 
-import Search from '@components/Search';
-import Footer from '@components/Footer';
-import profile from '@assets/profile.png';
-import '@styles/Home.css';
+import Header from '@components/Home/Header/Header';
+import Search from '@components/Home/Search';
+import Footer from '@components/Home/Footer';
+import '@styles/Home/Home.css';
 
 const Home = () => {
-	const [tooltip, showTooltip] = useState(true);
-
 	return (
 		<div className='home'>
-			<div className='home-header'>
-				<div className='home-header__left'>
-					<Link className='home-header__link' to='/about'>
-						About
-					</Link>
-					<Link className='home-header__link' to='/store'>
-						Store
-					</Link>
-				</div>
-
-				<div className='home-header__right'>
-					<Link className='home-header__link' to='/gmail'>
-						Gmail
-					</Link>
-					<Link className='home-header__link' to='/images'>
-						Images
-					</Link>
-
-					<TbGridDots
-						className='home-header__icon home-header__icon-grid'
-						data-tip='Google apps'
-						data-for='grid-icon'
-						onMouseEnter={() => showTooltip(true)}
-						onMouseLeave={() => {
-							showTooltip(false);
-							setTimeout(() => showTooltip(true), 50);
-						}}
-					/>
-					{tooltip && (
-						<ReactTooltip
-							id='grid-icon'
-							className='home-header__tooltip'
-							data-text-color='#BDC1C6'
-							data-border
-							data-border-color='#3C4043'
-							data-background-color='#202124'
-							data-place='bottom'
-							data-type='info'
-							effect='solid'
-						/>
-					)}
-
-					<div className='home-header__image'>
-						<img
-							className='home-header__image-profile'
-							src={profile}
-							alt='Jacob McMichael'
-						></img>
-					</div>
-				</div>
-			</div>
-
-			<div className='home-body'>
-				<Search />
-			</div>
-
-			<div className='home-footer'>
-				<Footer />
-			</div>
+			<Header />
+			<Search />
+			<Footer />
 		</div>
 	);
 };
