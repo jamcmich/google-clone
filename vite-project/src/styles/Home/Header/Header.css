@@ -7,7 +7,7 @@
 }
 
 .home-header__nav {
-	@apply flex flex-row items-center;
+	@apply flex flex-row items-center flex-shrink-0;
 	@apply pl-5 pr-2 space-x-5;
 }
 
@@ -36,7 +36,7 @@
 }
 
 .home-header__image {
-	@apply flex flex-row justify-center items-center;
+	@apply flex flex-row place-content-center items-center;
 	@apply border-2 rounded-full;
 	@apply mx-1;
 
@@ -47,7 +47,7 @@
 }
 
 .home-header__user-profile {
-	@apply w-2.25rem h-2.25rem;
+	@apply self-stretch flex-grow;
 	@apply border-2 border-transparent rounded-full;
 }
 

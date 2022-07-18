@@ -1,11 +1,13 @@
 .home-form {
-	@apply flex flex-col place-content-center items-center space-y-8;
+	@apply flex flex-col place-content-center items-center flex-shrink-0 space-y-8;
 }
 
 .home-form__group {
-	@apply flex flex-row place-content-center items-center;
+	@apply flex flex-row place-content-center items-center flex-shrink-0;
 	@apply border-1 border-g:shuttle_gray rounded-full;
 	@apply w-36rem h-2.8rem;
+
+	@apply <sm:w-23rem;
 }
 
 .home-form__group:focus-within,
@@ -13,6 +15,14 @@
 	@apply border-g:shark;
 	@apply bg-g:shark;
 	@apply shadow-g:sm_shadow;
+}
+
+.home-form__icon-container {
+	@apply flex flex-col place-content-center items-center self-stretch basis-12;
+}
+
+.home-form__icon-container--padding-x {
+	@apply px-1;
 }
 
 .home-form__icon {
@@ -58,10 +68,9 @@ input[type='text']:not([value='']) ~ .home-form__icon--hidden {
 }
 
 .home-form__input {
-	@apply flex-grow;
+	@apply self-stretch flex-grow;
 	@apply bg-transparent;
 	@apply text-1rem text-g:athens_gray;
-	@apply w-25rem;
 }
 
 .home-form__input:focus {
@@ -70,14 +79,6 @@ input[type='text']:not([value='']) ~ .home-form__icon--hidden {
 
 .home-form__input::-webkit-search-cancel-button {
 	@apply hidden;
-}
-
-.home-form__icon-container {
-	@apply flex flex-col place-content-center items-center self-stretch flex-grow;
-}
-
-.home-form__icon-container--padding-x {
-	@apply px-1;
 }
 
 .home-form__span {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { HiOutlineSearch } from 'react-icons/hi';
 
@@ -15,9 +15,10 @@ const Form = () => {
 
 	const [input, setInput] = useState('');
 
-	const getSearchResults = (event) => {
+	const submitForm = (event) => {
 		event.preventDefault();
-		navigate('/search');
+
+		console.log('submitForm()');
 
 		// switch (location.pathname) {
 		// 	case '/':
@@ -30,8 +31,17 @@ const Form = () => {
 		// }
 	};
 
+	const handleClick = () => {
+		console.log('handleClick()');
+		setInput('');
+	};
+
+	useEffect(() => {
+		console.log(input);
+	}, [input]);
+
 	return (
-		<form className='home-form' onSubmit={getSearchResults}>
+		<form className='home-form' onSubmit={submitForm}>
 			<div className='home-form__group'>
 				<div className='home-form__icon-container'>
 					<HiOutlineSearch className='home-form__icon home-form__icon--size-lg home-form__icon--color-gray' />
@@ -39,12 +49,12 @@ const Form = () => {
 
 				<input
 					className='home-form__input'
-					value={input}
 					type='text'
+					value={input}
 					onChange={(event) => setInput(event.target.value)}
 				/>
 
-				<ClearTooltip />
+				<ClearTooltip handleClick={handleClick} />
 				<span className='home-form__span home-form__span--hidden'></span>
 				<MicTooltip />
 			</div>
@@ -53,7 +63,7 @@ const Form = () => {
 				<button
 					className='home-form__button'
 					type='submit'
-					onClick={getSearchResults}
+					onClick={submitForm}
 				>
 					Google Search
 				</button>
