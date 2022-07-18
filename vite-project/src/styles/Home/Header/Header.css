@@ -46,21 +46,12 @@
 	border-left-color: #f4b400;
 }
 
-.home-header__image-profile {
+.home-header__user-profile {
 	@apply w-2.25rem h-2.25rem;
 	@apply border-2 border-transparent rounded-full;
 }
 
-.home-header__image-profile:hover {
+.home-header__user-profile:hover {
 	@apply bg-g:athens_gray_faded;
 	@apply cursor-pointer;
-}
-
-.home-body {
-	@apply flex flex-col justify-center items-center space-y-8;
-	@apply mb-60;
-}
-
-.home-footer {
-	@apply min-h-3rem;
 }

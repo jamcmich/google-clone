@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 
 import Home from '@pages/Home';
 import Results from '@pages/Results';
-import Search from '@components/Home/Search';
 import '@styles/App.css';
 
 function App() {
@@ -10,7 +9,7 @@ function App() {
 		<div className='app'>
 			<Routes>
 				<Route path='/' element={<Home />} />
-				<Route path='/search' element={[<Search />, <Results />]} />
+				<Route path='/search' element={<Results />} />
 			</Routes>
 		</div>
 	);

@@ -1,0 +1,4 @@
+.home-body__image {
+	@apply w-17rem;
+	@apply cursor-pointer;
+}

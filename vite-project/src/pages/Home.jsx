@@ -1,15 +1,15 @@
 import React from 'react';
 
 import Header from '@components/Home/Header/Header';
-import Search from '@components/Home/Search';
-import Footer from '@components/Home/Footer';
+import Body from '@components/Home/Body/Body';
+import Footer from '@components/Home/Footer/Footer';
 import '@styles/Home/Home.css';
 
 const Home = () => {
 	return (
 		<div className='home'>
 			<Header />
-			<Search />
+			<Body />
 			<Footer />
 		</div>
 	);

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Tooltip from '@components/Home/Header/Tooltip';
-import profile from '@assets/profile.png';
+import userProfile from '@assets/user-profile.png';
 import '@styles/Home/Header/Header.css';
 
 const Header = () => {
@@ -29,8 +29,8 @@ const Header = () => {
 
 				<div className='home-header__image'>
 					<img
-						className='home-header__image-profile'
-						src={profile}
+						className='home-header__user-profile'
+						src={userProfile}
 						alt='Jacob McMichael'
 					></img>
 				</div>

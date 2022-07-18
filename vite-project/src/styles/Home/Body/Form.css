@@ -1,47 +1,84 @@
-.search {
-	@apply flex flex-row justify-start items-center space-x-10;
-	@apply px-1.5rem py-1.75rem;
+.home-form {
+	@apply flex flex-col place-content-center items-center space-y-8;
 }
 
-.search__image-logo {
-	@apply w-17rem;
-	@apply cursor-pointer;
-}
-
-.search-form {
-	@apply flex flex-col justify-center items-center grow;
-}
-
-.search-form__input {
-	@apply flex flex-row justify-around items-center;
+.home-form__group {
+    @apply flex flex-row place-content-center items-center;
 	@apply border-1 border-g:shuttle_gray rounded-full;
-	@apply w-145 h-2.8rem;
+	@apply w-43vw h-2.8rem;
 }
 
-.search-form__input:focus-within,
-.search-form__input:hover {
+.home-form__group:focus-within,
+.home-form__group:hover {
 	@apply border-g:shark;
 	@apply bg-g:shark;
 	@apply shadow-g:sm_shadow;
 }
 
-.search-form__input-elem {
-	@apply self-center basis-3/4;
-	@apply bg-transparent;
-	@apply text-1rem text-g:athens_gray;
+.home-form__icon {
+    @apply flex-grow;
+	@apply text-g:light-gray;
+    @apply max-w-3rem h-1rem;
 }
 
-.search-form__input-elem:focus {
+.home-form__icon--size-md {
+    @apply h-1.15rem;
+}
+
+.home-form__icon--color-gray {
+	@apply text-g:gray_chateau;
+}
+
+.home-form__icon--color-stone {
+	@apply text-g:rolling_stone;
+	@apply h-1.5rem;
+	@apply invisible;
+}
+
+.home-form__icon--no-outline:focus {
 	@apply outline-none;
 }
 
-input[type='text']:not([value='']) ~ .search-form__span--border {
-	@apply border-r-1 border-g:shuttle_gray;
-	@apply h-7;
+.home-form__icon--pointer {
+	@apply cursor-pointer;
 }
 
-.search-form__input-elem::-webkit-search-cancel-button {
+input[type='text']:not([value='']) ~ .home-form__icon--hidden {
+	@apply visible;
+	@apply cursor-pointer;
+}
+
+.home-form__input {
+	/* @apply self-center basis-3/4; */
+    @apply flex-grow;
+	@apply bg-transparent;
+	@apply text-1rem text-g:athens_gray;
+    @apply w-28vw;
+}
+
+.home-form__input:focus {
+	@apply outline-none;
+}
+
+.home-form__input::-webkit-search-cancel-button {
 	@apply hidden;
+}
+
+.home-form__tooltip {
+	@apply rounded-none !important;
+	@apply font-roboto text-0.75rem font-medium !important;
+	@apply px-10px !important;
+	@apply shadow-g:xs_shadow !important;
+}
+
+.home-form__span {
+	@apply border-r-1 border-transparent;
+    @apply px-0 mx-0;
+}
+
+input[type='text']:not([value='']) ~ .home-form__span {
+	@apply border-r-1 border-g:shuttle_gray;
+	@apply h-7;
 }
 
 .search-form__icon-container {
@@ -50,37 +87,6 @@ input[type='text']:not([value='']) ~ .search-form__span--border {
 	@apply cursor-pointer;
 }
 
-.search-form__icon {
-	@apply flex-1 self-center;
-	@apply text-g:light-gray;
-	@apply h-1.25rem;
-}
-
-.search-form__cancel-icon {
-	@apply text-g:rolling_stone;
-	@apply h-1.5rem;
-	@apply invisible;
-}
-
-.search-form__cancel-icon:focus {
-	@apply outline-none;
-}
-
-input[type='text']:not([value='']) ~ .search-form__cancel-icon {
-	@apply visible;
-	@apply cursor-pointer;
-}
-
-.search-form__mic-icon {
-	@apply cursor-pointer;
-}
-
-.search-form__tooltip {
-	@apply rounded-none !important;
-	@apply font-roboto text-0.75rem font-medium !important;
-	@apply px-10px !important;
-	@apply shadow-g:xs_shadow !important;
-}
 
 .search__buttons {
 	@apply flex flex-row justify-center items-center;
@@ -98,6 +104,9 @@ input[type='text']:not([value='']) ~ .search-form__cancel-icon {
 .search__button:hover {
 	@apply border-g:shuttle_gray;
 }
+
+
+
 
 .search--styled {
 	@apply space-x-11;
@@ -118,14 +127,6 @@ input[type='text']:not([value='']) ~ .search-form__cancel-icon {
 	@apply shadow-g:md_shadow;
 }
 
-.search-form__span--border {
-	@apply border-r-1 border-transparent;
-}
-
-.search-form__span--padding {
-	@apply px-0 mx-0;
-}
-
 .search-form__icons--spacing {
 	@apply flex flex-row flex-1 self-stretch space-x-4;
 	@apply px-4;
@@ -136,10 +137,6 @@ input[type='text']:not([value='']) ~ .search-form__cancel-icon {
 	@apply text-g:athens_gray;
 	@apply bg-g:shark;
 	@apply w-full ml-5;
-}
-
-.search-form__search-icon--gray {
-	@apply text-g:gray_chateau;
 }
 
 .search-form__search-icon--blue {

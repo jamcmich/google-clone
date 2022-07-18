@@ -1,4 +1,14 @@
 .home {
 	@apply flex flex-col place-content-between;
 	@apply h-full;
+	@apply overflow-hidden;
+}
+
+.home-body {
+	@apply flex flex-col justify-center items-center space-y-8;
+	@apply mb-60;
+}
+
+.home-footer {
+	@apply min-h-3rem;
 }
