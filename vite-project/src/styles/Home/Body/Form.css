@@ -3,9 +3,9 @@
 }
 
 .home-form__group {
-    @apply flex flex-row place-content-center items-center;
+	@apply flex flex-row place-content-center items-center;
 	@apply border-1 border-g:shuttle_gray rounded-full;
-	@apply w-43vw h-2.8rem;
+	@apply w-36rem h-2.8rem;
 }
 
 .home-form__group:focus-within,
@@ -16,13 +16,20 @@
 }
 
 .home-form__icon {
-    @apply flex-grow;
+	@apply flex-grow;
 	@apply text-g:light-gray;
-    @apply max-w-3rem h-1rem;
 }
 
 .home-form__icon--size-md {
-    @apply h-1.15rem;
+	@apply w-0.8rem;
+}
+
+.home-form__icon--size-lg {
+	@apply w-1.15rem;
+}
+
+.home-form__icon--size-xl {
+	@apply w-1.5rem;
 }
 
 .home-form__icon--color-gray {
@@ -31,8 +38,6 @@
 
 .home-form__icon--color-stone {
 	@apply text-g:rolling_stone;
-	@apply h-1.5rem;
-	@apply invisible;
 }
 
 .home-form__icon--no-outline:focus {
@@ -43,17 +48,20 @@
 	@apply cursor-pointer;
 }
 
+.home-form__icon--hidden {
+	@apply invisible;
+}
+
 input[type='text']:not([value='']) ~ .home-form__icon--hidden {
 	@apply visible;
 	@apply cursor-pointer;
 }
 
 .home-form__input {
-	/* @apply self-center basis-3/4; */
-    @apply flex-grow;
+	@apply flex-grow;
 	@apply bg-transparent;
 	@apply text-1rem text-g:athens_gray;
-    @apply w-28vw;
+	@apply w-25rem;
 }
 
 .home-form__input:focus {
@@ -64,51 +72,45 @@ input[type='text']:not([value='']) ~ .home-form__icon--hidden {
 	@apply hidden;
 }
 
-.home-form__tooltip {
-	@apply rounded-none !important;
-	@apply font-roboto text-0.75rem font-medium !important;
-	@apply px-10px !important;
-	@apply shadow-g:xs_shadow !important;
+.home-form__icon-container {
+	@apply flex flex-col place-content-center items-center self-stretch flex-grow;
+}
+
+.home-form__icon-container--padding-x {
+	@apply px-1;
 }
 
 .home-form__span {
-	@apply border-r-1 border-transparent;
-    @apply px-0 mx-0;
-}
-
-input[type='text']:not([value='']) ~ .home-form__span {
 	@apply border-r-1 border-g:shuttle_gray;
 	@apply h-7;
 }
 
-.search-form__icon-container {
-	@apply flex flex-row flex-1 self-stretch space-x-5;
-	@apply px-4;
-	@apply cursor-pointer;
+.home-form__span--hidden {
+	@apply invisible;
 }
 
+input[type='text']:not([value='']) ~ .home-form__span--hidden {
+	@apply visible;
+}
 
-.search__buttons {
+.home-form__buttons {
 	@apply flex flex-row justify-center items-center;
 	@apply font-roboto;
 	@apply space-x-3;
 }
 
-.search__button {
+.home-form__button {
 	@apply border-1 border-g:shark rounded-4px;
 	@apply bg-g:shark;
 	@apply px-1rem;
 	@apply h-2.25rem;
 }
 
-.search__button:hover {
+.home-form__button:hover {
 	@apply border-g:shuttle_gray;
 }
 
-
-
-
-.search--styled {
+/* .search--styled {
 	@apply space-x-11;
 }
 
@@ -149,4 +151,4 @@ input[type='text']:not([value='']) ~ .home-form__span {
 
 .search__buttons--hidden {
 	@apply hidden;
-}
+} */
