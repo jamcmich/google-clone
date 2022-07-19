@@ -25,6 +25,10 @@
 	@apply cursor-pointer;
 }
 
+.home-header__link--text-sm {
+	@apply text-0.8rem;
+}
+
 .home-header__icon {
 	@apply w-1.4rem h-1.4rem;
 	@apply cursor-pointer;

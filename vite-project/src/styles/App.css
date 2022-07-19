@@ -1,5 +1,5 @@
 .app {
-    @apply text-0.9rem font-roboto text-g:silver tracking-tight;
+    @apply text-0.9rem font-roboto text-g:silver tracking-normal;
     @apply bg-g:charcoal;
     @apply h-screen;
 }

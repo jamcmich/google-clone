@@ -9,6 +9,7 @@ export default defineConfig({
 			},
 			colors: {
 				'g:cod': '#3C4043',
+				'g:cod_gray': '#171717',
 				'g:silver': '#BDC1C6',
 				'g:shark': '#303134',
 				'g:charcoal': '#202124',
@@ -19,6 +20,7 @@ export default defineConfig({
 				'g:malibu': '#8AB4F8',
 				'g:rolling_stone': '#757B80',
 				'g:gray_chateau': '#9AA0A6',
+				'g:manatee': '#999DA2',
 			},
 			boxShadow: {
 				'g:xs_shadow:': '0 1px 4px 0 rgba(0, 0, 0, 0.2)',

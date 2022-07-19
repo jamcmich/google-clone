@@ -18,10 +18,16 @@ const Header = () => {
 			</nav>
 
 			<nav className='home-header__nav home-header__nav--text-white'>
-				<Link className='home-header__link' to='/gmail'>
+				<Link
+					className='home-header__link home-header__link--text-sm'
+					to='/gmail'
+				>
 					Gmail
 				</Link>
-				<Link className='home-header__link' to='/images'>
+				<Link
+					className='home-header__link home-header__link--text-sm'
+					to='/images'
+				>
 					Images
 				</Link>
 

@@ -1,3 +1,8 @@
+.home-body {
+	@apply flex flex-col place-content-center items-center space-y-8;
+	@apply mb-60;
+}
+
 .home-body__image {
 	@apply w-17rem;
 	@apply cursor-pointer;
