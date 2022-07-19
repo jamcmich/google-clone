@@ -5,6 +5,11 @@
     @apply h-3rem;
 }
 
+.home-footer--theme-light {
+    @apply text-g:rolling_stone;
+    @apply bg-g:concrete;
+}
+
 .home-footer__nav {
 	@apply flex flex-row items-center flex-shrink-0 space-x-7;
 	@apply px-8;

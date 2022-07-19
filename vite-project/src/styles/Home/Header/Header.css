@@ -8,11 +8,19 @@
 
 .home-header__nav {
 	@apply flex flex-row items-center flex-shrink-0;
-	@apply pl-5 pr-2 space-x-5;
+	@apply pl-5 pr-2 space-x-4;
 }
 
 .home-header__nav--text-white {
 	@apply text-g:white;
+}
+
+.home-header__nav--theme-light {
+	@apply text-g:shark_darker;
+}
+
+.home-header__nav--theme-light-text {
+	@apply text-g:black;
 }
 
 .home-header__link {
@@ -29,14 +37,37 @@
 	@apply text-0.8rem;
 }
 
+.home-header__link-group {
+	@apply flex flex-row place-content-center items-center space-x-4;
+	@apply mr-3;
+}
+
 .home-header__icon {
+	@apply flex-shrink-0;
 	@apply w-1.4rem h-1.4rem;
 	@apply cursor-pointer;
+}
+
+.home-header__icon--size-md {
+	@apply w-1.5rem h-1rem;
+}
+
+.home-header__icon--size-lg {
+	@apply w-1.5rem h-1.5rem;
 }
 
 .home-header__icon--hover:hover {
 	@apply ring-9 ring-g:athens_gray_faded rounded-full;
 	@apply bg-g:athens_gray_faded;
+}
+
+.home-header__icon--theme-light {
+	@apply text-g:shuttle_gray;
+}
+
+.home-header__icon--theme-light:hover {
+	@apply ring-9 ring-g:cod_faded rounded-full;
+	@apply bg-g:cod_faded;
 }
 
 .home-header__image {
@@ -57,5 +88,10 @@
 
 .home-header__user-profile:hover {
 	@apply bg-g:athens_gray_faded;
+	@apply cursor-pointer;
+}
+
+.home-header__user-profile--theme-light:hover {
+	@apply bg-g:cod_faded;
 	@apply cursor-pointer;
 }

@@ -3,3 +3,7 @@
 	@apply h-full;
 	@apply overflow-hidden;
 }
+
+.home--theme-light {
+	@apply bg-g:white;
+}

@@ -3,5 +3,5 @@
 	@apply font-roboto text-0.75rem text-g:silver font-medium !important;
 	@apply bg-g:charcoal !important;
 	@apply px-10px !important;
-	@apply shadow-g:xs_shadow !important;
+	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
 }

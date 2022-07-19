@@ -14,7 +14,18 @@
 .home-form__group:hover {
 	@apply border-g:shark;
 	@apply bg-g:shark;
-	@apply shadow-g:sm_shadow;
+	box-shadow: 0 1px 6px 0 rgba(23, 23, 23, 1);
+}
+
+.home-form__group--theme-light {
+	@apply border-1 border-g:iron rounded-full;
+}
+
+.home-form__group--theme-light:focus-within,
+.home-form__group--theme-light:hover {
+	@apply border-g:iron_lighter;
+	@apply bg-g:white;
+	box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
 }
 
 .home-form__icon-container {
@@ -67,6 +78,10 @@ input[type='text']:not([value='']) ~ .home-form__icon--hidden {
 	@apply cursor-pointer;
 }
 
+.home-form__icon--theme-light {
+	@apply text-g:cornflower_blue;
+}
+
 .home-form__input {
 	@apply self-stretch flex-grow;
 	@apply bg-transparent;
@@ -81,9 +96,17 @@ input[type='text']:not([value='']) ~ .home-form__icon--hidden {
 	@apply hidden;
 }
 
+.home-form__input--theme-light {
+	@apply text-1rem text-g:black;
+}
+
 .home-form__span {
 	@apply border-r-1 border-g:shuttle_gray;
 	@apply h-7;
+}
+
+.home-form__span--theme-light {
+	@apply border-r-1 border-g:iron_darker;
 }
 
 .home-form__span--hidden {
@@ -111,45 +134,17 @@ input[type='text']:not([value='']) ~ .home-form__span--hidden {
 	@apply border-g:shuttle_gray;
 }
 
-/* .search--styled {
-	@apply space-x-11;
-}
-
-.search__image-logo--small {
-	@apply w-5.75rem;
-}
-
-.search-form__input--styled {
-	@apply justify-center;
-	@apply border-g:shark;
-	@apply bg-g:shark;
-	@apply w-43rem h-2.9rem;
-}
-
-.search-form__input--styled:hover {
-	@apply shadow-g:md_shadow;
-}
-
-.search-form__icons--spacing {
-	@apply flex flex-row flex-1 self-stretch space-x-4;
-	@apply px-4;
-}
-
-.search-form__input-elem--styled {
-	@apply self-center;
+.home-form__button--color-gray {
 	@apply text-g:athens_gray;
-	@apply bg-g:shark;
-	@apply w-full ml-5;
 }
 
-.search-form__search-icon--blue {
-	@apply text-g:malibu;
+.home-form__button--theme-light {
+	@apply text-g:cod;
+	@apply border-g:athens_gray_lighter;
+	@apply bg-g:athens_gray_lighter;
 }
 
-.search-form__icon--resize {
-	@apply w-5;
+.home-form__button--theme-light:hover {
+	@apply border-g:iron_darker;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
-
-.search__buttons--hidden {
-	@apply hidden;
-} */

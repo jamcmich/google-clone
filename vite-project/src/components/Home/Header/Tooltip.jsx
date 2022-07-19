@@ -4,13 +4,13 @@ import { TbGridDots } from 'react-icons/tb';
 
 import '@styles/Home/Header/Tooltip.css';
 
-const Tooltip = () => {
+const Tooltip = ({ theme }) => {
 	const [tooltip, showTooltip] = useState(true);
 
 	return (
 		<React.Fragment>
 			<TbGridDots
-				className='home-header__icon home-header__icon--hover'
+				className={`home-header__icon home-header__icon--hover home-header__icon--theme-${theme}`}
 				data-tip='Google apps'
 				data-for='home-header__icon-grid'
 				onMouseEnter={() => showTooltip(true)}

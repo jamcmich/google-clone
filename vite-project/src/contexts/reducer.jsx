@@ -1,9 +1,11 @@
 const initialState = {
 	input: null,
+	theme: 'dark',
 };
 
 const actionTypes = {
 	SET_SEARCH_INPUT: 'SET_SEARCH_INPUT',
+	SET_APPLICATION_THEME: 'SET_APPLICATION_THEME',
 };
 
 const reducer = (state, action) => {
@@ -14,6 +16,12 @@ const reducer = (state, action) => {
 			return {
 				...state,
 				input: action.input,
+			};
+		case actionTypes.SET_APPLICATION_THEME:
+			console.log(action.theme);
+			return {
+				...state,
+				theme: action.theme,
 			};
 
 		default:

@@ -1,5 +1,5 @@
 .home-body {
-	@apply flex flex-col place-content-center items-center space-y-8;
+	@apply flex flex-col place-content-center items-center space-y-7;
 	@apply mb-60;
 }
 

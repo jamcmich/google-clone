@@ -1,28 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useStateValue } from '@contexts/StateProvider';
 
 import leaf from '@assets/leaf.png';
 import '@styles/Home/Footer/Footer.css';
 
 const Footer = () => {
+	const [{ theme }, dispatch] = useStateValue();
+
 	return (
-		<footer className='home-footer'>
+		<footer className={`home-footer home-footer--theme-${theme}`}>
 			<nav className='home-footer__nav home-footer__nav--content-start'>
-				<Link className='home-footer__link' to='/about'>
+				<Link className='home-footer__link' to='#advertising'>
 					Advertising
 				</Link>
-				<Link className='home-footer__link' to='/store'>
+				<Link className='home-footer__link' to='#business'>
 					Business
 				</Link>
-				<Link className='home-footer__link' to='/store'>
+				<Link className='home-footer__link' to='#how-search-works'>
 					How Search Works
 				</Link>
 			</nav>
 
 			<nav className='home-footer__nav home-footer__nav--content-center'>
-				<Link
+				<a
 					className='home-footer__link home-footer__link--flex-row'
-					to='https://sustainability.google/carbon-free/?utm_source=googlehpfooter&utm_medium=housepromos&utm_campaign=bottom-footer&utm_content=#home'
+					href='https://sustainability.google/carbon-free/?utm_source=googlehpfooter&utm_medium=housepromos&utm_campaign=bottom-footer&utm_content=#home'
+					target='_blank'
 				>
 					<img
 						className='home-footer__image'
@@ -30,17 +34,17 @@ const Footer = () => {
 						alt='carbon neutral'
 					/>
 					Carbon neutral since 2007
-				</Link>
+				</a>
 			</nav>
 
 			<nav className='home-footer__nav home-footer__nav--content-end'>
-				<Link className='home-footer__link' to='/gmail'>
+				<Link className='home-footer__link' to='#privacy'>
 					Privacy
 				</Link>
-				<Link className='home-footer__link' to='/images'>
+				<Link className='home-footer__link' to='#terms'>
 					Terms
 				</Link>
-				<Link className='home-footer__link' to='/images'>
+				<Link className='home-footer__link' to='#settings'>
 					Settings
 				</Link>
 			</nav>

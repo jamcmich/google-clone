@@ -4,12 +4,12 @@ import { FaMicrophone } from 'react-icons/fa';
 
 import '@styles/Home/Body/Tooltip.css';
 
-const MicTooltip = () => {
+const MicTooltip = ({ theme }) => {
 	return (
 		<React.Fragment>
 			<div className='home-form__icon-container home-form__icon-container--padding-x'>
 				<FaMicrophone
-					className='home-form__icon home-form__icon--size-md home-form__icon--padding-x home-form__icon--pointer'
+					className={`home-form__icon home-form__icon--size-md home-form__icon--padding-x home-form__icon--pointer home-form__icon--theme-${theme}`}
 					data-tip='Search by voice'
 					data-for='mic__tooltip'
 				/>
