@@ -1,9 +1,9 @@
-.home {
+.home-page {
 	@apply flex flex-col place-content-between;
 	@apply h-full;
 	@apply overflow-hidden;
 }
 
-.home--theme-light {
+.home-page--theme-light {
 	@apply bg-g:white;
 }

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 import { useStateValue } from '@contexts/StateProvider';
-
 import leaf from '@assets/leaf.png';
-import '@styles/Home/Footer/Footer.css';
 
-const Footer = () => {
-	const [{ theme }, dispatch] = useStateValue();
+import './HomeFooter.css';
+
+const HomeFooter = () => {
+	const [{ theme }] = useStateValue();
 
 	return (
 		<footer className={`home-footer home-footer--theme-${theme}`}>
@@ -52,4 +53,4 @@ const Footer = () => {
 	);
 };
 
-export default Footer;
+export default HomeFooter;

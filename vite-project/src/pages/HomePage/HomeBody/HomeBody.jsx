@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Form from '@components/Home/Body/Form';
-import '@styles/Home/Body/Body.css';
+import SearchForm from '@components/forms/SearchForm/SearchForm';
 
-const Body = () => {
+import './HomeBody.css';
+
+const HomeBody = () => {
 	return (
 		<section className='home-body'>
 			<Link to='/'>
@@ -15,9 +16,9 @@ const Body = () => {
 				/>
 			</Link>
 
-			<Form />
+			<SearchForm />
 		</section>
 	);
 };
 
-export default Body;
+export default HomeBody;

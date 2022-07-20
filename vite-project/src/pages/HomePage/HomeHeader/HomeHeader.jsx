@@ -1,15 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HiSun as Sun } from 'react-icons/hi';
+import { BsMoonStarsFill as Moon } from 'react-icons/bs';
+
 import { useStateValue } from '@contexts/StateProvider';
 import { actionTypes } from '@contexts/reducer';
+import { Grid } from '@components/tooltips/Tooltips';
+import user from '@assets/user.png';
 
-import Tooltip from '@components/Home/Header/Tooltip';
-import userProfile from '@assets/user-profile.png';
-import { HiSun } from 'react-icons/hi';
-import { BsMoonStarsFill } from 'react-icons/bs';
-import '@styles/Home/Header/Header.css';
+import './HomeHeader.css';
 
-const Header = () => {
+const HomeHeader = () => {
 	const [{ theme }, dispatch] = useStateValue();
 
 	const toggleTheme = () => {
@@ -31,12 +32,12 @@ const Header = () => {
 					Store
 				</Link>
 				{theme === 'dark' ? (
-					<HiSun
+					<Sun
 						className='home-header__icon home-header__icon--size-lg'
 						onClick={toggleTheme}
 					/>
 				) : (
-					<BsMoonStarsFill
+					<Moon
 						className={`home-header__icon home-header__icon--size-md home-header__icon--theme-${theme}`}
 						onClick={toggleTheme}
 					/>
@@ -61,12 +62,12 @@ const Header = () => {
 					</Link>
 				</div>
 
-				<Tooltip theme={theme} />
+				<Grid theme={theme} />
 
 				<div className='home-header__image'>
 					<img
 						className={`home-header__user-profile home-header__user-profile--theme-${theme}`}
-						src={userProfile}
+						src={user}
 						alt='Jacob McMichael'
 					></img>
 				</div>
@@ -75,4 +76,4 @@ const Header = () => {
 	);
 };
 
-export default Header;
+export default HomeHeader;
