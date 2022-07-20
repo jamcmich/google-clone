@@ -44,7 +44,7 @@
 
 .home-header__icon {
 	@apply flex-shrink-0;
-	@apply w-1.4rem h-1.4rem;
+	@apply w-1.3rem h-1.3rem;
 	@apply cursor-pointer;
 }
 

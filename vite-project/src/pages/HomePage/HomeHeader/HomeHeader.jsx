@@ -62,7 +62,7 @@ const HomeHeader = () => {
 					</Link>
 				</div>
 
-				<Grid theme={theme} />
+				<Grid setTheme={theme} />
 
 				<div className='home-header__image'>
 					<img

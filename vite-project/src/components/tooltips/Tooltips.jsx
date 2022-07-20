@@ -6,12 +6,12 @@ import { TbGridDots } from 'react-icons/tb';
 
 import './Tooltips.css';
 
-const Clear = ({ clearInput }) => {
+const Clear = ({ clearInput, setTheme: theme }) => {
 	return (
 		<React.Fragment>
-			<div className='home-form__icon-container home-form__icon--hidden'>
+			<div className='search-form__icon-container search-form__icon--hidden'>
 				<MdClear
-					className='home-form__icon home-form__icon--size-xl  home-form__icon--color-stone home-form__icon--no-outline home-form__icon--pointer'
+					className='search-form__icon search-form__icon--size-xl  search-form__icon--color-stone search-form__icon--no-outline search-form__icon--pointer'
 					data-tip='Clear'
 					data-for='clear__tooltip'
 					onClick={clearInput}
@@ -19,7 +19,7 @@ const Clear = ({ clearInput }) => {
 			</div>
 			<ReactTooltip
 				id='clear__tooltip'
-				className='home-form__tooltip'
+				className={`search-form__tooltip search-form__tooltip--theme-${theme}`}
 				border
 				borderColor='#3C4043'
 				backgroundColor='#202124'
@@ -34,16 +34,16 @@ const Clear = ({ clearInput }) => {
 const Microphone = ({ setTheme: theme }) => {
 	return (
 		<React.Fragment>
-			<div className='home-form__icon-container home-form__icon-container--padding-x'>
+			<div className='search-form__icon-container'>
 				<FaMicrophone
-					className={`home-form__icon home-form__icon--size-md home-form__icon--padding-x home-form__icon--pointer home-form__icon--theme-${theme}`}
+					className={`search-form__icon search-form__icon--size-md search-form__icon--padding-x search-form__icon--pointer search-form__icon--theme-${theme}`}
 					data-tip='Search by voice'
 					data-for='mic__tooltip'
 				/>
 			</div>
 			<ReactTooltip
 				id='mic__tooltip'
-				className='home-form__tooltip'
+				className={`search-form__tooltip search-form__tooltip--theme-${theme}`}
 				border
 				borderColor='#3C4043'
 				backgroundColor='#202124'
