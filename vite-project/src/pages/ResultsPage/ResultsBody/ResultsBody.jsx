@@ -13,7 +13,7 @@ const ResultsBody = () => {
 
 	return (
 		<div className='results-body'>
-			<h1>{input}</h1>
+			<h1>{data}</h1>
 		</div>
 	);
 };

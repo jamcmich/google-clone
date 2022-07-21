@@ -5,10 +5,18 @@ import { API_KEY } from '@utils/keys';
 
 const useSearch = (input) => {
 	const [data, setData] = useState(null);
+	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
-		console.log(input);
+		getData();
+	}, []);
+
+	const getData = () => {
 		if (input) {
+			setIsLoading(true);
+
+			console.log(input);
+
 			let parsedInput = input
 				.toLowerCase()
 				.trim()
@@ -31,19 +39,21 @@ const useSearch = (input) => {
 				},
 			};
 
-			const getData = async () => {
-				await axios
-					.get(url, options)
-					.then((response) => {
-						console.log(response);
-						setData(response);
-					})
-					.catch((error) => console.log(error));
-			};
+			// await axios
+			// 	.get(url, options)
+			// 	.then((response) => {
+			// 		console.log(response);
+			// 		setData(response);
+			// 	})
+			// 	.catch((error) => console.log(error));
 
-			// getData();
+			let test = new Promise((resolve, reject) => {
+				setTimeout(() => resolve(setData('some data...')), 5000)
+			});
+
+			setIsLoading(false);
 		}
-	}, [input]);
+	};
 
 	return { data };
 };

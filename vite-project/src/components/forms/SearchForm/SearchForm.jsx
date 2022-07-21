@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { HiOutlineSearch as Search } from 'react-icons/hi';
 
 import { useStateValue } from '@contexts/StateProvider';
@@ -18,13 +18,13 @@ const SearchForm = () => {
 
 		console.log('submitForm()');
 
-		if (searchInput) {
+		if (searchInput && searchInput !== input) {
 			dispatch({
 				type: actionTypes.SET_SEARCH_INPUT,
 				input: searchInput,
 			});
 
-			navigate('/search');
+			if (location.pathname !== '/search') navigate('/search');
 		}
 	};
 
@@ -42,7 +42,7 @@ const SearchForm = () => {
 	};
 
 	useEffect(() => {
-		prependSearchInput();
+		if (location.pathname === '/search') prependSearchInput();
 	}, []);
 
 	return location.pathname === '/search' ? (
