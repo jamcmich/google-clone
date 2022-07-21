@@ -10,7 +10,7 @@ import './SearchForm.css';
 
 const SearchForm = () => {
 	const navigate = useNavigate();
-	const [{ theme }, dispatch] = useStateValue();
+	const [{ input, theme }, dispatch] = useStateValue();
 	const [searchInput, setSearchInput] = useState('');
 
 	const submitForm = (event) => {
@@ -37,23 +37,19 @@ const SearchForm = () => {
 		setSearchInput('');
 	};
 
+	const prependSearchInput = () => {
+		if (input) document.querySelector('.search-form__input').value = input;
+	};
+
 	useEffect(() => {
-		console.log(searchInput);
-	}, [searchInput]);
+		prependSearchInput();
+	}, []);
 
 	return location.pathname === '/search' ? (
 		<form
-			className='search-form search-form--horizontal search-form--flex-row'
+			className='search-form search-form--flex-row'
 			onSubmit={submitForm}
 		>
-			<Link to='/'>
-				<img
-					className='search-form__image'
-					src='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
-					alt='logo'
-				/>
-			</Link>
-
 			<div
 				className={`search-form__group search-form__group--bg-fill search-form__group--wide search-form__group--shadow-lg search-form__group--theme-${theme}`}
 			>

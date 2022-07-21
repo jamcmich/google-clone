@@ -2,16 +2,6 @@
 	@apply flex flex-col place-content-center items-center flex-shrink-0 space-y-8;
 }
 
-.search-form__image {
-	@apply ml-4 mr-11;
-	@apply w-5.75rem;
-}
-
-.search-form--horizontal {
-	@apply flex-row place-content-start space-y-0;
-	@apply pt-7 pl-2;
-}
-
 .search-form__group {
 	@apply flex flex-row place-content-center items-center flex-shrink-0;
 	@apply border-1 border-g:shuttle_gray rounded-full;
