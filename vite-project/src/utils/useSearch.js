@@ -7,55 +7,48 @@ const useSearch = (input) => {
 	const [data, setData] = useState(null);
 	const [isLoading, setIsLoading] = useState(false);
 
-	useEffect(() => {
-		getData();
-	}, []);
+	let parsedInput = input
+		.toLowerCase()
+		.trim()
+		.replace(/[\W_]+/g, '+');
 
-	const getData = () => {
-		if (input) {
-			setIsLoading(true);
+	const url =
+		`https://google-search3.p.rapidapi.com/api/v1/search` +
+		`/q=${parsedInput}` +
+		`&num=5`;
 
-			console.log(input);
-
-			let parsedInput = input
-				.toLowerCase()
-				.trim()
-				.replace(/[\W_]+/g, '+');
-
-			const url =
-				`https://google-search3.p.rapidapi.com/api/v1/search` +
-				`/q=${parsedInput}` +
-				`&num=5`;
-
-			console.log(url);
-
-			const options = {
-				method: 'GET',
-				headers: {
-					'X-User-Agent': 'desktop',
-					'X-Proxy-Location': 'US',
-					'X-RapidAPI-Key': API_KEY,
-					'X-RapidAPI-Host': 'google-search3.p.rapidapi.com',
-				},
-			};
-
-			// await axios
-			// 	.get(url, options)
-			// 	.then((response) => {
-			// 		console.log(response);
-			// 		setData(response);
-			// 	})
-			// 	.catch((error) => console.log(error));
-
-			let test = new Promise((resolve, reject) => {
-				setTimeout(() => resolve(setData('some data...')), 5000)
-			});
-
-			setIsLoading(false);
-		}
+	const options = {
+		method: 'GET',
+		headers: {
+			'X-User-Agent': 'desktop',
+			'X-Proxy-Location': 'US',
+			'X-RapidAPI-Key': API_KEY,
+			'X-RapidAPI-Host': 'google-search3.p.rapidapi.com',
+		},
 	};
 
-	return { data };
+	const getData = async () => {
+		console.log('getData() called');
+		setIsLoading(true);
+
+		try {
+			const response = await axios.get(url, options);
+			console.log(
+				`Remaining API calls: ${response.headers['x-ratelimit-search-remaining']}`
+			);
+			setData(response.data);
+		} catch (error) {
+			console.log(error);
+		}
+
+		setIsLoading(false);
+	};
+
+	useEffect(() => {
+		if (input && !isLoading) getData();
+	}, []);
+
+	return { data, isLoading };
 };
 
 export { useSearch };

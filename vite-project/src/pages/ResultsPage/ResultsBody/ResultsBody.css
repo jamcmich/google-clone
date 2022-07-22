@@ -1,3 +1,8 @@
 .results-body {
+    @apply flex flex-col place-content-center items-start;
+    @apply mx-11.25rem;
+}
+
+.results-body__stats {
     
 }
