@@ -9,9 +9,9 @@ import './Tooltips.css';
 const Clear = ({ clearInput, setTheme: theme }) => {
 	return (
 		<React.Fragment>
-			<div className='search-form__icon-container search-form__icon--hidden'>
+			<div className='search-form__icon-container search-form__icon-container--size-lg search-form__icon-container--hidden'>
 				<MdClear
-					className='search-form__icon search-form__icon--size-xl  search-form__icon--color-stone search-form__icon--no-outline search-form__icon--pointer'
+					className='search-form__icon  search-form__icon--color-stone search-form__icon--no-outline search-form__icon--pointer'
 					data-tip='Clear'
 					data-for='clear__tooltip'
 					onClick={clearInput}
@@ -34,9 +34,9 @@ const Clear = ({ clearInput, setTheme: theme }) => {
 const Microphone = ({ setTheme: theme }) => {
 	return (
 		<React.Fragment>
-			<div className='search-form__icon-container'>
+			<div className='search-form__icon-container search-form__icon-container--size-md'>
 				<FaMicrophone
-					className={`search-form__icon search-form__icon--size-md search-form__icon--padding-x search-form__icon--pointer search-form__icon--theme-${theme}`}
+					className={`search-form__icon search-form__icon--padding-x search-form__icon--pointer search-form__icon--theme-${theme}`}
 					data-tip='Search by voice'
 					data-for='mic__tooltip'
 				/>

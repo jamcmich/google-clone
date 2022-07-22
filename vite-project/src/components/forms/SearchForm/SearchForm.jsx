@@ -53,20 +53,22 @@ const SearchForm = () => {
 			<div
 				className={`search-form__group search-form__group--bg-fill search-form__group--wide search-form__group--shadow-lg search-form__group--theme-${theme}`}
 			>
-				<input
-					className={`search-form__input search-form__input--padding search-form__input--theme-${theme}`}
-					type='text'
-					value={searchInput}
-					onChange={handleChange}
-				/>
+				<div className='search-form__group--margin search-form__group--margin-clear'>
+					<input
+						className={`search-form__input search-form__input--padding search-form__input--theme-${theme}`}
+						type='text'
+						value={searchInput}
+						onChange={handleChange}
+					/>
 
-				<Clear clearInput={clearInput} setTheme={theme} />
-				<span
-					className={`search-form__span search-form__span--theme-${theme} search-form__span--hidden`}
-				></span>
-				<Microphone setTheme={theme} />
-				<div className='search-form__icon-container search-form__icon-container--width-sm'>
-					<Search className='search-form__icon search-form__icon--size-lg-2 search-form__icon--color-gray search-form__icon--margin' />
+					<Clear clearInput={clearInput} setTheme={theme} />
+					<span
+						className={`search-form__span search-form__span--theme-${theme} search-form__span--hidden`}
+					></span>
+					<Microphone setTheme={theme} />
+					<div className='search-form__icon-container search-form__icon-container--margin-clear'>
+						<Search className='search-form__icon search-form__icon--size-lg-2 search-form__icon--color-gray search-form__icon--margin' />
+					</div>
 				</div>
 			</div>
 
@@ -90,20 +92,22 @@ const SearchForm = () => {
 			<div
 				className={`search-form__group search-form__group--theme-${theme}`}
 			>
-				<div className='search-form__icon-container'>
-					<Search className='search-form__icon search-form__icon--size-lg search-form__icon--color-gray' />
+				<div className='search-form__group--margin'>
+					<div className='search-form__icon-container'>
+						<Search className='search-form__icon search-form__icon--color-gray' />
+					</div>
+					<input
+						className={`search-form__input search-form__input--theme-${theme}`}
+						type='text'
+						value={searchInput}
+						onChange={handleChange}
+					/>
+					<Clear clearInput={clearInput} setTheme={theme} />
+					<span
+						className={`search-form__span search-form__span--theme-${theme} search-form__span--hidden`}
+					></span>
+					<Microphone setTheme={theme} />
 				</div>
-				<input
-					className={`search-form__input search-form__input--theme-${theme}`}
-					type='text'
-					value={searchInput}
-					onChange={handleChange}
-				/>
-				<Clear clearInput={clearInput} setTheme={theme} />
-				<span
-					className={`search-form__span search-form__span--theme-${theme} search-form__span--hidden`}
-				></span>
-				<Microphone setTheme={theme} />
 			</div>
 
 			<div className='search-form__buttons'>

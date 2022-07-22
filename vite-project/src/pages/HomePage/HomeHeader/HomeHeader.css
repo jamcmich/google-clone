@@ -34,7 +34,7 @@
 }
 
 .home-header__link--text-sm {
-	@apply text-0.8rem;
+	@apply text-13px;
 }
 
 .home-header__link-group {
@@ -54,6 +54,16 @@
 
 .home-header__icon--size-lg {
 	@apply w-1.5rem h-1.5rem;
+}
+
+.home-header__icon--theme-dark--hover:hover {
+	@apply ring-9 ring-g:athens_gray_faded rounded-full; 
+	@apply bg-g:athens_gray_faded;
+}
+
+.home-header__icon--theme-light--hover:hover {
+	@apply ring-9 ring-g:cod_faded rounded-full;
+	@apply bg-g:cod_faded;
 }
 
 .home-header__icon--hover:hover {

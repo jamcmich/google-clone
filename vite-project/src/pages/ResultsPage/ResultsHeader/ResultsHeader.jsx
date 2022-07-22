@@ -45,15 +45,15 @@ const ResultsHeader = () => {
 
 				<div className='results-header__link-container'>
 					<div className='results-header__link-item'>
-						<Book className='results-header__link-icon text-0.9rem' />
-						<Link to='#books'>Books</Link>
+						<Video className='results-header__link-icon' />
+						<Link to='#videos'>Videos</Link>
 					</div>
 				</div>
 
 				<div className='results-header__link-container'>
 					<div className='results-header__link-item'>
-						<Video className='results-header__link-icon' />
-						<Link to='#videos'>Videos</Link>
+						<Book className='results-header__link-icon text-0.9rem' />
+						<Link to='#books'>Books</Link>
 					</div>
 				</div>
 

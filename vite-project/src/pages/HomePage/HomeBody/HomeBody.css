@@ -4,6 +4,6 @@
 }
 
 .home-body__image {
-	@apply w-17rem;
+	@apply w-14vw;
 	@apply cursor-pointer;
 }

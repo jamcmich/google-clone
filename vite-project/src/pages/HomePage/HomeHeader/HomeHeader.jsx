@@ -33,12 +33,12 @@ const HomeHeader = () => {
 				</Link>
 				{theme === 'dark' ? (
 					<Sun
-						className='home-header__icon home-header__icon--size-lg'
+						className='home-header__icon home-header__icon--size-lg home-header__icon--theme-dark--hover'
 						onClick={toggleTheme}
 					/>
 				) : (
 					<Moon
-						className={`home-header__icon home-header__icon--size-md home-header__icon--theme-${theme}`}
+						className={`home-header__icon home-header__icon--size-md home-header__icon--theme-light--hover`}
 						onClick={toggleTheme}
 					/>
 				)}
