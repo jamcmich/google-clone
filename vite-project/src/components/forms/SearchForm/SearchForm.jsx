@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { HiOutlineSearch as Search } from 'react-icons/hi';
+import { IoMdSearch as Search } from 'react-icons/io';
 
 import { useStateValue } from '@contexts/StateProvider';
 import { actionTypes } from '@contexts/Reducer';
@@ -12,6 +12,7 @@ const SearchForm = () => {
 	const navigate = useNavigate();
 	const [{ input, theme }, dispatch] = useStateValue();
 	const [searchInput, setSearchInput] = useState('');
+	const [style, setStyle] = useState('');
 
 	const submitForm = (event) => {
 		event.preventDefault();
@@ -38,89 +39,77 @@ const SearchForm = () => {
 	};
 
 	const prependSearchInput = () => {
-		if (input) document.querySelector('.search-form__input').value = input;
+		document.querySelector('.results-form__input').value = input;
+	};
+
+	const handleStyles = () => {
+		switch (location.pathname) {
+			case '/':
+				console.log('search-page__icon');
+				setStyle('search')
+				break;
+			case '/search':
+				console.log('results-page__icon');
+				setStyle('results')
+				break;
+			default:
+				console.log('no styles could be applied');
+				break;
+		}
 	};
 
 	useEffect(() => {
-		if (location.pathname === '/search') prependSearchInput();
+		if (input && location.pathname === '/search') prependSearchInput();
+		handleStyles();
 	}, []);
 
 	return location.pathname === '/search' ? (
-		<form
-			className='search-form search-form--flex-row'
-			onSubmit={submitForm}
-		>
-			<div
-				className={`search-form__group search-form__group--bg-fill search-form__group--wide search-form__group--shadow-lg search-form__group--theme-${theme}`}
-			>
-				<div className='search-form__group--margin search-form__group--margin-clear'>
-					<input
-						className={`search-form__input search-form__input--padding search-form__input--theme-${theme}`}
-						type='text'
-						value={searchInput}
-						onChange={handleChange}
-					/>
-
-					<Clear clearInput={clearInput} setTheme={theme} />
-					<span
-						className={`search-form__span search-form__span--theme-${theme} search-form__span--hidden`}
-					></span>
-					<Microphone setTheme={theme} />
-					<div className='search-form__icon-container search-form__icon-container--margin-clear'>
-						<Search className='search-form__icon search-form__icon--size-lg-2 search-form__icon--color-gray search-form__icon--margin' />
-					</div>
-				</div>
-			</div>
-
-			<div className='search-form__buttons search-form_buttons--hidden'>
-				<button
-					className={`search-form__button search-form__button--color-gray search-form__button--theme-${theme}`}
-					type='submit'
-					onClick={submitForm}
-				>
-					Google Search
-				</button>
-				<button
-					className={`search-form__button search-form__button--color-gray search-form__button--theme-${theme}`}
-				>
-					I'm Feeling Lucky
-				</button>
+		<form className='results-page__form' onSubmit={submitForm}>
+			<div className='results-page__form-group'>
+				<input
+					className='results-page__input'
+					type='text'
+					value={searchInput}
+					onChange={handleChange}
+				/>
+				<Clear
+					clearInput={clearInput}
+					setTheme={theme}
+					setStyle={style}
+				/>
+				<span className='results-page__span'></span>
+				<Microphone setTheme={theme} setStyle={style} />
+				<Search className='results-page__icon' />
 			</div>
 		</form>
 	) : (
-		<form className='search-form' onSubmit={submitForm}>
-			<div
-				className={`search-form__group search-form__group--theme-${theme}`}
-			>
-				<div className='search-form__group--margin'>
-					<div className='search-form__icon-container'>
-						<Search className='search-form__icon search-form__icon--color-gray' />
-					</div>
-					<input
-						className={`search-form__input search-form__input--theme-${theme}`}
-						type='text'
-						value={searchInput}
-						onChange={handleChange}
-					/>
-					<Clear clearInput={clearInput} setTheme={theme} />
-					<span
-						className={`search-form__span search-form__span--theme-${theme} search-form__span--hidden`}
-					></span>
-					<Microphone setTheme={theme} />
-				</div>
+		<form className='search-page__form' onSubmit={submitForm}>
+			<div className='search-page__form-group'>
+				<Search className='search-page__icon' />
+				<input
+					className='search-page__input'
+					type='text'
+					value={searchInput}
+					onChange={handleChange}
+				/>
+				<Clear
+					clearInput={clearInput}
+					setTheme={theme}
+					setStyle={style}
+				/>
+				<span className='search-page__span'></span>
+				<Microphone setTheme={theme} setStyle={style} />
 			</div>
 
 			<div className='search-form__buttons'>
 				<button
-					className={`search-form__button search-form__button--color-gray search-form__button--theme-${theme}`}
+					className='search-form__button'
 					type='submit'
 					onClick={submitForm}
 				>
 					Google Search
 				</button>
-				<button
-					className={`search-form__button search-form__button--color-gray search-form__button--theme-${theme}`}
-				>
+				<button className='search-form__button'>
 					I'm Feeling Lucky
 				</button>
 			</div>

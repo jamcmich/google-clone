@@ -1,22 +1,20 @@
 import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import { MdClear } from 'react-icons/md';
-import { FaMicrophone } from 'react-icons/fa';
+import { IoMdMic } from 'react-icons/io';
 import { TbGridDots } from 'react-icons/tb';
 
 import './Tooltips.css';
 
-const Clear = ({ clearInput, setTheme: theme }) => {
+const Clear = ({ clearInput, setTheme: theme, setStyle: style }) => {
 	return (
 		<React.Fragment>
-			<div className='search-form__icon-container search-form__icon-container--size-lg search-form__icon-container--hidden'>
-				<MdClear
-					className='search-form__icon  search-form__icon--color-stone search-form__icon--no-outline search-form__icon--pointer'
-					data-tip='Clear'
-					data-for='clear__tooltip'
-					onClick={clearInput}
-				/>
-			</div>
+			<MdClear
+				className={`${style}-page__icon ${style}-page__clear-icon`}
+				data-tip='Clear'
+				data-for='clear__tooltip'
+				onClick={clearInput}
+			/>
 			<ReactTooltip
 				id='clear__tooltip'
 				className={`search-form__tooltip search-form__tooltip--theme-${theme}`}
@@ -31,16 +29,14 @@ const Clear = ({ clearInput, setTheme: theme }) => {
 	);
 };
 
-const Microphone = ({ setTheme: theme }) => {
+const Microphone = ({ setTheme: theme, setStyle: style }) => {
 	return (
 		<React.Fragment>
-			<div className='search-form__icon-container search-form__icon-container--size-md'>
-				<FaMicrophone
-					className={`search-form__icon search-form__icon--padding-x search-form__icon--pointer search-form__icon--theme-${theme}`}
-					data-tip='Search by voice'
-					data-for='mic__tooltip'
-				/>
-			</div>
+			<IoMdMic
+				className={`${style}-page__icon ${style}-page__mic-icon`}
+				data-tip='Search by voice'
+				data-for='mic__tooltip'
+			/>
 			<ReactTooltip
 				id='mic__tooltip'
 				className={`search-form__tooltip search-form__tooltip--theme-${theme}`}
@@ -59,7 +55,7 @@ const Grid = ({ setTheme: theme }) => {
 	return (
 		<React.Fragment>
 			<TbGridDots
-				className={`home-header__icon home-header__icon--hover home-header__icon--theme-${theme}`}
+				className='search-page__icon results-page__icon'
 				data-tip='Google apps'
 				data-for='home-header__icon-grid'
 			/>
