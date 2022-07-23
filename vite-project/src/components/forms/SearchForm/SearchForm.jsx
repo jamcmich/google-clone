@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IoMdSearch as Search } from 'react-icons/io';
+import { BsSunFill as Sun, BsMoonStarsFill as Moon } from 'react-icons/bs';
 
 import { useStateValue } from '@contexts/StateProvider';
 import { actionTypes } from '@contexts/Reducer';
@@ -63,32 +64,53 @@ const SearchForm = () => {
 		}
 	};
 
+	const toggleTheme = () => {
+		dispatch({
+			type: actionTypes.SET_APPLICATION_THEME,
+			theme: theme === 'dark' ? 'light' : 'dark',
+		});
+	};
+
 	useEffect(() => {
 		prependSearchInput();
 		handleStyles();
 	}, [input]);
 
 	return location.pathname === '/results' ? (
-		<form className='results-page__form' onSubmit={submitForm}>
-			<div className='results-page__form-group'>
-				<input
-					className='results-page__input'
-					type='text'
-					value={searchInput}
-					onChange={handleChange}
+		<React.Fragment>
+			<form className='results-page__form' onSubmit={submitForm}>
+				<div className='results-page__form-group'>
+					<input
+						className='results-page__input'
+						type='text'
+						value={searchInput}
+						onChange={handleChange}
+					/>
+					<Clear
+						clearInput={clearInput}
+						setTheme={theme}
+						setStyle={style}
+					/>
+					<span className='results-page__span'></span>
+					<Microphone setTheme={theme} setStyle={style} />
+					<Search
+						className={`${style}-page__icon ${style}-page__search-icon`}
+					/>
+				</div>
+			</form>
+
+			{theme === 'dark' ? (
+				<Sun
+					className={`home-header__icon home-header__icon--${theme} results-page__sun-icon`}
+					onClick={toggleTheme}
 				/>
-				<Clear
-					clearInput={clearInput}
-					setTheme={theme}
-					setStyle={style}
+			) : (
+				<Moon
+					className={`home-header__icon home-header__icon--${theme} home-header__moon-icon--${theme} results-page__moon-icon`}
+					onClick={toggleTheme}
 				/>
-				<span className='results-page__span'></span>
-				<Microphone setTheme={theme} setStyle={style} />
-				<Search
-					className={`${style}-page__icon ${style}-page__search-icon`}
-				/>
-			</div>
-		</form>
+			)}
+		</React.Fragment>
 	) : (
 		<form className='search-page__form' onSubmit={submitForm}>
 			<div

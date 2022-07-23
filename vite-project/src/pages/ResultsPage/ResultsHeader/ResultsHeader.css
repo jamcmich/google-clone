@@ -25,13 +25,13 @@
     @apply pb-0.75rem;
 }
 
+.results-header__link-tools {
+    @apply ml-8.5rem;
+}
+
 .results-header__link-container {
     @apply pr-1.5rem;
     @apply cursor-pointer;
-}
-
-.results-header__link-item--margin {
-    @apply ml-8.5rem;
 }
 
 .results-header__link-item--active {

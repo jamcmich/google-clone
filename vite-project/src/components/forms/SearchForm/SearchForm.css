@@ -161,3 +161,9 @@ input.results-page__input[type='text'][value=''] ~ .results-page__span {
 	@apply w-23px h-23px;
 	@apply ml-5px;
 }
+
+.results-page__sun-icon,
+.results-page__moon-icon {
+	@apply flex-row flex-1;
+	@apply mr-50px;
+}

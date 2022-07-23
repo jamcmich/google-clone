@@ -72,7 +72,7 @@ const ResultsHeader = () => {
 				</div>
 
 				<div className='results-header__link-container'>
-					<div className='results-header__link-item results-header__link-item--margin'>
+					<div className='results-header__link-item results-header__link-tools'>
 						<Link to='#tools'>Tools</Link>
 					</div>
 				</div>
