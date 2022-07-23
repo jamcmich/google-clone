@@ -55,13 +55,13 @@ const Grid = ({ setTheme: theme }) => {
 	return (
 		<React.Fragment>
 			<TbGridDots
-				className='search-page__icon results-page__icon'
+				className='home-header__icon home-header__grid-icon'
 				data-tip='Google apps'
-				data-for='home-header__icon-grid'
+				data-for='home-header__grid-icon'
 			/>
 
 			<ReactTooltip
-				id='home-header__icon-grid'
+				id='home-header__grid-icon'
 				className='home-header__icon-tooltip'
 				data-place='bottom'
 				data-type='info'
