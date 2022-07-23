@@ -4,6 +4,6 @@
 	@apply overflow-hidden;
 }
 
-.home-page--theme-light {
+.home-page--light {
 	@apply bg-g:white;
 }

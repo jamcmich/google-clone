@@ -19,6 +19,6 @@
 	box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-.search-form__tooltip--theme-light {
-	@apply border-g:white;
+.search-form__tooltip--light {
+	@apply border-g:white !important;
 }

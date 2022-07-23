@@ -1,9 +1,9 @@
 .home-body {
 	@apply flex flex-col place-content-center items-center space-y-7;
-	@apply mb-60;
+	@apply mb-310px;
 }
 
 .home-body__image {
-	@apply w-14vw;
+	@apply w-272px h-92px;
 	@apply cursor-pointer;
 }

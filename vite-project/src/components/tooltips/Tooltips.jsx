@@ -17,7 +17,7 @@ const Clear = ({ clearInput, setTheme: theme, setStyle: style }) => {
 			/>
 			<ReactTooltip
 				id='clear__tooltip'
-				className={`search-form__tooltip search-form__tooltip--theme-${theme}`}
+				className={`search-form__tooltip search-form__tooltip--${theme}`}
 				border
 				borderColor='#3C4043'
 				backgroundColor='#202124'
@@ -39,7 +39,7 @@ const Microphone = ({ setTheme: theme, setStyle: style }) => {
 			/>
 			<ReactTooltip
 				id='mic__tooltip'
-				className={`search-form__tooltip search-form__tooltip--theme-${theme}`}
+				className={`search-form__tooltip search-form__tooltip--${theme}`}
 				border
 				borderColor='#3C4043'
 				backgroundColor='#202124'

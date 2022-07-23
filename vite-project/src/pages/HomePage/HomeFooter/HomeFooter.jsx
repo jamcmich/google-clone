@@ -10,8 +10,8 @@ const HomeFooter = () => {
 	const [{ theme }] = useStateValue();
 
 	return (
-		<footer className={`home-footer home-footer--theme-${theme}`}>
-			<nav className='home-footer__nav home-footer__nav--content-start'>
+		<footer className={`home-footer home-footer--${theme}`}>
+			<nav className='home-footer__nav home-footer__nav-left'>
 				<Link className='home-footer__link' to='#advertising'>
 					Advertising
 				</Link>
@@ -23,9 +23,9 @@ const HomeFooter = () => {
 				</Link>
 			</nav>
 
-			<nav className='home-footer__nav home-footer__nav--content-center'>
+			<nav className='home-footer__nav home-footer__nav-center'>
 				<a
-					className='home-footer__link home-footer__link--flex-row'
+					className='home-footer__link-center'
 					href='https://sustainability.google/carbon-free/?utm_source=googlehpfooter&utm_medium=housepromos&utm_campaign=bottom-footer&utm_content=#home'
 					target='_blank'
 				>
@@ -38,7 +38,7 @@ const HomeFooter = () => {
 				</a>
 			</nav>
 
-			<nav className='home-footer__nav home-footer__nav--content-end'>
+			<nav className='home-footer__nav home-footer__nav-right'>
 				<Link className='home-footer__link' to='#privacy'>
 					Privacy
 				</Link>
