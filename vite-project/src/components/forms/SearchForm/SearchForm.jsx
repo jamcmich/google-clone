@@ -19,7 +19,7 @@ const SearchForm = () => {
 
 		console.log('submitForm()');
 
-		if (searchInput && searchInput !== input) {
+		if (searchInput.trim() && searchInput !== input) {
 			dispatch({
 				type: actionTypes.SET_SEARCH_INPUT,
 				input: searchInput,
@@ -39,18 +39,22 @@ const SearchForm = () => {
 	};
 
 	const prependSearchInput = () => {
+		console.log('test');
 		if (input && location.pathname === '/results')
-			setSearchInput(input);
+			setSearchInput(
+				input
+					.toLowerCase()
+					.trim()
+					.replace(/[\W_]+/g, ' ')
+			);
 	};
 
 	const handleStyles = () => {
 		switch (location.pathname) {
 			case '/':
-				console.log('search-page__icon');
 				setStyle('search');
 				break;
 			case '/results':
-				console.log('results-page__icon');
 				setStyle('results');
 				break;
 			default:
@@ -62,7 +66,7 @@ const SearchForm = () => {
 	useEffect(() => {
 		prependSearchInput();
 		handleStyles();
-	}, []);
+	}, [input]);
 
 	return location.pathname === '/results' ? (
 		<form className='results-page__form' onSubmit={submitForm}>
@@ -87,10 +91,12 @@ const SearchForm = () => {
 		</form>
 	) : (
 		<form className='search-page__form' onSubmit={submitForm}>
-			<div className='search-page__form-group'>
+			<div
+				className={`search-page__form-group search-page__form-group--${theme}`}
+			>
 				<Search className={`${style}-page__icon`} />
 				<input
-					className='search-page__input'
+					className={`search-page__input search-page__input--${theme}`}
 					type='text'
 					value={searchInput}
 					onChange={handleChange}
@@ -100,19 +106,25 @@ const SearchForm = () => {
 					setTheme={theme}
 					setStyle={style}
 				/>
-				<span className='search-page__span'></span>
+				<span
+					className={`search-page__span search-page__span--${theme}`}
+				></span>
 				<Microphone setTheme={theme} setStyle={style} />
 			</div>
 
 			<div className='search-form__buttons'>
 				<button
-					className='search-form__button'
+					className={`search-form__button search-form__button--${theme}`}
 					type='submit'
 					onClick={submitForm}
 				>
 					Google Search
 				</button>
-				<button className='search-form__button'>
+				<button
+					className={`search-form__button search-form__button--${theme}`}
+					type='submit'
+					onClick={submitForm}
+				>
 					I'm Feeling Lucky
 				</button>
 			</div>

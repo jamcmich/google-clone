@@ -33,7 +33,7 @@ const Microphone = ({ setTheme: theme, setStyle: style }) => {
 	return (
 		<React.Fragment>
 			<IoMdMic
-				className={`${style}-page__icon ${style}-page__mic-icon`}
+				className={`${style}-page__icon ${style}-page__mic-icon search-page__mic-icon--${theme}`}
 				data-tip='Search by voice'
 				data-for='mic__tooltip'
 			/>
