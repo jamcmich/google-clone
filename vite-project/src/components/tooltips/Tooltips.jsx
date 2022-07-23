@@ -55,7 +55,7 @@ const Grid = ({ setTheme: theme }) => {
 	return (
 		<React.Fragment>
 			<TbGridDots
-				className='home-header__icon home-header__grid-icon'
+				className={`home-header__icon home-header__icon--${theme} home-header__grid-icon home-header__grid-icon--${theme}`}
 				data-tip='Google apps'
 				data-for='home-header__grid-icon'
 			/>

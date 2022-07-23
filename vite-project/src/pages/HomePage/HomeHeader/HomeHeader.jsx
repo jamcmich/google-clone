@@ -22,7 +22,9 @@ const HomeHeader = () => {
 	return (
 		<header className='home-header'>
 			<div className='home-header__nav'>
-				<nav className='home-header__nav-left'>
+				<nav
+					className={`home-header__nav-left home-header__nav-left--${theme}`}
+				>
 					<Link className='home-header__link' to='#about'>
 						About
 					</Link>
@@ -31,18 +33,20 @@ const HomeHeader = () => {
 					</Link>
 					{theme === 'dark' ? (
 						<Sun
-							className='home-header__icon'
+							className={`home-header__icon home-header__icon--${theme}`}
 							onClick={toggleTheme}
 						/>
 					) : (
 						<Moon
-							className='home-header__icon'
+							className={`home-header__icon home-header__icon--${theme} home-header__moon-icon--${theme}`}
 							onClick={toggleTheme}
 						/>
 					)}
 				</nav>
 
-				<nav className='home-header__nav-right'>
+				<nav
+					className={`home-header__nav-right home-header__nav-right--${theme}`}
+				>
 					<Link
 						className='home-header__link home-header__gmail-link'
 						to='#gmail'
@@ -57,7 +61,7 @@ const HomeHeader = () => {
 
 					<div className='home-header__image-border'>
 						<img
-							className='home-header__image'
+							className={`home-header__image home-header__image--${theme}`}
 							src={user}
 							alt='Jacob McMichael'
 						/>

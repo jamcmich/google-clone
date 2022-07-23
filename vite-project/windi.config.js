@@ -25,7 +25,6 @@ export default defineConfig({
 				'g:gray_chateau': '#9AA0A6',
 				'g:manatee': '#999DA2',
 				'g:manatee_light': '#969BA1',
-				'g:shark_darker': '#202124',
 				'g:black': '#000000',
 				'g:black_faded': '#000000DE',
 				'g:iron': '#DFE1E5',
