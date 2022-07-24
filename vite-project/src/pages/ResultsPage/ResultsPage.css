@@ -1,2 +1,7 @@
 .results-page {
+
+}
+
+.results-page--light {
+    @apply bg-g:white;
 }

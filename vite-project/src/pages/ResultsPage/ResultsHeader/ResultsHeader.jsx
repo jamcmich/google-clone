@@ -1,7 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
-import SearchForm from '@components/forms/SearchForm/SearchForm';
 import {
 	BiSearch as Search,
 	BiDotsVerticalRounded as Dots,
@@ -10,10 +8,44 @@ import {
 import { RiVideoLine as Video } from 'react-icons/ri';
 import { BsImage as Image } from 'react-icons/bs';
 import { AiOutlineBook as Book } from 'react-icons/ai';
+import { BsSunFill as Sun, BsMoonStarsFill as Moon } from 'react-icons/bs';
+
+import { Settings, Grid } from '@components/tooltips/Tooltips';
+import user from '@assets/user.png';
+import { useStateValue } from '@contexts/StateProvider';
+import { actionTypes } from '@contexts/Reducer';
+import SearchForm from '@components/forms/SearchForm/SearchForm';
 
 import './ResultsHeader.css';
 
 const ResultsHeader = () => {
+	const [{ theme }, dispatch] = useStateValue();
+
+	const toggleTheme = () => {
+		dispatch({
+			type: actionTypes.SET_APPLICATION_THEME,
+			theme: theme === 'dark' ? 'light' : 'dark',
+		});
+	};
+
+	const handleStyles = () => {
+		switch (location.pathname) {
+			case '/':
+				setStyle('search');
+				break;
+			case '/results':
+				setStyle('results');
+				break;
+			default:
+				console.log('no styles could be applied');
+				break;
+		}
+	};
+
+	useEffect(() => {
+		handleStyles();
+	}, []);
+
 	return (
 		<header className='results-header'>
 			<div className='results-header__form-group'>
@@ -26,6 +58,32 @@ const ResultsHeader = () => {
 				</Link>
 
 				<SearchForm />
+
+				<nav className='results-header__nav-right'>
+					{theme === 'dark' ? (
+						<Sun
+							className={`home-header__icon home-header__icon--${theme} results-header__sun-icon`}
+							onClick={toggleTheme}
+						/>
+					) : (
+						<Moon
+							className={`home-header__icon home-header__icon--${theme} home-header__moon-icon--${theme} results-header__moon-icon`}
+							onClick={toggleTheme}
+						/>
+					)}
+
+					<Settings className='results-header__icon results-header__settings-icon' />
+
+					<Grid setTheme={theme} />
+
+					<div className='home-header__image-border'>
+						<img
+							className={`home-header__image home-header__image--${theme}`}
+							src={user}
+							alt='Jacob McMichael'
+						/>
+					</div>
+				</nav>
 			</div>
 
 			<nav className='results-header__links'>

@@ -3,13 +3,36 @@
 }
 
 .results-header__form-group {
-	@apply flex flex-row place-content-start items-center space-y-0;
-	@apply pt-7 pl-2;
+	@apply flex flex-row place-content-start items-center;
+	@apply pt-26px px-20px pl-18px;
 }
 
 .results-header__image {
-	@apply ml-4 mr-11;
-	@apply w-5.75rem;
+	@apply w-92px h-30px;
+    @apply ml-6px mt-3px;
+}
+
+.results-header__nav-right {
+    @apply flex flex-row justify-end items-center;
+    @apply flex-1;
+}
+
+.results-header__icon {
+	@apply cursor-pointer;
+}
+
+.results-header__icon:hover {
+	@apply ring-9 ring-g:athens_gray_faded rounded-full;
+	@apply bg-g:athens_gray_faded;
+}
+
+.results-header__sun-icon,
+.results-header__moon-icon {
+}
+
+.results-header__settings-icon {
+    @apply w-20px h-20px;
+    @apply mx-20px;
 }
 
 .results-header__links {

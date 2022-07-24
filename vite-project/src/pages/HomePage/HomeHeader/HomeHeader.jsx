@@ -1,16 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { BsSunFill as Sun, BsMoonStarsFill as Moon } from 'react-icons/bs';
 
 import { useStateValue } from '@contexts/StateProvider';
 import { actionTypes } from '@contexts/reducer';
+import { Sun, Moon } from '@components/icons'
 import { Grid } from '@components/tooltips/Tooltips';
 import user from '@assets/user.png';
 
 import './HomeHeader.css';
 
 const HomeHeader = () => {
-	const [{ theme }, dispatch] = useStateValue();
+	const [{ theme, style }, dispatch] = useStateValue();
 
 	const toggleTheme = () => {
 		dispatch({
@@ -18,6 +18,17 @@ const HomeHeader = () => {
 			theme: theme === 'dark' ? 'light' : 'dark',
 		});
 	};
+
+	const toggleStyle = () => {
+		dispatch({
+			type: actionTypes.SET_APPLICATION_STYLE,
+			style: location.pathname === '/' ? 'search' : 'results',
+		});
+	};
+
+	useEffect(() => {
+		toggleStyle();
+	}, []);
 
 	return (
 		<header className='home-header'>
@@ -57,7 +68,7 @@ const HomeHeader = () => {
 						Images
 					</Link>
 
-					<Grid setTheme={theme} />
+					<Grid setTheme={theme} setStyle={style} />
 
 					<div className='home-header__image-border'>
 						<img

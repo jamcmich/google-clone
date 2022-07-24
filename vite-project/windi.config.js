@@ -10,6 +10,7 @@ export default defineConfig({
 			colors: {
 				'g:cod': '#3C4043',
 				'g:cod_faded': '#3C404314',
+				'g:cod_lighter': '#3c4043E6',
 				'g:cod_gray': '#171717',
 				'g:silver': '#BDC1C6',
 				'g:shark': '#303134',
