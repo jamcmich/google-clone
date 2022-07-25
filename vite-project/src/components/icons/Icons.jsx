@@ -1,56 +1,100 @@
+/* Utilities */
 import React from 'react';
+import { useStateValue } from '@contexts/StateProvider';
+
+/* Icons */
 import { BsSunFill, BsMoonFill } from 'react-icons/bs';
 import { MdClear } from 'react-icons/md';
-import { IoMdMic } from 'react-icons/io';
+import { IoMdMic, IoMdSearch } from 'react-icons/io';
 import { FaCog } from 'react-icons/fa';
 import { TbGridDots } from 'react-icons/tb';
 
-const Sun = () => {
+/* Styles */
+import './Icons.css';
+
+const Sun = (props) => {
+	const [{ theme }] = useStateValue();
+
 	return (
 		<div className='icon-container'>
-			<BsSunFill className='icon-sun' />
+			<BsSunFill
+				className={`icon-sun ${props.style}-page__icon-sun icon-sun--${theme}`}
+			/>
 		</div>
 	);
 };
 
-const Moon = () => {
+const Moon = (props) => {
+	const [{ theme }] = useStateValue();
+
 	return (
 		<div className='icon-container'>
-			<BsMoonFill className='icon-moon' />
+			<BsMoonFill
+				className={`icon-moon ${props.style}-page__icon-moon icon-moon--${theme}`}
+			/>
 		</div>
 	);
 };
 
-const Clear = ({ clearInput }) => {
+const Clear = (props, { clearInput }) => {
+	const [{ theme }] = useStateValue();
+
 	return (
 		<div className='icon-container'>
-			<MdClear className='icon-clear' onClick={clearInput} />
+			<MdClear
+				className={`icon-clear ${props.style}-page__icon-clear icon-clear--${theme}`}
+				onClick={clearInput}
+			/>
 		</div>
 	);
 };
 
-const Mic = () => {
+const Mic = (props) => {
+	const [{ theme }] = useStateValue();
+
 	return (
 		<div className='icon-container'>
-			<IoMdMic className='icon-mic' />
+			<IoMdMic
+				className={`icon-mic ${props.style}-page__icon-mic icon-mic--${theme}`}
+			/>
 		</div>
 	);
 };
 
-const Settings = () => {
+const Search = (props) => {
+	const [{ theme }] = useStateValue();
+
 	return (
 		<div className='icon-container'>
-			<FaCog className='icon-settings' />
+			<IoMdSearch
+				className={`icon-search ${props.style}-page__icon-search icon-search--${theme}`}
+			/>
 		</div>
 	);
 };
 
-const Grid = () => {
+const Settings = (props) => {
+	const [{ theme }] = useStateValue();
+
 	return (
 		<div className='icon-container'>
-			<TbGridDots className='icon-grid' />
+			<FaCog
+				className={`icon-settings ${props.style}-page__icon-settings icon-settings--${theme}`}
+			/>
 		</div>
 	);
 };
 
-export default { Sun, Moon, Clear, Mic, Settings, Grid };
+const Grid = (props) => {
+	const [{ theme }] = useStateValue();
+
+	return (
+		<div className='icon-container'>
+			<TbGridDots
+				className={`icon-grid ${props.style}-page__icon-grid icon-grid--${theme}`}
+			/>
+		</div>
+	);
+};
+
+export { Sun, Moon, Clear, Mic, Search, Settings, Grid };

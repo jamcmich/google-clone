@@ -10,7 +10,6 @@ import { BsImage as Image } from 'react-icons/bs';
 import { AiOutlineBook as Book } from 'react-icons/ai';
 import { BsSunFill as Sun, BsMoonStarsFill as Moon } from 'react-icons/bs';
 
-import { Settings, Grid } from '@components/tooltips/Tooltips';
 import user from '@assets/user.png';
 import { useStateValue } from '@contexts/StateProvider';
 import { actionTypes } from '@contexts/Reducer';

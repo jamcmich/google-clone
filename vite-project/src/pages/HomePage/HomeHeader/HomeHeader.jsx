@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { useStateValue } from '@contexts/StateProvider';
 import { actionTypes } from '@contexts/reducer';
-import { Sun, Moon } from '@components/icons'
-import { Grid } from '@components/tooltips/Tooltips';
+import { Sun, Moon, Grid } from '@components/icons/Icons';
+import Tooltip from '@components/tooltip/Tooltip';
 import user from '@assets/user.png';
 
 import './HomeHeader.css';
@@ -19,17 +19,6 @@ const HomeHeader = () => {
 		});
 	};
 
-	const toggleStyle = () => {
-		dispatch({
-			type: actionTypes.SET_APPLICATION_STYLE,
-			style: location.pathname === '/' ? 'search' : 'results',
-		});
-	};
-
-	useEffect(() => {
-		toggleStyle();
-	}, []);
-
 	return (
 		<header className='home-header'>
 			<div className='home-header__nav'>
@@ -42,16 +31,11 @@ const HomeHeader = () => {
 					<Link className='home-header__link' to='#store'>
 						Store
 					</Link>
+
 					{theme === 'dark' ? (
-						<Sun
-							className={`home-header__icon home-header__icon--${theme}`}
-							onClick={toggleTheme}
-						/>
+						<Sun onClick={toggleTheme} />
 					) : (
-						<Moon
-							className={`home-header__icon home-header__icon--${theme} home-header__moon-icon--${theme}`}
-							onClick={toggleTheme}
-						/>
+						<Moon onClick={toggleTheme} />
 					)}
 				</nav>
 
@@ -68,7 +52,9 @@ const HomeHeader = () => {
 						Images
 					</Link>
 
-					<Grid setTheme={theme} setStyle={style} />
+					<Tooltip content='Google Apps' direction='bottom'>
+						<Grid style={'results'} />
+					</Tooltip>
 
 					<div className='home-header__image-border'>
 						<img
