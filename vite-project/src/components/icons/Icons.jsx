@@ -3,11 +3,13 @@ import React from 'react';
 import { useStateValue } from '@contexts/StateProvider';
 
 /* Assets */
-import { BsSunFill, BsMoonStarsFill } from 'react-icons/bs';
+import { BsSunFill, BsMoonStarsFill, BsImage } from 'react-icons/bs';
+import { BiSearch, BiNews, BiDotsVerticalRounded } from 'react-icons/bi';
 import { MdClear } from 'react-icons/md';
-import { IoMdMic, IoMdSearch } from 'react-icons/io';
-import { FaCog } from 'react-icons/fa';
+import { IoMdMic, IoMdSearch, IoMdSettings } from 'react-icons/io';
 import { TbGridDots } from 'react-icons/tb';
+import { AiOutlineBook } from 'react-icons/ai';
+import { RiVideoLine } from 'react-icons/ri';
 
 /* Styles */
 import './Icons.css';
@@ -87,8 +89,8 @@ const Settings = (props) => {
 
 	return (
 		<div className='icon-container'>
-			<FaCog
-				className={`icon icon-settings ${props.style}-page__icon-settings icon-settings--${theme}`}
+			<IoMdSettings
+				className={`icon icon-settings ${props.style}-page__icon-grid icon-grid--${theme}`}
 				size={svgSize}
 			/>
 		</div>
@@ -108,4 +110,96 @@ const Grid = (props) => {
 	);
 };
 
-export { Sun, Moon, Clear, Mic, Search, Settings, Grid };
+const SearchSmall = (props) => {
+	const [{ theme }] = useStateValue();
+
+	return (
+		<div className='icon-container'>
+			<BiSearch
+				className={`icon icon-search-sm ${props.style}-page__icon-grid icon-grid--${theme}`}
+				size={svgSize}
+			/>
+		</div>
+	);
+};
+
+const News = (props) => {
+	const [{ theme }] = useStateValue();
+
+	return (
+		<div className='icon-container'>
+			<BiNews
+				className={`icon icon-news ${props.style}-page__icon-grid icon-grid--${theme}`}
+				size={svgSize}
+			/>
+		</div>
+	);
+};
+
+const Image = (props) => {
+	const [{ theme }] = useStateValue();
+
+	return (
+		<div className='icon-container'>
+			<BsImage
+				className={`icon icon-image ${props.style}-page__icon-grid icon-grid--${theme}`}
+				size={svgSize}
+			/>
+		</div>
+	);
+};
+
+const Book = (props) => {
+	const [{ theme }] = useStateValue();
+
+	return (
+		<div className='icon-container'>
+			<AiOutlineBook
+				className={`icon icon-book ${props.style}-page__icon-grid icon-grid--${theme}`}
+				size={svgSize}
+			/>
+		</div>
+	);
+};
+
+const Video = (props) => {
+	const [{ theme }] = useStateValue();
+
+	return (
+		<div className='icon-container'>
+			<RiVideoLine
+				className={`icon icon-video ${props.style}-page__icon-grid icon-grid--${theme}`}
+				size={svgSize}
+			/>
+		</div>
+	);
+};
+
+const Dots = (props) => {
+	const [{ theme }] = useStateValue();
+
+	return (
+		<div className='icon-container'>
+			<BiDotsVerticalRounded
+				className={`icon icon-dots ${props.style}-page__icon-grid icon-grid--${theme}`}
+				size={svgSize}
+			/>
+		</div>
+	);
+};
+
+export {
+	Sun,
+	Moon,
+	Clear,
+	Mic,
+	Search,
+	Settings,
+	Grid,
+	SearchSmall,
+	News,
+	Image,
+	Book,
+	Video,
+	Dots,
+};

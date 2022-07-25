@@ -1,20 +1,28 @@
-import React, { useEffect } from 'react';
+/* Utilities */
+import React from 'react';
 import { Link } from 'react-router-dom';
-import {
-	BiSearch as Search,
-	BiDotsVerticalRounded as Dots,
-	BiNews as News,
-} from 'react-icons/bi';
-import { RiVideoLine as Video } from 'react-icons/ri';
-import { BsImage as Image } from 'react-icons/bs';
-import { AiOutlineBook as Book } from 'react-icons/ai';
-import { BsSunFill as Sun, BsMoonStarsFill as Moon } from 'react-icons/bs';
-
-import user from '@assets/user.png';
 import { useStateValue } from '@contexts/StateProvider';
 import { actionTypes } from '@contexts/Reducer';
+
+/* Components */
 import SearchForm from '@components/forms/SearchForm/SearchForm';
 
+/* Assets */
+import {
+	Sun,
+	Moon,
+	Grid,
+	Settings,
+	Search,
+	News,
+	Image,
+	Book,
+	Video,
+	Dots,
+} from '@components/icons/Icons';
+import user from '@assets/user.png';
+
+/* Styles */
 import './ResultsHeader.css';
 
 const ResultsHeader = () => {
@@ -26,24 +34,6 @@ const ResultsHeader = () => {
 			theme: theme === 'dark' ? 'light' : 'dark',
 		});
 	};
-
-	const handleStyles = () => {
-		switch (location.pathname) {
-			case '/':
-				setStyle('search');
-				break;
-			case '/results':
-				setStyle('results');
-				break;
-			default:
-				console.log('no styles could be applied');
-				break;
-		}
-	};
-
-	useEffect(() => {
-		handleStyles();
-	}, []);
 
 	return (
 		<header className='results-header'>
@@ -60,18 +50,12 @@ const ResultsHeader = () => {
 
 				<nav className='results-header__nav-right'>
 					{theme === 'dark' ? (
-						<Sun
-							className={`home-header__icon home-header__icon--${theme} results-header__sun-icon`}
-							onClick={toggleTheme}
-						/>
+						<Sun callToggleTheme={toggleTheme} />
 					) : (
-						<Moon
-							className={`home-header__icon home-header__icon--${theme} home-header__moon-icon--${theme} results-header__moon-icon`}
-							onClick={toggleTheme}
-						/>
+						<Moon callToggleTheme={toggleTheme} />
 					)}
 
-					<Settings className='results-header__icon results-header__settings-icon' />
+					<Settings />
 
 					<Grid setTheme={theme} />
 
@@ -95,8 +79,22 @@ const ResultsHeader = () => {
 
 				<div className='results-header__link-container'>
 					<div className='results-header__link-item'>
-						<Image className='results-header__link-icon text-0.9rem mr-0.1rem' />
+						<News className='results-header__link-icon' />
+						<Link to='#news'>News</Link>
+					</div>
+				</div>
+
+				<div className='results-header__link-container'>
+					<div className='results-header__link-item'>
+						<Image className='results-header__link-icon' />
 						<Link to='#images'>Images</Link>
+					</div>
+				</div>
+
+				<div className='results-header__link-container'>
+					<div className='results-header__link-item'>
+						<Book className='results-header__link-icon' />
+						<Link to='#books'>Books</Link>
 					</div>
 				</div>
 
@@ -104,20 +102,6 @@ const ResultsHeader = () => {
 					<div className='results-header__link-item'>
 						<Video className='results-header__link-icon' />
 						<Link to='#videos'>Videos</Link>
-					</div>
-				</div>
-
-				<div className='results-header__link-container'>
-					<div className='results-header__link-item'>
-						<Book className='results-header__link-icon text-0.9rem' />
-						<Link to='#books'>Books</Link>
-					</div>
-				</div>
-
-				<div className='results-header__link-container'>
-					<div className='results-header__link-item'>
-						<News className='results-header__link-icon mr-0.1rem' />
-						<Link to='#news'>News</Link>
 					</div>
 				</div>
 
