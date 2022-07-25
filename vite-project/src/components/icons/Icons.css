@@ -1,8 +1,53 @@
 .icon-container {
-    @apply flex flex-row justify-center items-center;
-    @apply h-full;
+	@apply flex flex-row justify-center items-center;
+	@apply h-full;
 }
 
 .icon {
-    @apply w-20px h-20px;
+	@apply cursor-pointer;
+}
+
+.icon-sun,
+.icon-moon {
+	@apply ml-10px;
+}
+
+.icon-grid {
+	@apply text-g:white_faded;
+	@apply mr-14px ml-15px;
+}
+
+.icon-search {
+	@apply cursor-default;
+}
+
+.icon-clear {
+	@apply text-g:rolling_stone;
+}
+
+.icon-grid:hover,
+.icon-sun:hover,
+.icon-moon:hover {
+	@apply ring-10 ring-g:athens_gray_faded rounded-full;
+	@apply bg-g:athens_gray_faded;
+}
+
+.icon-grid--light,
+.icon-moon--light {
+	@apply text-g:shuttle_gray;
+}
+
+.icon-grid--light:hover,
+.icon-sun--light:hover,
+.icon-moon--light:hover {
+	@apply ring-g:cod_faded;
+	@apply bg-g:cod_faded;
+}
+
+.icon-search--light {
+    @apply text-g:gray_chateau;
+}
+
+.icon-mic--light {
+    @apply text-g:cornflower_blue;
 }

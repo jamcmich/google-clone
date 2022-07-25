@@ -1,18 +1,22 @@
+/* Utilities */
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import { useStateValue } from '@contexts/StateProvider';
 import { actionTypes } from '@contexts/reducer';
-import { Sun, Moon, Grid } from '@components/icons/Icons';
 import Tooltip from '@components/tooltip/Tooltip';
+
+/* Assets */
+import { Sun, Moon, Grid } from '@components/icons/Icons';
 import user from '@assets/user.png';
 
+/* Styles */
 import './HomeHeader.css';
 
 const HomeHeader = () => {
-	const [{ theme, style }, dispatch] = useStateValue();
+	const [{ theme }, dispatch] = useStateValue();
 
 	const toggleTheme = () => {
+		console.log('toggleTheme()');
 		dispatch({
 			type: actionTypes.SET_APPLICATION_THEME,
 			theme: theme === 'dark' ? 'light' : 'dark',
@@ -33,9 +37,9 @@ const HomeHeader = () => {
 					</Link>
 
 					{theme === 'dark' ? (
-						<Sun onClick={toggleTheme} />
+						<Sun callToggleTheme={toggleTheme} />
 					) : (
-						<Moon onClick={toggleTheme} />
+						<Moon callToggleTheme={toggleTheme} />
 					)}
 				</nav>
 
@@ -52,7 +56,11 @@ const HomeHeader = () => {
 						Images
 					</Link>
 
-					<Tooltip content='Google Apps' direction='bottom' type='rounded'>
+					<Tooltip
+						content='Google Apps'
+						direction='bottom'
+						type='rounded'
+					>
 						<Grid style={'results'} />
 					</Tooltip>
 

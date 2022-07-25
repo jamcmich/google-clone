@@ -5,7 +5,7 @@ import { useStateValue } from '@contexts/StateProvider';
 import { actionTypes } from '@contexts/reducer';
 import Tooltip from '@components/tooltip/Tooltip';
 
-/* Icons */
+/* Assets */
 import { Clear, Mic, Search } from '@components/icons/Icons';
 
 /* Styles */
@@ -41,7 +41,6 @@ const SearchForm = () => {
 	};
 
 	const prependSearchInput = () => {
-		console.log('test');
 		if (input && location.pathname === '/results')
 			setSearchInput(
 				input
@@ -68,7 +67,7 @@ const SearchForm = () => {
 				/>
 
 				<Tooltip content='Clear' direction='bottom' type='sharp'>
-					<Clear clearInput={clearInput} style='results' />
+					<Clear callClearInput={clearInput} style='results' />
 				</Tooltip>
 
 				<span
@@ -80,7 +79,7 @@ const SearchForm = () => {
 					direction='bottom'
 					type='sharp'
 				>
-					<Mic clearInput={clearInput} style='results' />
+					<Mic style='results' />
 				</Tooltip>
 
 				<Search style='results' />
@@ -100,7 +99,7 @@ const SearchForm = () => {
 				/>
 
 				<Tooltip content='Clear' direction='bottom' type='sharp'>
-					<Clear clearInput={clearInput} style='search' />
+					<Clear callClearInput={clearInput} style='search' />
 				</Tooltip>
 
 				<span
@@ -112,7 +111,7 @@ const SearchForm = () => {
 					direction='bottom'
 					type='sharp'
 				>
-					<Mic clearInput={clearInput} style='search' />
+					<Mic style='search' />
 				</Tooltip>
 			</div>
 

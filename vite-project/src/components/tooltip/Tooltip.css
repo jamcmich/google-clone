@@ -11,7 +11,7 @@
 .tooltip-tip {
 	@apply absolute;
 	@apply rounded-4px;
-	@apply p-10px;
+	@apply px-10px py-8px;
 	@apply font-14px font-arial leading-1 whitespace-nowrap;
 	@apply z-100;
 
@@ -105,8 +105,10 @@
 }
 
 .tooltip-tip.rounded {
-	/* @apply text-g:; */
-	@apply border-1 border-g:cod rounded-md;
+	@apply text-g:white font-arial text-12px;
+	@apply border-1 border-g:cod_lighter rounded-4px;
+	@apply bg-g:cod_lighter;
+	@apply px-8px py-4px;
 }
 
 .tooltip-tip.rounded::before {
