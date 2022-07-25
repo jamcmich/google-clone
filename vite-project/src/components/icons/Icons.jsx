@@ -14,7 +14,8 @@ import { RiVideoLine } from 'react-icons/ri';
 /* Styles */
 import './Icons.css';
 
-const svgSize = 21;
+const large = 21;
+const small = 12;
 
 const Sun = (props) => {
 	const [{ theme }] = useStateValue();
@@ -22,8 +23,8 @@ const Sun = (props) => {
 	return (
 		<div className='icon-container'>
 			<BsSunFill
-				className={`icon icon-sun ${props.style}-page__icon-sun icon-sun--${theme}`}
-				size={svgSize}
+				className={`icon icon-sun ${props.style} ${theme}`}
+				size={large}
 				onClick={props.callToggleTheme}
 			/>
 		</div>
@@ -36,8 +37,8 @@ const Moon = (props) => {
 	return (
 		<div className='icon-container'>
 			<BsMoonStarsFill
-				className={`icon icon-moon ${props.style}-page__icon-moon icon-moon--${theme}`}
-				size={svgSize}
+				className={`icon icon-moon ${props.style} ${theme}`}
+				size={large}
 				onClick={props.callToggleTheme}
 			/>
 		</div>
@@ -50,9 +51,9 @@ const Clear = (props) => {
 	return (
 		<div className='icon-container'>
 			<MdClear
-				className={`icon icon-clear ${props.style}-page__icon-clear icon-clear--${theme}`}
+				className={`icon icon-clear ${props.style} ${theme}`}
 				onClick={props.callClearInput}
-				size={svgSize + 1}
+				size={props.size || large}
 			/>
 		</div>
 	);
@@ -64,8 +65,8 @@ const Mic = (props) => {
 	return (
 		<div className='icon-container'>
 			<IoMdMic
-				className={`icon icon-mic ${props.style}-page__icon-mic icon-mic--${theme}`}
-				size={svgSize + 1}
+				className={`icon icon-mic ${props.style} ${theme}`}
+				size={props.size || large}
 			/>
 		</div>
 	);
@@ -77,8 +78,8 @@ const Search = (props) => {
 	return (
 		<div className='icon-container'>
 			<IoMdSearch
-				className={`icon icon-search ${props.style}-page__icon-search icon-search--${theme}`}
-				size={svgSize}
+				className={`icon icon-search ${props.style} ${theme}`}
+				size={props.size || large}
 			/>
 		</div>
 	);
@@ -90,8 +91,8 @@ const Settings = (props) => {
 	return (
 		<div className='icon-container'>
 			<IoMdSettings
-				className={`icon icon-settings ${props.style}-page__icon-grid icon-grid--${theme}`}
-				size={svgSize}
+				className={`icon icon-settings ${props.style} ${theme}`}
+				size={large + 2}
 			/>
 		</div>
 	);
@@ -103,8 +104,8 @@ const Grid = (props) => {
 	return (
 		<div className='icon-container'>
 			<TbGridDots
-				className={`icon icon-grid ${props.style}-page__icon-grid icon-grid--${theme}`}
-				size={svgSize}
+				className={`icon icon-grid ${props.style} ${theme}`}
+				size={large}
 			/>
 		</div>
 	);
@@ -116,8 +117,8 @@ const SearchSmall = (props) => {
 	return (
 		<div className='icon-container'>
 			<BiSearch
-				className={`icon icon-search-sm ${props.style}-page__icon-grid icon-grid--${theme}`}
-				size={svgSize}
+				className={`icon icon-search-sm ${props.style} ${theme}`}
+				size={small}
 			/>
 		</div>
 	);
@@ -129,8 +130,8 @@ const News = (props) => {
 	return (
 		<div className='icon-container'>
 			<BiNews
-				className={`icon icon-news ${props.style}-page__icon-grid icon-grid--${theme}`}
-				size={svgSize}
+				className={`icon icon-news ${props.style} ${theme}`}
+				size={small}
 			/>
 		</div>
 	);
@@ -142,8 +143,8 @@ const Image = (props) => {
 	return (
 		<div className='icon-container'>
 			<BsImage
-				className={`icon icon-image ${props.style}-page__icon-grid icon-grid--${theme}`}
-				size={svgSize}
+				className={`icon icon-image ${props.style} ${theme}`}
+				size={small}
 			/>
 		</div>
 	);
@@ -155,8 +156,8 @@ const Book = (props) => {
 	return (
 		<div className='icon-container'>
 			<AiOutlineBook
-				className={`icon icon-book ${props.style}-page__icon-grid icon-grid--${theme}`}
-				size={svgSize}
+				className={`icon icon-book ${props.style} ${theme}`}
+				size={small}
 			/>
 		</div>
 	);
@@ -168,8 +169,8 @@ const Video = (props) => {
 	return (
 		<div className='icon-container'>
 			<RiVideoLine
-				className={`icon icon-video ${props.style}-page__icon-grid icon-grid--${theme}`}
-				size={svgSize}
+				className={`icon icon-video ${props.style} ${theme}`}
+				size={small}
 			/>
 		</div>
 	);
@@ -181,8 +182,8 @@ const Dots = (props) => {
 	return (
 		<div className='icon-container'>
 			<BiDotsVerticalRounded
-				className={`icon icon-dots ${props.style}-page__icon-grid icon-grid--${theme}`}
-				size={svgSize}
+				className={`icon icon-dots ${props.style} ${theme}`}
+				size={small}
 			/>
 		</div>
 	);

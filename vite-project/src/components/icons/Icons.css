@@ -7,6 +7,10 @@
 	@apply cursor-pointer;
 }
 
+.icon-search.results {
+	@apply ml-10px;
+}
+
 .icon-sun,
 .icon-moon {
 	@apply ml-10px;
@@ -27,27 +31,40 @@
 
 .icon-grid:hover,
 .icon-sun:hover,
-.icon-moon:hover {
+.icon-moon:hover,
+.icon-settings:hover {
 	@apply ring-10 ring-g:athens_gray_faded rounded-full;
 	@apply bg-g:athens_gray_faded;
 }
 
-.icon-grid--light,
-.icon-moon--light {
+.icon-search.results {
+	@apply ml-15px;
+}
+
+.icon-sun.results,
+.icon-moon.results,
+.icon-settings.results {
+	@apply mx-15px;
+}
+
+.icon-grid.light,
+.icon-moon.light,
+.icon-settings.light {
 	@apply text-g:shuttle_gray;
 }
 
-.icon-grid--light:hover,
-.icon-sun--light:hover,
-.icon-moon--light:hover {
+.icon-grid.light:hover,
+.icon-sun.light:hover,
+.icon-moon.light:hover,
+.icon-settings.light:hover {
 	@apply ring-g:cod_faded;
 	@apply bg-g:cod_faded;
 }
 
-.icon-search--light {
-    @apply text-g:gray_chateau;
+.icon-search.light {
+	@apply text-g:gray_chateau;
 }
 
-.icon-mic--light {
-    @apply text-g:cornflower_blue;
+.icon-mic.light {
+	@apply text-g:cornflower_blue;
 }

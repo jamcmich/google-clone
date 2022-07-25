@@ -19,7 +19,7 @@ const Tooltip = (props) => {
 
 	return (
 		<div
-			className='tooltip-container'
+			className={`tooltip-container ${props.name || ''}`}
 			onMouseEnter={showTooltip}
 			onMouseLeave={hideTooltip}
 		>

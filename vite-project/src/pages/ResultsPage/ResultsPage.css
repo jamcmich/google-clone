@@ -5,3 +5,7 @@
 .results-page--light {
     @apply bg-g:white;
 }
+
+.results-page__span.results {
+    @apply mx-15px;
+}

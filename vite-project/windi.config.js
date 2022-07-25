@@ -27,7 +27,7 @@ export default defineConfig({
 				'g:manatee': '#999DA2',
 				'g:manatee_light': '#969BA1',
 				'g:black': '#000000',
-				'g:black_faded': '#000000DE',
+				'g:black_faded': 'rgba(0, 0, 0, 0.87)',
 				'g:iron': '#DFE1E5',
 				'g:iron_lighter': '#DFE1E500',
 				'g:iron_darker': '#DADCE0',

@@ -55,56 +55,62 @@ const SearchForm = () => {
 	}, [input]);
 
 	return location.pathname === '/results' ? (
-		<form className='results-page__form' onSubmit={submitForm}>
-			<div
-				className={`results-page__form-group results-page__form-group--${theme}`}
-			>
+		<form className='search-page__form results' onSubmit={submitForm}>
+			<div className={`search-page__form-group results ${theme}`}>
 				<input
-					className={`results-page__input results-page__input--${theme}`}
+					className={`search-page__input results ${theme}`}
 					type='text'
 					value={searchInput}
 					onChange={handleChange}
 				/>
 
-				<Tooltip content='Clear' direction='bottom' type='sharp'>
-					<Clear callClearInput={clearInput} style='results' />
+				<Tooltip
+					content='Clear'
+					direction='bottom'
+					type='sharp'
+					name='clear'
+				>
+					<Clear
+						callClearInput={clearInput}
+						style='results'
+						size={22}
+					/>
 				</Tooltip>
 
-				<span
-					className={`results-page__span results-page__span--${theme}`}
-				></span>
+				<span className={`search-page__span results ${theme}`}></span>
 
 				<Tooltip
 					content='Search by Voice'
 					direction='bottom'
 					type='sharp'
 				>
-					<Mic style='results' />
+					<Mic style='results' size={22} />
 				</Tooltip>
 
-				<Search style='results' />
+				<Search style='results' size={22} />
 			</div>
 		</form>
 	) : (
 		<form className='search-page__form' onSubmit={submitForm}>
-			<div
-				className={`search-page__form-group search-page__form-group--${theme}`}
-			>
+			<div className={`search-page__form-group ${theme}`}>
 				<Search style='search' />
 				<input
-					className={`search-page__input search-page__input--${theme}`}
+					className={`search-page__input ${theme}`}
 					type='text'
 					value={searchInput}
 					onChange={handleChange}
 				/>
 
-				<Tooltip content='Clear' direction='bottom' type='sharp'>
+				<Tooltip
+					content='Clear'
+					direction='bottom'
+					type='sharp'
+					name='clear'
+				>
 					<Clear callClearInput={clearInput} style='search' />
 				</Tooltip>
 
-				<span
-					className={`search-page__span search-page__span--${theme}`}
-				></span>
+				<span className={`search-page__span ${theme}`}></span>
 
 				<Tooltip
 					content='Search by Voice'
@@ -117,14 +123,14 @@ const SearchForm = () => {
 
 			<div className='search-form__buttons'>
 				<button
-					className={`search-form__button search-form__button--${theme}`}
+					className={`search-form__button ${theme}`}
 					type='submit'
 					onClick={submitForm}
 				>
 					Google Search
 				</button>
 				<button
-					className={`search-form__button search-form__button--${theme}`}
+					className={`search-form__button ${theme}`}
 					type='submit'
 					onClick={submitForm}
 				>

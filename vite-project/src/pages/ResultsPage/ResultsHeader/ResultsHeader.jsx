@@ -50,12 +50,12 @@ const ResultsHeader = () => {
 
 				<nav className='results-header__nav-right'>
 					{theme === 'dark' ? (
-						<Sun callToggleTheme={toggleTheme} />
+						<Sun callToggleTheme={toggleTheme} style='results' />
 					) : (
-						<Moon callToggleTheme={toggleTheme} />
+						<Moon callToggleTheme={toggleTheme} style='results' />
 					)}
 
-					<Settings />
+					<Settings setTheme={theme} style='results' />
 
 					<Grid setTheme={theme} />
 
