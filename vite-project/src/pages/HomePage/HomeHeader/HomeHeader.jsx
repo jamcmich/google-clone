@@ -52,7 +52,7 @@ const HomeHeader = () => {
 						Images
 					</Link>
 
-					<Tooltip content='Google Apps' direction='bottom'>
+					<Tooltip content='Google Apps' direction='bottom' type='rounded'>
 						<Grid style={'results'} />
 					</Tooltip>
 

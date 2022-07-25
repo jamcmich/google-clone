@@ -26,7 +26,7 @@ const Tooltip = (props) => {
 			{props.children}
 			{active && (
 				<div
-					className={`tooltip-tip ${props.direction || 'top'}`}
+					className={`tooltip-tip ${props.direction || 'top'} ${props.type}`}
 				>
 					{props.content}
 				</div>

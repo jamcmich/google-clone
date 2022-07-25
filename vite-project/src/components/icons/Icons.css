@@ -1,0 +1,8 @@
+.icon-container {
+    @apply flex flex-row justify-center items-center;
+    @apply h-full;
+}
+
+.icon {
+    @apply w-20px h-20px;
+}

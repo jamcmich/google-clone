@@ -67,7 +67,7 @@ const SearchForm = () => {
 					onChange={handleChange}
 				/>
 
-				<Tooltip content='Clear' direction='bottom'>
+				<Tooltip content='Clear' direction='bottom' type='sharp'>
 					<Clear clearInput={clearInput} style='results' />
 				</Tooltip>
 
@@ -75,7 +75,11 @@ const SearchForm = () => {
 					className={`results-page__span results-page__span--${theme}`}
 				></span>
 
-				<Tooltip content='Search by Voice' direction='bottom'>
+				<Tooltip
+					content='Search by Voice'
+					direction='bottom'
+					type='sharp'
+				>
 					<Mic clearInput={clearInput} style='results' />
 				</Tooltip>
 
@@ -95,7 +99,7 @@ const SearchForm = () => {
 					onChange={handleChange}
 				/>
 
-				<Tooltip content='Clear' direction='bottom'>
+				<Tooltip content='Clear' direction='bottom' type='sharp'>
 					<Clear clearInput={clearInput} style='search' />
 				</Tooltip>
 
@@ -103,7 +107,11 @@ const SearchForm = () => {
 					className={`search-page__span search-page__span--${theme}`}
 				></span>
 
-				<Tooltip content='Search by Voice' direction='bottom'>
+				<Tooltip
+					content='Search by Voice'
+					direction='bottom'
+					type='sharp'
+				>
 					<Mic clearInput={clearInput} style='search' />
 				</Tooltip>
 			</div>
