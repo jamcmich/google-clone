@@ -12,13 +12,13 @@ const HomeFooter = () => {
 	return (
 		<footer className={`home-footer home-footer--${theme}`}>
 			<nav className='home-footer__nav home-footer__nav-left'>
-				<Link className='home-footer__link' to='#advertising'>
+				<Link className='home-footer__link' to=''>
 					Advertising
 				</Link>
-				<Link className='home-footer__link' to='#business'>
+				<Link className='home-footer__link' to=''>
 					Business
 				</Link>
-				<Link className='home-footer__link' to='#how-search-works'>
+				<Link className='home-footer__link' to=''>
 					How Search Works
 				</Link>
 			</nav>
@@ -39,13 +39,13 @@ const HomeFooter = () => {
 			</nav>
 
 			<nav className='home-footer__nav home-footer__nav-right'>
-				<Link className='home-footer__link' to='#privacy'>
+				<Link className='home-footer__link' to=''>
 					Privacy
 				</Link>
-				<Link className='home-footer__link' to='#terms'>
+				<Link className='home-footer__link' to=''>
 					Terms
 				</Link>
-				<Link className='home-footer__link' to='#settings'>
+				<Link className='home-footer__link' to=''>
 					Settings
 				</Link>
 			</nav>

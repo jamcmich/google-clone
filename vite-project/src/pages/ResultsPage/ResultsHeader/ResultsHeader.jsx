@@ -13,7 +13,7 @@ import {
 	Moon,
 	Grid,
 	Settings,
-	Search,
+	SearchSmall,
 	News,
 	Image,
 	Book,
@@ -33,6 +33,18 @@ const ResultsHeader = () => {
 			type: actionTypes.SET_APPLICATION_THEME,
 			theme: theme === 'dark' ? 'light' : 'dark',
 		});
+	};
+
+	const toggleActive = (event) => {
+		document
+			.querySelectorAll('.results-header__link')
+			.forEach((element) => {
+				element.classList.remove('active');
+
+				if (element.textContent === event.currentTarget.textContent) {
+					element.classList.add('active');
+				}
+			});
 	};
 
 	return (
@@ -61,7 +73,7 @@ const ResultsHeader = () => {
 
 					<div className='home-header__image-border'>
 						<img
-							className={`home-header__image home-header__image--${theme}`}
+							className={`home-header__image`}
 							src={user}
 							alt='Jacob McMichael'
 						/>
@@ -71,51 +83,71 @@ const ResultsHeader = () => {
 
 			<nav className='results-header__links'>
 				<div className='results-header__link-container'>
-					<div className='results-header__link-item results-header__link-item--active'>
-						<Search className='results-header__link-icon' />
-						<Link to='#all'>All</Link>
-					</div>
+					<Link
+						to='#all'
+						className='results-header__link'
+						onClick={(event) => toggleActive(event)}
+					>
+						<SearchSmall className='results-header__link-icon' />
+						<p className='results-header__link-text'>All</p>
+					</Link>
 				</div>
 
 				<div className='results-header__link-container'>
-					<div className='results-header__link-item'>
+					<Link
+						to='#news'
+						className='results-header__link'
+						onClick={(event) => toggleActive(event)}
+					>
 						<News className='results-header__link-icon' />
-						<Link to='#news'>News</Link>
-					</div>
+						<p className='results-header__link-text'>News</p>
+					</Link>
 				</div>
 
 				<div className='results-header__link-container'>
-					<div className='results-header__link-item'>
+					<Link
+						to='#images'
+						className='results-header__link'
+						onClick={(event) => toggleActive(event)}
+					>
 						<Image className='results-header__link-icon' />
-						<Link to='#images'>Images</Link>
-					</div>
+						<p className='results-header__link-text'>Images</p>
+					</Link>
 				</div>
 
 				<div className='results-header__link-container'>
-					<div className='results-header__link-item'>
+					<Link
+						to='#books'
+						className='results-header__link'
+						onClick={(event) => toggleActive(event)}
+					>
 						<Book className='results-header__link-icon' />
-						<Link to='#books'>Books</Link>
-					</div>
+						<p className='results-header__link-text'>Books</p>
+					</Link>
 				</div>
 
 				<div className='results-header__link-container'>
-					<div className='results-header__link-item'>
+					<Link
+						to='#videos'
+						className='results-header__link'
+						onClick={(event) => toggleActive(event)}
+					>
 						<Video className='results-header__link-icon' />
-						<Link to='#videos'>Videos</Link>
-					</div>
+						<p className='results-header__link-text'>Videos</p>
+					</Link>
 				</div>
 
 				<div className='results-header__link-container'>
-					<div className='results-header__link-item'>
+					<Link to='' className='results-header__link'>
 						<Dots className='results-header__link-icon' />
-						<Link to='#more'>More</Link>
-					</div>
+						<p className='results-header__link-text'>More</p>
+					</Link>
 				</div>
 
-				<div className='results-header__link-container'>
-					<div className='results-header__link-item results-header__link-tools'>
-						<Link to='#tools'>Tools</Link>
-					</div>
+				<div className='results-header__link-container tools'>
+					<Link to='' className='results-header__link'>
+						<p className='results-header__link-text'>Tools</p>
+					</Link>
 				</div>
 			</nav>
 			<span className='results-header__span'></span>

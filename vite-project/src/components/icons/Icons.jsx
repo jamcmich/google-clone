@@ -15,7 +15,7 @@ import { RiVideoLine } from 'react-icons/ri';
 import './Icons.css';
 
 const large = 21;
-const small = 12;
+const small = 15;
 
 const Sun = (props) => {
 	const [{ theme }] = useStateValue();

@@ -1,7 +1,3 @@
-.results-header {
-    
-}
-
 .results-header__form-group {
 	@apply flex flex-row place-content-start items-center;
 	@apply pt-26px px-20px pl-18px;
@@ -9,12 +5,12 @@
 
 .results-header__image {
 	@apply w-92px h-30px;
-    @apply ml-6px mt-3px;
+	@apply ml-6px mt-3px;
 }
 
 .results-header__nav-right {
-    @apply flex flex-row justify-end items-center;
-    @apply flex-1;
+	@apply flex flex-row justify-end items-center;
+	@apply flex-1;
 }
 
 .results-header__icon {
@@ -26,49 +22,52 @@
 	@apply bg-g:athens_gray_faded;
 }
 
-.results-header__sun-icon,
-.results-header__moon-icon {
-}
-
 .results-header__settings-icon {
-    @apply w-20px h-20px;
-    @apply mx-20px;
+	@apply w-20px h-20px;
+	@apply mx-20px;
 }
 
 .results-header__links {
-    @apply flex flex-row place-content-start items-end;
-    @apply h-2rem;
-    @apply ml-11.25rem mt-1.75rem;
+	@apply flex flex-row place-content-start items-end;
+	@apply mt-18px ml-180px;
 }
 
-.results-header__link-item {
-    @apply flex flex-row place-content-center items-center space-x-1;
-    @apply text-14px text-g:manatee_light;
-    @apply border-b-3 border-transparent rounded-none;
-    @apply pb-0.75rem;
+.results-header__link {
+	@apply flex flex-row items-center;
+	@apply text-14px text-g:manatee_light;
+	@apply border-b-3 border-transparent rounded-none;
+	@apply h-50px;
+}
+
+.results-header__link.active {
+	@apply text-g:malibu;
+	@apply border-g:malibu;
+}
+
+.results-header__link-text {
+    @apply ml-5px;
 }
 
 .results-header__link-tools {
-    @apply ml-8.5rem;
+	@apply ml-8.5rem;
 }
 
 .results-header__link-container {
-    @apply pr-1.5rem;
-    @apply cursor-pointer;
+	@apply mr-25px;
+	@apply cursor-pointer;
 }
 
-.results-header__link-item--active {
-    @apply text-g:malibu;
-    @apply border-g:malibu;
+.results-header__link-container.tools {
+    @apply ml-125px;
 }
 
 .results-header__link-icon {
-    @apply text-1rem;
-    @apply w-1rem;
+	@apply text-1rem;
+	@apply w-1rem;
 }
 
 .results-header__span {
-    @apply flex;
-    @apply bg-g:cod;
-    @apply min-h-1px min-w-full;
+	@apply flex;
+	@apply bg-g:cod;
+	@apply min-h-1px min-w-full;
 }

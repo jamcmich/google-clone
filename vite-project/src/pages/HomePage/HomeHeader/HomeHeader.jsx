@@ -29,10 +29,10 @@ const HomeHeader = () => {
 				<nav
 					className={`home-header__nav-left home-header__nav-left--${theme}`}
 				>
-					<Link className='home-header__link' to='#about'>
+					<Link className='home-header__link' to=''>
 						About
 					</Link>
-					<Link className='home-header__link' to='#store'>
+					<Link className='home-header__link' to=''>
 						Store
 					</Link>
 
@@ -48,11 +48,11 @@ const HomeHeader = () => {
 				>
 					<Link
 						className='home-header__link home-header__gmail-link'
-						to='#gmail'
+						to=''
 					>
 						Gmail
 					</Link>
-					<Link className='home-header__link' to='#images'>
+					<Link className='home-header__link' to=''>
 						Images
 					</Link>
 

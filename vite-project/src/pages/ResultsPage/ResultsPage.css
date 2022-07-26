@@ -2,7 +2,7 @@
 
 }
 
-.results-page--light {
+.results-page.light {
     @apply bg-g:white;
 }
 

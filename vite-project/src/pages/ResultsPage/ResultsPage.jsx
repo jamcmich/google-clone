@@ -11,7 +11,7 @@ const ResultsPage = () => {
 	const [{ theme }] = useStateValue();
 
 	return (
-		<div className={`results-page results-page--${theme}`}>
+		<div className={`results-page ${theme}`}>
 			<ResultsHeader />
 			<ResultsBody />
 			<ResultsFooter />
