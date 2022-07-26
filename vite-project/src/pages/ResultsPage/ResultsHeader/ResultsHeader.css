@@ -39,9 +39,18 @@
 	@apply h-50px;
 }
 
+.results-header__link.light {
+	@apply text-g:shuttle_gray;
+}
+
 .results-header__link.active {
 	@apply text-g:malibu;
 	@apply border-g:malibu;
+}
+
+.results-header__link.light.active {
+    @apply text-g:royal_blue;
+	@apply border-g:royal_blue;
 }
 
 .results-header__link-text {
@@ -70,4 +79,8 @@
 	@apply flex;
 	@apply bg-g:cod;
 	@apply min-h-1px min-w-full;
+}
+
+.results-header__span.light {
+	@apply bg-g:gallery;
 }

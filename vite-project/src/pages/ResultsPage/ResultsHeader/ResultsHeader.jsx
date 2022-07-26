@@ -85,7 +85,7 @@ const ResultsHeader = () => {
 				<div className='results-header__link-container'>
 					<Link
 						to='#all'
-						className='results-header__link'
+						className={`results-header__link ${theme} active`}
 						onClick={(event) => toggleActive(event)}
 					>
 						<SearchSmall className='results-header__link-icon' />
@@ -96,7 +96,7 @@ const ResultsHeader = () => {
 				<div className='results-header__link-container'>
 					<Link
 						to='#news'
-						className='results-header__link'
+						className={`results-header__link ${theme}`}
 						onClick={(event) => toggleActive(event)}
 					>
 						<News className='results-header__link-icon' />
@@ -107,7 +107,7 @@ const ResultsHeader = () => {
 				<div className='results-header__link-container'>
 					<Link
 						to='#images'
-						className='results-header__link'
+						className={`results-header__link ${theme}`}
 						onClick={(event) => toggleActive(event)}
 					>
 						<Image className='results-header__link-icon' />
@@ -118,7 +118,7 @@ const ResultsHeader = () => {
 				<div className='results-header__link-container'>
 					<Link
 						to='#books'
-						className='results-header__link'
+						className={`results-header__link ${theme}`}
 						onClick={(event) => toggleActive(event)}
 					>
 						<Book className='results-header__link-icon' />
@@ -129,7 +129,7 @@ const ResultsHeader = () => {
 				<div className='results-header__link-container'>
 					<Link
 						to='#videos'
-						className='results-header__link'
+						className={`results-header__link ${theme}`}
 						onClick={(event) => toggleActive(event)}
 					>
 						<Video className='results-header__link-icon' />
@@ -138,19 +138,19 @@ const ResultsHeader = () => {
 				</div>
 
 				<div className='results-header__link-container'>
-					<Link to='' className='results-header__link'>
+					<Link to='' className={`results-header__link ${theme}`}>
 						<Dots className='results-header__link-icon' />
 						<p className='results-header__link-text'>More</p>
 					</Link>
 				</div>
 
 				<div className='results-header__link-container tools'>
-					<Link to='' className='results-header__link'>
+					<Link to='' className={`results-header__link ${theme}`}>
 						<p className='results-header__link-text'>Tools</p>
 					</Link>
 				</div>
 			</nav>
-			<span className='results-header__span'></span>
+			<span className={`results-header__span ${theme}`} />
 		</header>
 	);
 };
