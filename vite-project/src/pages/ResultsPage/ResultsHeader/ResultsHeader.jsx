@@ -20,7 +20,7 @@ import {
 	Video,
 	Dots,
 } from '@components/icons/Icons';
-import user from '@assets/user.png';
+import user from '@assets/images/user.png';
 
 /* Styles */
 import './ResultsHeader.css';

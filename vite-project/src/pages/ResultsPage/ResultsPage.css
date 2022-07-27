@@ -1,5 +1,5 @@
 .results-page {
-
+    @apply bg-g:charcoal;
 }
 
 .results-page.light {

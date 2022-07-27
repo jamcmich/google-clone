@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { useStateValue } from '@contexts/StateProvider';
-import leaf from '@assets/leaf.png';
+import leaf from '@assets/images/leaf.png';
 
 import './HomeFooter.css';
 

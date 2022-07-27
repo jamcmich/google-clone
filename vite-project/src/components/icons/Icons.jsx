@@ -5,7 +5,7 @@ import { useStateValue } from '@contexts/StateProvider';
 /* Assets */
 import { BsSunFill, BsMoonStarsFill, BsImage } from 'react-icons/bs';
 import { BiSearch, BiNews, BiDotsVerticalRounded } from 'react-icons/bi';
-import { MdClear } from 'react-icons/md';
+import { MdClear, MdKeyboardArrowRight } from 'react-icons/md';
 import { IoMdMic, IoMdSearch, IoMdSettings } from 'react-icons/io';
 import { TbGridDots } from 'react-icons/tb';
 import { AiOutlineBook } from 'react-icons/ai';
@@ -14,8 +14,8 @@ import { RiVideoLine } from 'react-icons/ri';
 /* Styles */
 import './Icons.css';
 
-const large = 21;
 const small = 15;
+const large = 21;
 
 const Sun = (props) => {
 	const [{ theme }] = useStateValue();
@@ -23,7 +23,7 @@ const Sun = (props) => {
 	return (
 		<div className='icon-container'>
 			<BsSunFill
-				className={`icon icon-sun ${props.style} ${theme}`}
+				className={`icon icon-sun ${props.style || ''} ${theme}`}
 				size={large}
 				onClick={props.callToggleTheme}
 			/>
@@ -37,7 +37,7 @@ const Moon = (props) => {
 	return (
 		<div className='icon-container'>
 			<BsMoonStarsFill
-				className={`icon icon-moon ${props.style} ${theme}`}
+				className={`icon icon-moon ${props.style || ''} ${theme}`}
 				size={large}
 				onClick={props.callToggleTheme}
 			/>
@@ -51,7 +51,7 @@ const Clear = (props) => {
 	return (
 		<div className='icon-container'>
 			<MdClear
-				className={`icon icon-clear ${props.style} ${theme}`}
+				className={`icon icon-clear ${props.style || ''} ${theme}`}
 				onClick={props.callClearInput}
 				size={props.size || large}
 			/>
@@ -65,7 +65,7 @@ const Mic = (props) => {
 	return (
 		<div className='icon-container'>
 			<IoMdMic
-				className={`icon icon-mic ${props.style} ${theme}`}
+				className={`icon icon-mic ${props.style || ''} ${theme}`}
 				size={props.size || large}
 			/>
 		</div>
@@ -78,7 +78,7 @@ const Search = (props) => {
 	return (
 		<div className='icon-container'>
 			<IoMdSearch
-				className={`icon icon-search ${props.style} ${theme}`}
+				className={`icon icon-search ${props.style || ''} ${theme}`}
 				size={props.size || large}
 			/>
 		</div>
@@ -91,7 +91,7 @@ const Settings = (props) => {
 	return (
 		<div className='icon-container'>
 			<IoMdSettings
-				className={`icon icon-settings ${props.style} ${theme}`}
+				className={`icon icon-settings ${props.style || ''} ${theme}`}
 				size={large + 2}
 			/>
 		</div>
@@ -104,7 +104,7 @@ const Grid = (props) => {
 	return (
 		<div className='icon-container'>
 			<TbGridDots
-				className={`icon icon-grid ${props.style} ${theme}`}
+				className={`icon icon-grid ${props.style || ''} ${theme}`}
 				size={large}
 			/>
 		</div>
@@ -117,7 +117,7 @@ const SearchSmall = (props) => {
 	return (
 		<div className='icon-container'>
 			<BiSearch
-				className={`icon icon-search-sm ${props.style} ${theme}`}
+				className={`icon icon-search-sm ${props.style || ''} ${theme}`}
 				size={small}
 			/>
 		</div>
@@ -130,7 +130,7 @@ const News = (props) => {
 	return (
 		<div className='icon-container'>
 			<BiNews
-				className={`icon icon-news ${props.style} ${theme}`}
+				className={`icon icon-news ${props.style || ''} ${theme}`}
 				size={small}
 			/>
 		</div>
@@ -143,7 +143,7 @@ const Image = (props) => {
 	return (
 		<div className='icon-container'>
 			<BsImage
-				className={`icon icon-image ${props.style} ${theme}`}
+				className={`icon icon-image ${props.style || ''} ${theme}`}
 				size={small}
 			/>
 		</div>
@@ -156,7 +156,7 @@ const Book = (props) => {
 	return (
 		<div className='icon-container'>
 			<AiOutlineBook
-				className={`icon icon-book ${props.style} ${theme}`}
+				className={`icon icon-book ${props.style || ''} ${theme}`}
 				size={small}
 			/>
 		</div>
@@ -169,7 +169,7 @@ const Video = (props) => {
 	return (
 		<div className='icon-container'>
 			<RiVideoLine
-				className={`icon icon-video ${props.style} ${theme}`}
+				className={`icon icon-video ${props.style || ''} ${theme}`}
 				size={small}
 			/>
 		</div>
@@ -182,8 +182,23 @@ const Dots = (props) => {
 	return (
 		<div className='icon-container'>
 			<BiDotsVerticalRounded
-				className={`icon icon-dots ${props.style} ${theme}`}
+				className={`icon icon-dots ${props.style || ''} ${theme}`}
 				size={small}
+			/>
+		</div>
+	);
+};
+
+const ArrowRight = (props) => {
+	const [{ theme }] = useStateValue();
+
+	return (
+		<div className='icon-container'>
+			<MdKeyboardArrowRight
+				className={`icon icon-arrow-right ${
+					props.style || ''
+				} ${theme}`}
+				size={large + 5}
 			/>
 		</div>
 	);
@@ -203,4 +218,5 @@ export {
 	Book,
 	Video,
 	Dots,
+	ArrowRight,
 };

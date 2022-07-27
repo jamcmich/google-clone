@@ -1,30 +1,18 @@
+/* Utilities */
 import React, { useState, useEffect } from 'react';
-
 import { useStateValue } from '@contexts/StateProvider';
 // import { useSearch } from '@utils/useSearch';
+
+/* Assets */
 import { BiDotsVerticalRounded as Dots } from 'react-icons/bi';
+
+/* Styles */
 import './ResultsBody.css';
 
 const ResultsBody = () => {
-	const [{ input }, dispatch] = useStateValue();
+	const [{ input, theme }, dispatch] = useStateValue();
 	// const { data, isLoading } = useSearch(input);
 	const [data, setData] = useState({});
-	const word = [
-		'G',
-		'o',
-		'o',
-		'o',
-		'o',
-		'o',
-		'o',
-		'o',
-		'o',
-		'o',
-		'o',
-		'g',
-		'l',
-		'e',
-	];
 
 	useEffect(() => {
 		setData({
@@ -242,74 +230,53 @@ const ResultsBody = () => {
 		<div className='results-body'>
 			{/* {isLoading && <span>Loading...</span>} */}
 
-			{data ? (
-				<span className='results-body__stats'>{`About ${data?.total?.toLocaleString(
-					'en-US'
-				)} results in (${parseFloat(data?.ts).toFixed(
-					2
-				)} seconds)`}</span>
-			) : null}
+			{data && (
+				<span className={`results-body__stats ${theme}`}>
+					{`About ${data?.total?.toLocaleString(
+						'en-US'
+					)} results in (${parseFloat(data?.ts).toFixed(2)} seconds)`}
+				</span>
+			)}
 
-			{data
-				? data?.results?.map((item, index) => (
-						<div key={index} className='results-body__item'>
-							<a
-								className='results-body__item-link'
-								href={item.cite.link}
-							>
-								<div className='results-body__item-domain-group'>
-									<span className='results-body__item-domain'>
-										{item.cite.domain.replace(
-											/(?<=\s).*$/gi,
-											''
-										)}
-									</span>
-									<span className='results-body__item-tags'>
-										{item.cite.span}
-									</span>
-									<Dots className='results-body__item-dots' />
-								</div>
-
-								<h1
-									className='results-body__item-title'
-									href={item.link}
+			{data &&
+				data?.results?.map((item, index) => (
+					<div key={index} className='results-body__item'>
+						<a
+							className='results-body__item-link'
+							href={item.cite.link}
+						>
+							<div className='results-body__item-domain-group'>
+								<span
+									className={`results-body__item-domain ${theme}`}
 								>
-									{item.title}
-								</h1>
-							</a>
-
-							<p className='results-body__item-desc'>
-								{item.description}
-							</p>
-						</div>
-				  ))
-				: null}
-
-			<div className='results-body__footer'>
-				<div className='results-body__footer-col'>
-					<div className='results-body__footer-row'>
-						{word.map((letter) => (
-							<span className='results-body__footer-letter'>
-								{letter}
-							</span>
-						))}
-					</div>
-
-					<div className='results-body__footer-row'>
-						{word.map((letter, index) =>
-							letter === 'o' ? (
-								<span className='results-body__footer-index'>
-									{index}
+									{item.cite.domain.replace(
+										/(?<=\s).*$/gi,
+										''
+									)}
 								</span>
-							) : (
-								<span className='results-body__footer-index results-body__footer-index--hidden'>
-									{' '}
+								<span
+									className={`results-body__item-tags ${theme}`}
+								>
+									{item.cite.span}
 								</span>
-							)
-						)}
+								<Dots
+									className={`results-body__item-dots ${theme}`}
+								/>
+							</div>
+
+							<h1
+								className={`results-body__item-title ${theme}`}
+								href={item.link}
+							>
+								{item.title}
+							</h1>
+						</a>
+
+						<p className={`results-body__item-desc ${theme}`}>
+							{item.description}
+						</p>
 					</div>
-				</div>
-			</div>
+				))}
 		</div>
 	);
 };

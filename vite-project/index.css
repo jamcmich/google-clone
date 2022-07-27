@@ -1,4 +1,16 @@
-html, body, #root {
-    margin: 0;
-    height: 100%;
+@font-face {
+	font-family: 'Google Sans';
+	src: url('./src/assets/fonts/google-sans/ProductSans-Black.ttf'),
+		format('truetype');
+	font-weight: normal;
+	font-style: normal;
 }
+
+html,
+body,
+#root {
+	margin: 0;
+	height: 100%;
+}
+
+
