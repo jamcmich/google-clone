@@ -9,8 +9,8 @@ function App() {
 	return (
 		<div className='app'>
 			<Routes>
-				<Route path='/' element={<HomePage />} />
-				<Route path='/results' element={<ResultsPage />} />
+				<Route path='/google-search-clone' element={<HomePage />} />
+				<Route path='/google-search-clone/results' element={<ResultsPage />} />
 			</Routes>
 		</div>
 	);

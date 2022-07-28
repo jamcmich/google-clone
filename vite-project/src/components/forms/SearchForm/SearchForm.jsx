@@ -25,7 +25,7 @@ const SearchForm = () => {
 				input: searchInput,
 			});
 
-			if (location.pathname !== '/results') navigate('/results');
+			if (location.pathname !== '/google-search-clone/results') navigate('/google-search-clone/results');
 		}
 	};
 
@@ -38,7 +38,7 @@ const SearchForm = () => {
 	};
 
 	const prependSearchInput = () => {
-		if (input && location.pathname === '/results')
+		if (input && location.pathname === '/google-search-clone/results')
 			setSearchInput(
 				input
 					.toLowerCase()
@@ -51,7 +51,7 @@ const SearchForm = () => {
 		prependSearchInput();
 	}, []);
 
-	return location.pathname === '/results' ? (
+	return location.pathname === '/google-search-clone/results' ? (
 		<form className='search-page__form results' onSubmit={submitForm}>
 			<div className={`search-page__form-group results ${theme}`}>
 				<input
