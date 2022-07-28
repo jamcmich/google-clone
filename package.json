@@ -5,7 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "cd vite-project/ && npm run dev"
+		"dev": "cd vite-project/ && npm run dev",
+		"deploy" : "npm run build && git add dist -f && git commit -m 'Adding dist' && git subtree push --prefix dist origin gh-pages"
+
 	},
 	"keywords": [],
 	"author": "",
