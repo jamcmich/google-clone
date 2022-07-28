@@ -1,5 +1,12 @@
+html,
+body,
+#root {
+	margin: 0;
+	height: 100%;
+}
+
 .app {
-    @apply text-14px font-roboto text-g:silver tracking-normal;
-    @apply bg-g:charcoal;
-    @apply h-full;
+	@apply text-14px font-roboto text-g:silver tracking-normal;
+	@apply bg-g:charcoal;
+	@apply h-full;
 }
