@@ -6,6 +6,7 @@ const path = require('path');
 
 // https://vitejs.dev/config/
 export default defineConfig({
+	base: '/google-search-clone/',
 	plugins: [react(), WindiCSS()],
 	resolve: {
 		alias: {
