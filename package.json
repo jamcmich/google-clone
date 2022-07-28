@@ -1,19 +1,26 @@
 {
-	"name": "google-clone",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "cd vite-project/ && npm run dev",
-		"deploy" : "cd ./vite-project/ && npm run build && git add dist -f && git commit -m 'Adding dist' && git subtree push --prefix dist origin gh-pages"
-
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"vite": "^2.9.14"
-	}
+  "name": "vite-project",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-icons": "^4.4.0",
+    "react-loader-spinner": "^5.1.7-beta.1",
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@vitejs/plugin-react": "^1.3.0",
+    "vite": "^2.9.9",
+    "vite-plugin-windicss": "^1.8.6",
+    "windicss": "^3.5.6"
+  }
 }
-
