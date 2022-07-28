@@ -15,7 +15,7 @@ const useSearch = (input) => {
 	const url =
 		`https://google-search3.p.rapidapi.com/api/v1/search` +
 		`/q=${parsedInput}` +
-		`&num=5`;
+		`&num=10`;
 
 	const options = {
 		method: 'GET',
@@ -28,7 +28,6 @@ const useSearch = (input) => {
 	};
 
 	const getData = async () => {
-		console.log('getData() called');
 		setIsLoading(true);
 
 		try {
@@ -46,7 +45,7 @@ const useSearch = (input) => {
 
 	useEffect(() => {
 		if (input && !isLoading) getData();
-	}, []);
+	}, [input]);
 
 	return { data, isLoading };
 };

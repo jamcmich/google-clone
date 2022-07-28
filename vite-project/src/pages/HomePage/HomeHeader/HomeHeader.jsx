@@ -16,7 +16,6 @@ const HomeHeader = () => {
 	const [{ theme }, dispatch] = useStateValue();
 
 	const toggleTheme = () => {
-		console.log('toggleTheme()');
 		dispatch({
 			type: actionTypes.SET_APPLICATION_THEME,
 			theme: theme === 'dark' ? 'light' : 'dark',

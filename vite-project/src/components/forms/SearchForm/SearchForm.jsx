@@ -19,8 +19,6 @@ const SearchForm = () => {
 	const submitForm = (event) => {
 		event.preventDefault();
 
-		console.log('submitForm()');
-
 		if (searchInput.trim() && searchInput !== input) {
 			dispatch({
 				type: actionTypes.SET_SEARCH_INPUT,
@@ -36,7 +34,6 @@ const SearchForm = () => {
 	};
 
 	const clearInput = () => {
-		console.log('clearInput()');
 		setSearchInput('');
 	};
 
@@ -52,7 +49,7 @@ const SearchForm = () => {
 
 	useEffect(() => {
 		prependSearchInput();
-	}, [input]);
+	}, []);
 
 	return location.pathname === '/results' ? (
 		<form className='search-page__form results' onSubmit={submitForm}>

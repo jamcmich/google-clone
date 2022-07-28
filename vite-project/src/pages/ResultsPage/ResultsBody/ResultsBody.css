@@ -75,3 +75,16 @@
 .results-body__item-desc.light {
     @apply text-g:abbey;
 }
+
+.three-dots.center {
+    @apply flex flex-row place-content-center items-center;
+    @apply w-640px;
+}
+
+.three-dots {
+    @apply fill-g:malibu;
+}
+
+.three-dots.light {
+    @apply fill-g:cornflower_blue;
+}
