@@ -6,7 +6,7 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "cd vite-project/ && npm run dev",
-		"deploy" : "cd ./vite-project/ && npm run build && git add ./vite-project/dist -f && git commit -m 'Adding dist' && git subtree push --prefix dist origin gh-pages"
+		"deploy" : "cd ./vite-project/ && npm run build && git add vite-project/dist -f && git commit -m 'Adding dist' && git subtree push --prefix vite-project/dist origin gh-pages"
 
 	},
 	"keywords": [],
