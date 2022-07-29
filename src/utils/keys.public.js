@@ -1,3 +1,3 @@
-const API_KEY = '3f2d81e22emsh8d8c990d958af88p1e6b8bjsn59bbdacf97ea';
+const API_KEY = process.env.RAPID_API_KEY;
 
 export { API_KEY };
