@@ -14,6 +14,5 @@ jobs:
         run: |
           npm ci
           chmod +x deploy.sh
-          npm run gh-deploy
         env:
           RAPID_API_KEY: ${{ secrets.RAPID_API_KEY }}
