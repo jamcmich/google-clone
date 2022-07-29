@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-import { API_KEY } from '@utils/keys';
+import { API_KEY } from '@utils/keys.public.js';
 
 const useSearch = (input) => {
 	const [data, setData] = useState(null);
