@@ -4,11 +4,17 @@
 	@apply bg-g:cod_gray;
 	@apply h-47px;
 	@apply px-35px;
+
+	@apply <tablet:flex-col <tablet:h-80px <tablet:justify-center <tablet:space-y-4;
 }
 
-.home-footer--light {
+.home-footer.light {
 	@apply text-g:rolling_stone;
 	@apply bg-g:concrete;
+}
+
+.home-footer__nav {
+	@apply <tablet:w-[90vw] <tablet:justify-between !important;
 }
 
 .home-footer__nav-left,
@@ -25,6 +31,10 @@
 	@apply mr-30px;
 }
 
+.home-footer__link {
+	@apply <tablet:m-0 !important;
+}
+
 .home-footer__nav-right {
 	@apply justify-end;
 }
@@ -35,6 +45,9 @@
 
 .home-footer__nav-center {
 	@apply mr-110px;
+
+	@apply <tablet:m-0 <tablet:hidden;
+	@apply <laptop:hidden;
 }
 
 .home-footer__link {
@@ -45,6 +58,18 @@
 .home-footer__link:hover {
 	@apply underline;
 	@apply cursor-pointer;
+}
+
+.home-footer__link.show {
+	@apply hidden;
+}
+
+.home-footer__link.show {
+	@apply <laptop:block;
+}
+
+.home-footer__link.hide {
+	@apply <laptop:hidden;
 }
 
 .home-footer__link-center {
