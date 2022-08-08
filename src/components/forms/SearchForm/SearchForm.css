@@ -10,7 +10,7 @@
 	@apply h-full;
 	@apply px-15px;
 
-	@apply <md:max-w-90vw <md:m-auto;
+	@apply <tablet:max-w-90vw <tablet:m-auto;
 }
 
 .search-page__form-group:focus-within,

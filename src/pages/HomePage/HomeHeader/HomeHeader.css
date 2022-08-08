@@ -17,7 +17,11 @@
 	@apply text-g:silver;
 }
 
-.home-header__nav-left--light {
+.home-header__nav-left {
+	@apply <tablet:gap-4;
+}
+
+.home-header__nav-left.light {
 	@apply text-g:charcoal;
 }
 
@@ -25,12 +29,15 @@
 	@apply font-arial text-13px text-g:white;
 }
 
-.home-header__nav-right--light {
+.home-header__nav-right.light {
 	@apply text-g:black_faded;
 }
 
 .home-header__link {
+	@apply block;
 	@apply p-5px mr-10px;
+
+	@apply <tablet:hidden;
 }
 
 .home-header__link:hover {
@@ -52,7 +59,7 @@
 	@apply bg-g:athens_gray_faded;
 }
 
-.home-header__icon--light:hover {
+.home-header__icon.light:hover {
 	@apply ring-9 ring-g:cod_faded rounded-full;
 	@apply bg-g:cod_faded;
 }
@@ -67,16 +74,16 @@
 	@apply bg-g:athens_gray_faded;
 }
 
-.home-header__grid-icon--light {
+.home-header__grid-icon.light {
 	@apply text-g:shuttle_gray;
 }
 
-.home-header__grid-icon--light:hover {
+.home-header__grid-icon.light:hover {
 	@apply ring-g:cod_faded;
 	@apply bg-g:cod_faded;
 }
 
-.home-header__moon-icon--light {
+.home-header__moon-icon.light {
 	@apply text-g:cod;
 }
 
@@ -101,6 +108,6 @@
 	@apply cursor-pointer;
 }
 
-.home-header__image--light:hover {
+.home-header__image.light:hover {
 	@apply bg-g:cod_faded;
 }

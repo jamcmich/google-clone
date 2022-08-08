@@ -11,6 +11,15 @@
 	@apply ml-10px;
 }
 
+.icon-hamburger,
+.icon-bell {
+	@apply tablet:hidden;
+}
+
+.icon-bell {
+	@apply text-g:silver;
+}
+
 .icon-sun,
 .icon-moon {
 	@apply ml-10px;
@@ -49,7 +58,9 @@
 
 .icon-grid.light,
 .icon-moon.light,
-.icon-settings.light {
+.icon-settings.light,
+.icon-hamburger.light,
+.icon-bell.light {
 	@apply text-g:shuttle_gray;
 }
 

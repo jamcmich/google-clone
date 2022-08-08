@@ -6,7 +6,7 @@ import { actionTypes } from '@contexts/reducer';
 import Tooltip from '@components/tooltip/Tooltip';
 
 /* Assets */
-import { Sun, Moon, Grid } from '@components/icons/Icons';
+import { Sun, Moon, Grid, HamburgerMenu, Bell } from '@components/icons/Icons';
 import user from '@assets/images/user.png';
 
 /* Styles */
@@ -26,8 +26,10 @@ const HomeHeader = () => {
 		<header className='home-header'>
 			<div className='home-header__nav'>
 				<nav
-					className={`home-header__nav-left home-header__nav-left--${theme}`}
+					className={`home-header__nav-left ${theme}`}
 				>
+					<HamburgerMenu />
+
 					<Link className='home-header__link' to=''>
 						About
 					</Link>
@@ -43,8 +45,10 @@ const HomeHeader = () => {
 				</nav>
 
 				<nav
-					className={`home-header__nav-right home-header__nav-right--${theme}`}
+					className={`home-header__nav-right ${theme}`}
 				>
+					<Bell />
+
 					<Link
 						className='home-header__link home-header__gmail-link'
 						to=''
@@ -65,7 +69,7 @@ const HomeHeader = () => {
 
 					<div className='home-header__image-border'>
 						<img
-							className={`home-header__image home-header__image--${theme}`}
+							className={`home-header__image ${theme}`}
 							src={user}
 							alt='Jacob McMichael'
 						/>
