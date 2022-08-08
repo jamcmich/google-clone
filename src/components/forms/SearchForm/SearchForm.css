@@ -9,6 +9,8 @@
 	@apply border-1 border-g:shuttle_gray rounded-full;
 	@apply h-full;
 	@apply px-15px;
+
+	@apply <md:max-w-90vw <md:m-auto;
 }
 
 .search-page__form-group:focus-within,
