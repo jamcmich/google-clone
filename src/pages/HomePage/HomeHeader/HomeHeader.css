@@ -101,6 +101,7 @@
 .home-header__image {
 	@apply self-stretch flex-grow;
 	@apply border-2 border-transparent rounded-full;
+	@apply min-w-[36px] min-h-[36px];
 }
 
 .home-header__image:hover {

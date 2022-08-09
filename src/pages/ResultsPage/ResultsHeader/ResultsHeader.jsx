@@ -50,9 +50,33 @@ const ResultsHeader = () => {
 	return (
 		<header className='results-header'>
 			<div className='results-header__form-group'>
+				<nav className='results-header__nav tablet'>
+					{theme === 'dark' ? (
+						<Sun callToggleTheme={toggleTheme} style='results' />
+					) : (
+						<Moon callToggleTheme={toggleTheme} style='results' />
+					)}
+
+					<Link to='/google-search-clone'>
+						<img
+							className='results-header__image'
+							src='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
+							alt='logo'
+						/>
+					</Link>
+
+					<div className='home-header__image-border'>
+						<img
+							className={`home-header__image`}
+							src={user}
+							alt='Jacob McMichael'
+						/>
+					</div>
+				</nav>
+
 				<Link to='/google-search-clone'>
 					<img
-						className='results-header__image'
+						className='results-header__image desktop'
 						src='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png'
 						alt='logo'
 					/>

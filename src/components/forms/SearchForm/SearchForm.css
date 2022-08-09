@@ -111,8 +111,10 @@ input.search-page__input[type='text'][value=''] ~ .search-page__span {
 
 /* results page */
 .search-page__form.results {
-	@apply w-690px h-46px;
+	@apply max-w-690px h-46px;
 	@apply ml-44px;
+
+	@apply <tablet:m-0 w-full;
 }
 
 .search-page__form-group.results {
@@ -121,6 +123,8 @@ input.search-page__input[type='text'][value=''] ~ .search-page__span {
 	@apply border-1 border-g:shark rounded-full;
 	@apply h-full;
 	@apply px-20px;
+
+	@apply <tablet:mx-0 min-w-[100%] !important;
 }
 
 .search-page__form-group.results:focus-within,
