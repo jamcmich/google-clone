@@ -6,7 +6,13 @@ import { useStateValue } from '@contexts/StateProvider';
 import { BsSunFill, BsMoonStarsFill, BsImage } from 'react-icons/bs';
 import { BiSearch, BiNews, BiDotsVerticalRounded } from 'react-icons/bi';
 import { MdClear, MdKeyboardArrowRight } from 'react-icons/md';
-import { IoMdMic, IoMdSearch, IoMdSettings } from 'react-icons/io';
+import {
+	IoMdMic,
+	IoMdSearch,
+	IoMdSettings,
+	IoMdMenu,
+	IoMdNotificationsOutline,
+} from 'react-icons/io';
 import { TbGridDots } from 'react-icons/tb';
 import { AiOutlineBook } from 'react-icons/ai';
 import { RiVideoLine } from 'react-icons/ri';
@@ -204,6 +210,32 @@ const ArrowRight = (props) => {
 	);
 };
 
+const HamburgerMenu = (props) => {
+	const [{ theme }] = useStateValue();
+
+	return (
+		<div className='icon-container'>
+			<IoMdMenu
+				className={`icon icon-hamburger ${props.style || ''} ${theme}`}
+				size={large + 5}
+			/>
+		</div>
+	);
+};
+
+const Bell = (props) => {
+	const [{ theme }] = useStateValue();
+
+	return (
+		<div className='icon-container'>
+			<IoMdNotificationsOutline
+				className={`icon icon-bell ${props.style || ''} ${theme}`}
+				size={large + 5}
+			/>
+		</div>
+	);
+};
+
 export {
 	Sun,
 	Moon,
@@ -219,4 +251,6 @@ export {
 	Video,
 	Dots,
 	ArrowRight,
+	HamburgerMenu,
+	Bell,
 };

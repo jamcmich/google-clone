@@ -2,6 +2,12 @@ import { defineConfig } from 'windicss/helpers';
 
 export default defineConfig({
 	theme: {
+		screens: {
+			mobile: '375px',
+			tablet: '768px',
+			laptop: '1024px',
+			desktop: '1440px',
+		},
 		extend: {
 			fontFamily: {
 				roboto: ['Roboto', 'sans-serif'],

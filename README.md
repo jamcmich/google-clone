@@ -1,7 +1,11 @@
-# google-search-clone
-
 WIP, live demo available at https://jamcmich.github.io/google-search-clone/
 
-todo:
-- make responsive
-- documentation/code snippets
+### Google Search Clone
+A static web application that uses Google’s search engine to render results.
+
+### Built With
+JavaScript, Node.js, React.js, WindiCSS, Visual Studio Code
+
+### Challenges
+
+### Screenshots

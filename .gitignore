@@ -21,4 +21,4 @@ node_modules
 *.sln
 *.sw?
 
-src/utils/keys.js
+/src/utils/keys.js

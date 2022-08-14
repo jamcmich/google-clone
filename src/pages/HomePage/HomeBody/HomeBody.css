@@ -4,6 +4,8 @@
 }
 
 .home-body__image {
-	@apply w-272px h-92px;
+	@apply w-272px h-auto;
 	@apply cursor-pointer;
+
+	@apply <tablet:w-200px <tablet:h-auto;
 }
