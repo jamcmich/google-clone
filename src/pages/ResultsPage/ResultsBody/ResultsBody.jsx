@@ -14,11 +14,10 @@ import { BiDotsVerticalRounded as Dots } from 'react-icons/bi';
 import './ResultsBody.css';
 
 const ResultsBody = () => {
-	const [{ input, theme }, dispatch] = useStateValue();
+	const [{ input, theme }] = useStateValue();
 	const { data, isLoading } = useSearch(input || '');
 
-	useEffect(() => {
-	}, [isLoading && data]);
+	useEffect(() => {}, [isLoading && data]);
 
 	return (
 		<div className={`results-body ${theme}`}>
@@ -35,10 +34,7 @@ const ResultsBody = () => {
 
 			{data
 				? [
-						<span
-							className={`results-body__stats ${theme}`}
-							key='stats'
-						>
+						<span className={`results-body__stats ${theme}`}>
 							{`About ${data?.total?.toLocaleString(
 								'en-US'
 							)} results in (${parseFloat(data?.ts).toFixed(
@@ -60,11 +56,13 @@ const ResultsBody = () => {
 												''
 											) || item.link.replace(/\/+$/, '')}
 										</span>
+
 										<span
 											className={`results-body__item-tags ${theme}`}
 										>
 											{item.cite?.span}
 										</span>
+
 										<Dots
 											className={`results-body__item-dots ${theme}`}
 										/>

@@ -84,13 +84,13 @@ const SearchForm = () => {
 					<Mic style='results' size={22} />
 				</Tooltip>
 
-				<Search style='results' size={22} />
+				<Search style='results' size={22} onClick={submitForm} />
 			</div>
 		</form>
 	) : (
 		<form className='search-page__form' onSubmit={submitForm}>
 			<div className={`search-page__form-group ${theme}`}>
-				<Search style='search' />
+				<Search style='search' onClick={submitForm} />
 				<input
 					className={`search-page__input ${theme}`}
 					type='text'

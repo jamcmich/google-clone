@@ -1,9 +1,9 @@
 .results-footer {
 	@apply flex flex-col self-stretch place-content-center items-center;
-	@apply w-640px;
-	@apply ml-180px py-50px;
+	@apply w-full;
+	@apply m-auto py-50px;
 
-	@apply <tablet:w-full <tablet:m-auto <tablet:mt-0 !important;
+	@apply <tablet:m-auto <tablet:mt-0 !important;
 }
 
 .results-footer__row {

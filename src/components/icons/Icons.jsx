@@ -82,12 +82,12 @@ const Search = (props) => {
 	const [{ theme }] = useStateValue();
 
 	return (
-		<div className='icon-container'>
+		<button className='icon-container'>
 			<IoMdSearch
 				className={`icon icon-search ${props.style || ''} ${theme}`}
 				size={props.size || large}
 			/>
-		</div>
+		</button>
 	);
 };
 
