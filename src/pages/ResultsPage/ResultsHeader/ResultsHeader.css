@@ -48,6 +48,9 @@
 .results-header__links {
 	@apply flex flex-row place-content-start items-end;
 	@apply mt-18px ml-180px;
+
+	@apply <tablet:m-auto <tablet:mt-[18px] <tablet:w-[90vw] <tablet:place-content-center;
+	@apply <tablet:overflow-x-scroll <tablet:place-content-start <tablet:overflow-y-hidden;
 }
 
 .results-header__link {
@@ -72,7 +75,9 @@
 }
 
 .results-header__link-text {
-    @apply ml-5px;
+    @apply ml-[5px];
+
+	@apply <tablet:mx-[10px];
 }
 
 .results-header__link-tools {
@@ -103,4 +108,8 @@
 
 .results-header__span.light {
 	@apply bg-g:gallery;
+}
+
+.results-header__link-container .icon {
+	@apply <tablet:hidden;
 }

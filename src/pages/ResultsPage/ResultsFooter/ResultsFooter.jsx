@@ -34,30 +34,33 @@ const ResultsFooter = () => {
 				{word.map((letter, index) =>
 					letter === 'o' ? (
 						<div
-							className={`results-footer__col link ${theme}`}
 							key={index}
+							className={`results-footer__col link ${theme}`}
 						>
 							<span className='results-footer__letter'>
 								{letter}
 							</span>
+
 							<span className={`results-footer__index ${theme}`}>
 								{index}
 							</span>
 						</div>
 					) : (
 						<div
-							className={`results-footer__col ${theme}`}
 							key={index}
+							className={`results-footer__col ${theme}`}
 						>
 							<span className='results-footer__letter'>
 								{letter}
 							</span>
+
 							<span className='results-footer__index hidden'>
 								{' '}
 							</span>
 						</div>
 					)
 				)}
+
 				<div className={`results-footer__col next ${theme}`}>
 					<ArrowRight />
 					<span className='results-footer__next-text'>Next</span>

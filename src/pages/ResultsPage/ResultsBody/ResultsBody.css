@@ -1,7 +1,13 @@
 .results-body {
 	@apply flex flex-col place-content-center items-start space-y-6;
-	@apply ml-11.25rem;
+	@apply ml-[180px];
 	@apply text-14px;
+
+	@apply <tablet:m-auto <tablet:w-[90vw];
+}
+
+.results-body.light {
+	@apply bg-white;
 }
 
 .results-body__stats {
@@ -14,34 +20,38 @@
 }
 
 .results-body__item {
-    @apply self-stretch;
-    @apply w-40rem;
+	@apply self-stretch;
+	@apply w-100%;
+
+	@apply <tablet:w-full;
 }
 
 .results-body__item-link {
 	@apply text-g:silver;
-    @apply cursor-pointer;
+	@apply cursor-pointer;
 }
 
 .results-body__item-link:hover > .results-body__item-title {
-    @apply underline;
+	@apply underline;
 }
 
 .results-body__item-domain-group {
-    @apply flex flex-row justify-start items-center;
-    @apply h-2rem;
+	@apply flex flex-row justify-start items-center;
+	@apply h-2rem;
 }
 
 .results-body__item-domain {
-    @apply mr-0.3rem;
+	@apply mr-0.3rem;
+	@apply truncate;
 }
 
 .results-body__item-domain.light {
-    @apply text-g:charcoal;
+	@apply text-g:charcoal;
 }
 
 .results-body__item-tags {
 	@apply text-g:manatee_light;
+	@apply truncate;
 }
 
 .results-body__item-tags.light {
@@ -49,14 +59,14 @@
 }
 
 .results-body__item-dots {
-    @apply self-stretch;
-    @apply text-g:manatee_light;
-    @apply w-1.25rem h-auto;
-    @apply ml-1.15rem;
+	@apply self-stretch;
+	@apply text-g:manatee_light;
+	@apply w-1.25rem h-auto;
+	@apply ml-1.15rem;
 }
 
 .results-body__item-dots.light {
-    @apply text-g:rolling_stone_lighter;
+	@apply text-g:rolling_stone_lighter;
 }
 
 .results-body__item-title {
@@ -69,22 +79,22 @@
 }
 
 .results-body__item-desc {
-    @apply leading-relaxed;
+	@apply leading-relaxed whitespace-pre-line;
 }
 
 .results-body__item-desc.light {
-    @apply text-g:abbey;
+	@apply text-g:abbey;
 }
 
 .three-dots.center {
-    @apply flex flex-row place-content-center items-center;
-    @apply w-640px;
+	@apply flex flex-row place-content-center items-center;
+	@apply w-640px;
 }
 
 .three-dots {
-    @apply fill-g:malibu;
+	@apply fill-g:malibu;
 }
 
 .three-dots.light {
-    @apply fill-g:cornflower_blue;
+	@apply fill-g:cornflower_blue;
 }

@@ -10,3 +10,7 @@ body,
 	@apply bg-g:charcoal;
 	@apply h-full;
 }
+
+.app.light {
+	@apply bg-white;
+}
