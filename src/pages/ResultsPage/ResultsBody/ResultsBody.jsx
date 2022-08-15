@@ -16,13 +16,12 @@ import './ResultsBody.css';
 const ResultsBody = () => {
 	const [{ input, theme }, dispatch] = useStateValue();
 	const { data, isLoading } = useSearch(input || '');
-	// const [data, setData] = useState({});
 
 	useEffect(() => {
 	}, [isLoading && data]);
 
 	return (
-		<div className='results-body'>
+		<div className={`results-body ${theme}`}>
 			{isLoading && (
 				<div className='three-dots center'>
 					<ThreeDots
@@ -59,7 +58,7 @@ const ResultsBody = () => {
 											{item.cite?.domain?.replace(
 												/(?<=\s).*$/gi,
 												''
-											)}
+											) || item.link.replace(/\/+$/, '')}
 										</span>
 										<span
 											className={`results-body__item-tags ${theme}`}

@@ -7,7 +7,7 @@ import './HomeBody.css';
 
 const HomeBody = () => {
 	return (
-		<section className='home-body'>
+		<div className='home-body'>
 			<Link to='/google-search-clone'>
 				<img
 					className='home-body__image'
@@ -17,7 +17,7 @@ const HomeBody = () => {
 			</Link>
 
 			<SearchForm />
-		</section>
+		</div>
 	);
 };
 
