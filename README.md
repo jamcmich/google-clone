@@ -17,4 +17,5 @@ A static web application that uses Google’s search engine to render results.
 
 ## Features for Future Consideration
 
-- [ ] Pagination
+- [ ] [Pagination](https://www.educba.com/pagination-in-javascript/)
+- [ ] "I'm Feeling Lucky" button takes the user to a random page
