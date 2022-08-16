@@ -1,6 +1,7 @@
 # Google Search Clone
 
-A static web application that uses Google’s search engine to render results.
+A static web application that uses Google’s search engine to render results. 
+> Note: This website has identical elements and styling to [Google's search page](https://www.google.com/) but includes only the essential search features.
 
 ## Screenshots
 
@@ -13,3 +14,7 @@ A static web application that uses Google’s search engine to render results.
 ## Demo
 
 [https://jamcmich.github.io/google-search-clone/](https://jamcmich.github.io/google-search-clone/)
+
+## Features for Future Consideration
+
+- [ ] Pagination
