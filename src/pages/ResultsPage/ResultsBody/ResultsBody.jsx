@@ -34,7 +34,10 @@ const ResultsBody = () => {
 
 			{data
 				? [
-						<span className={`results-body__stats ${theme}`}>
+						<span
+							key={data?.total?.toLocaleString('en-US')}
+							className={`results-body__stats ${theme}`}
+						>
 							{`About ${data?.total?.toLocaleString(
 								'en-US'
 							)} results in (${parseFloat(data?.ts).toFixed(
@@ -45,7 +48,8 @@ const ResultsBody = () => {
 							<div key={index} className='results-body__item'>
 								<a
 									className='results-body__item-link'
-									href={item.cite?.link}
+									href={item.cite?.link || item.link}
+									target='_blank'
 								>
 									<div className='results-body__item-domain-group'>
 										<span

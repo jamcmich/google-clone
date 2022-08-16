@@ -25,7 +25,8 @@ const SearchForm = () => {
 				input: searchInput,
 			});
 
-			if (location.pathname !== '/google-search-clone/results') navigate('/google-search-clone/results');
+			if (location.pathname !== '/google-search-clone/results')
+				navigate('/google-search-clone/results');
 		}
 	};
 
