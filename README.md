@@ -1,3 +1,5 @@
+<img src='assets/google-icon.png' align='center'></img>
+
 # Google Search Clone
 
 A static web application that uses Google’s search engine to render results. 
