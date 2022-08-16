@@ -2,7 +2,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useStateValue } from '@contexts/StateProvider';
-import { actionTypes } from '@contexts/Reducer';
+import { actionTypes } from '@contexts/reducer';
 
 /* Components */
 import SearchForm from '@components/forms/SearchForm/SearchForm';
