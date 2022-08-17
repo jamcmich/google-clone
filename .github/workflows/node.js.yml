@@ -1,3 +1,4 @@
+# Build project and deploy to GitHub Pages
 name: Build and Deploy
 
 on:
@@ -9,17 +10,22 @@ permissions:
   
 jobs:
   build-and-deploy:
-    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+    # Recommended if you intend to make multiple deployments in quick succession.
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     steps:
+      # Checks-out the repository under $GITHUB_WORKSPACE
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      # Commands to build the project with Vite.js
+      # Outputs to 'dist' folder
+      - name: Install and Build 🔧
         run: |
           npm ci
           npm run build
 
+      # Deploys the build files from 'dist'
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:

@@ -7,7 +7,7 @@ import { useStateValue } from '@contexts/StateProvider';
 import './App.css';
 
 function App() {
-	const [{ input, theme }, dispatch] = useStateValue();
+	const [{ theme }] = useStateValue();
 
 	return (
 		<div className={`app ${theme}`}>
