@@ -67,25 +67,39 @@ I decided to create **[a simple, reusable tooltip system](#custom-tooltips-1)** 
 
 #### Data Fetching
 
-Fetching data in React is fairly straightforward using Async/Await and Axios (see **[Data Fetching code snippet](#data-fetching-1)**). The real challenge is distributing the returned data across a React project between parent and child components. To overcome this obstacle we can use **[React Context](#react-context)**.
+For this application, we only need to service GET requests from the API. Fetching data in React is fairly straightforward using Async/Await and Axios (see **[Data Fetching code snippet](#data-fetching-1)**). The real challenge is distributing the returned data across a React project between parent and child components. To overcome this obstacle we can use **[React Context](#react-context)**.
 
 #### React Context
 
 The React Context API was introduced in React v16.3, allowing developers to pass data through component trees and share information at various levels in an application. Instead of passing props down through every single component on the tree, the components that require a prop can simply request it from `useContext()`. This feature circumvents the dreaded practice of **[prop drilling](https://blog.logrocket.com/react-context-api-deep-dive-examples/#reactpropdrilling)** and reduces unnecessary re-rendering.
 
-To use Context within our application we first establish a State Provider, essentially a higher order component that passes values to it's `{children}`, to use state within our application. Feel free to **[view my implementation of StateContext here](#react-context-1)** for a better understanding. You might notice that my code includes an additional implementation `useReducer()` which is an alternative to `useState()` and is used when the next state depends on the previous one. This allows us to implement features such as passing data or **[toggling themes](#theme-switcher)**.
+To use Context within our application we first establish a State Provider, essentially a higher order component that passes values to it's `{children}`, to use state within our application. Feel free to **[view my implementation of StateContext here](#react-context-1)** for a better understanding. You might notice that my code includes an additional implementation `useReducer()` which is an alternative to `useState()` and is used when the next state depends on the previous one. This allows us to implement features such as comparing form inputs or **[toggling themes](#theme-switcher)**.
 
 #### Reducer
 
-`useReducer()` works exactly like JavaScript's Array `reduce()` function by receiving an initial value of `state` and an `action`, and then returning a new state. I created two ``actionTypes`` within my application, ``SET_SEARCH_INPUT`` and ``SET_APPLICATION_THEME``, to pass input and theme values to various components (see **[Reducer](#reducer-1)** code snippet).
+I used **[React's reducer hook](https://reactjs.org/docs/hooks-reference.html#usereducer)** in conjunction with React Context to reference search inputs and the application's current theme. `useReducer()` works exactly like JavaScript's Array `reduce()` function by receiving an initial value of `state` and an `action`, and then returning a new state. I created two `actionTypes` within my application, `SET_SEARCH_INPUT` and `SET_APPLICATION_THEME`, to pass input and theme values to various components (see **[Reducer](#reducer-1)** code snippet).
 
 #### Data Rendering
+
+Data is rendered to the virtual DOM by **[mapping over results](#data-rendering-1)** fetched from the GET method in `useSearch.js`.
+
+#### Theme Switching
+
+React Context makes it easy to receive, mutate, and pass the global state value of `theme` to any component. In this **[example with the application's theme switching feature](#theme-switching-1)**, I use the `theme` state to conditionally render icons and toggle between styles pertaining to light and dark mode.
 
 #### Parsing Search Input
 
 Search engines are built with varying degrees of complexity to allow for detailed queries. Most users take advantage of basic keyword searching so I decided to implement **[a regex pattern that combines words and filters special characters](#parsing-search-input-1)**.
 
 For example, searching `cat memes` or `cat!@#$%-_memes` is parsed to `cat+memes` which is the appropriate format for Google's search engine parameters. The resulting URL becomes `https://google-search3.p.rapidapi.com/api/v1/search/q=cat+memes&num=10`.
+
+#### Continuous Integration
+
+This project was my first exposure to **[GitHub Actions](https://docs.github.com/en/actions)**. After reading about the benefits of continuous integration and development, I decided to create **[a workflow that would build and deploy my project](#continuous-integration-1)** to GitHub Pages automatically.
+
+#### Webpack Configuration
+
+A neat trick I learned throughout the development of this project is using Webpack aliases to create shortened file references. This is extremely helpful for avoiding long and repetitive path names such as ``import ModuleName from '../../../src/components/Component``. See the **[Webpack Configuration](#webpack-configuration-1)** code snippet for more details.
 
 <!-- Code Examples -->
 
@@ -118,17 +132,23 @@ For example, searching `cat memes` or `cat!@#$%-_memes` is parsed to `cat+memes`
 
 ![](assets/readme/pages_example__rendering-data.png)
 
-#### Theme Switcher
+#### Theme Switching
 
 ![](assets/readme/components__theme-icons.png)
+![](assets/readme/utils__example__toggle-theme.png)
 
 #### Parsing Search Input
 
 ![](assets/readme/utils__parse-input.png)
 
-#### Path Shorthand
+#### Continuous Integration
+
+![](assets/readme/github-actions__built-and-deploy.png)
+
+#### Webpack Configuration
 
 ![](assets/readme/configs__path-shorthand.png)
+![](assets/readme/configs__example__path-shorthand.png)
 
 <!-- Improvements -->
 
