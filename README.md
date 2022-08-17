@@ -1,7 +1,7 @@
 <!-- Heading -->
 <section>
     <div align='center'>
-        <img src='assets/google-icon.png' alt='Google Icon' width='100' height='100' />
+        <img src='assets/readme/project-icon.png' alt='Google Icon' width='100' height='100' />
         <h1>Google Search Clone</h1>
         <p>A static web application that uses Google’s search engine to render results.</p>
     </div>
@@ -28,8 +28,8 @@
 
 > Note: This website has identical elements and styling to **[Google's search page](https://www.google.com/)** but includes only the essential search features.
 
-*   Search functionality with Google via RapidAPI
-*   Responsive styling for mobile, tablet, and desktop
+-   Search functionality with Google via RapidAPI
+-   Responsive styling for mobile, tablet, and desktop
 
 <!-- Technologies -->
 
@@ -41,7 +41,7 @@
 
 ### Screenshots
 
-![](assets/demo.gif)
+![](assets/readme/project-demo.gif)
 
 <!-- Problem Solving -->
 
