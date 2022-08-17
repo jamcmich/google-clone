@@ -57,13 +57,23 @@ After looking into the issue, I discovered a CSS naming convention created by BE
 
 Reading up on the Windi documentation allowed me to **[incorporate Windi's utility classes in an external stylesheet](#windicss-external-stylesheet)** and preserve my application's class naming schemes. Even though this method would invalidate one of the framework's biggest advantages, I was able to reduce the clutter of my JSX files and create a solution with BEM conventions in mind.
 
+#### Parsing Input
+
+Search engines are built with varying degrees of complexity to allow for detailed queries. Most users take advantage of basic keyword searching so I decided to implement **[a regex pattern that combines words and filters special characters](#parsing-search-input)**.
+
+For example, searching ``cat memes`` or ``cat!@#$%-_memes`` is parsed to ``cat+memes`` which is the appropriate format for Google's search engine parameters. The resulting URL becomes ``https://google-search3.p.rapidapi.com/api/v1/search/q=cat+memes&num=10``.
+
+#### Data Fetching
+
+Fetching data in React is fairly straightforward.
+
 #### Tooltips
 
 Since React is a very flexible library, many developers turn to third-party solutions when it comes to certain features. For example, some components on Google's search page provide users with tooltips on hover and I needed a way to incorporate this functionality into my project.
 
 **[React Tooltip](https://github.com/wwayne/react-tooltip)** is a library with almost 3k stars on GitHub. Many developers rely on external solutions such as this one assuming the library will be well maintained and up-to-date. Unfortunately, myself and many others were running into **[compatibility issues between React Tooltip and React 18](https://github.com/wwayne/react-tooltip/issues/777)**. The repository had been struggling to find a maintainer and likely wouldn't be updated for the new version of React anytime soon.
 
-I decided to create **[a simple, reusable tooltip system](#custom-tooltips)** that complimented my project instead of relying on the inconsistencies of an external library. This solution was lightweight and allowed me to wrap icons within my ``<Tooltip />`` component and create custom tooltip styles.
+I decided to create **[a simple, reusable tooltip system](#custom-tooltips)** that complimented my project instead of relying on the inconsistencies of an external library. This solution was lightweight and allowed me to wrap icons within my `<Tooltip />` component and create custom tooltip styles.
 
 <!-- Code Examples -->
 
@@ -73,14 +83,17 @@ I decided to create **[a simple, reusable tooltip system](#custom-tooltips)** th
 
 ![](assets/readme/styles__example__home-header.png)
 
-#### Theme Switcher
+#### Parsing Search Input
 
-![](assets/readme/contexts__app.png)
-![](assets/readme/components__theme-icons.png)
+![](assets/readme/utils__parse-input.png)
 
-#### Custom Tooltips
+#### Data Fetching
 
-![](assets/readme/components__tooltip.png)
+![](assets/readme/utils__fetch-data.png)
+
+#### Data Rendering
+
+![](assets/readme/pages_example__rendering-data.png)
 
 #### Reducer
 
@@ -89,6 +102,15 @@ I decided to create **[a simple, reusable tooltip system](#custom-tooltips)** th
 #### React Context
 
 ![](assets/readme/contexts__state-context.png)
+
+#### Custom Tooltips
+
+![](assets/readme/components__tooltip.png)
+
+#### Theme Switcher
+
+![](assets/readme/contexts__app.png)
+![](assets/readme/components__theme-icons.png)
 
 #### Path Shorthand
 
