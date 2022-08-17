@@ -55,14 +55,44 @@ This project was my first exposure to using **[WindiCSS](https://windicss.org/gu
 
 After looking into the issue, I discovered a CSS naming convention created by BEM for writing cleaner and more readable class names. You can read up on the methodology with examples in **[BEM's official guide](http://getbem.com/introduction/)**. These practices provided me with solutions for simplifying the DOM structure, creating descriptive CSS styles, and self-documenting my code.
 
-Reading up on the Windi documentation allowed me to incorporate Windi's utility classes in an external stylesheet and preserve my application's class naming schemes. Even though this method would invalidate one of the framework's biggest advantages, I was able to reduce the clutter of my JSX files and create a solution with BEM conventions in mind.
+Reading up on the Windi documentation allowed me to **[incorporate Windi's utility classes in an external stylesheet](#windicss-external-stylesheet)** and preserve my application's class naming schemes. Even though this method would invalidate one of the framework's biggest advantages, I was able to reduce the clutter of my JSX files and create a solution with BEM conventions in mind.
+
+#### Tooltips
+
+Since React is a very flexible library, many developers turn to third-party solutions when it comes to certain features. For example, some components on Google's search page provide users with tooltips on hover and I needed a way to incorporate this functionality into my project.
+
+**[React Tooltip](https://github.com/wwayne/react-tooltip)** is a library with almost 3k stars on GitHub. Many developers rely on external solutions such as this one assuming the library will be well maintained and up-to-date. Unfortunately, myself and many others were running into **[compatibility issues between React Tooltip and React 18](https://github.com/wwayne/react-tooltip/issues/777)**. The repository had been struggling to find a maintainer and likely wouldn't be updated for the new version of React anytime soon.
+
+I decided to create **[a simple, reusable tooltip system](#custom-tooltips)** that complimented my project instead of relying on the inconsistencies of an external library. This solution was lightweight and allowed me to wrap icons within my ``<Tooltip />`` component and create custom tooltip styles.
 
 <!-- Code Examples -->
 
 ### 📸 Code Examples
 
-<section>
-</section>
+#### WindiCSS + External Stylesheet
+
+![](assets/readme/styles__example__home-header.png)
+
+#### Theme Switcher
+
+![](assets/readme/contexts__app.png)
+![](assets/readme/components__theme-icons.png)
+
+#### Custom Tooltips
+
+![](assets/readme/components__tooltip.png)
+
+#### Reducer
+
+![](assets/readme/contexts__reducer.png)
+
+#### React Context
+
+![](assets/readme/contexts__state-context.png)
+
+#### Path Shorthand
+
+![](assets/readme/configs__path-shorthand.png)
 
 <!-- Improvements -->
 
