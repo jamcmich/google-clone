@@ -30,7 +30,7 @@
 
 -   Search functionality with Google via **[RapidAPI](https://rapidapi.com/apigeek/api/google-search3/)**
 -   Responsive styling for mobile, tablet, and desktop
--   Light and Dark mode theme switcher
+-   Data fetching and theme switcher via **[Higher Order Components](https://reactjs.org/docs/higher-order-components.html)**
 -   Custom tooltip system
 
 <!-- Technologies -->
@@ -55,62 +55,76 @@ This project was my first exposure to using **[WindiCSS](https://windicss.org/gu
 
 After looking into the issue, I discovered a CSS naming convention created by BEM for writing cleaner and more readable class names. You can read up on the methodology with examples in **[BEM's official guide](http://getbem.com/introduction/)**. These practices provided me with solutions for simplifying the DOM structure, creating descriptive CSS styles, and self-documenting my code.
 
-Reading up on the Windi documentation allowed me to **[incorporate Windi's utility classes in an external stylesheet](#windicss-external-stylesheet)** and preserve my application's class naming schemes. Even though this method would invalidate one of the framework's biggest advantages, I was able to reduce the clutter of my JSX files and create a solution with BEM conventions in mind.
+Reading up on the Windi documentation allowed me to **[incorporate Windi's utility classes in an external stylesheet](#styling-conventions-1)** and preserve my application's class naming schemes. Even though this method would invalidate one of the framework's biggest advantages, I was able to reduce the clutter of my JSX files and create a solution with BEM conventions in mind.
 
-#### Parsing Input
-
-Search engines are built with varying degrees of complexity to allow for detailed queries. Most users take advantage of basic keyword searching so I decided to implement **[a regex pattern that combines words and filters special characters](#parsing-search-input)**.
-
-For example, searching ``cat memes`` or ``cat!@#$%-_memes`` is parsed to ``cat+memes`` which is the appropriate format for Google's search engine parameters. The resulting URL becomes ``https://google-search3.p.rapidapi.com/api/v1/search/q=cat+memes&num=10``.
-
-#### Data Fetching
-
-Fetching data in React is fairly straightforward.
-
-#### Tooltips
+#### Custom Tooltips
 
 Since React is a very flexible library, many developers turn to third-party solutions when it comes to certain features. For example, some components on Google's search page provide users with tooltips on hover and I needed a way to incorporate this functionality into my project.
 
 **[React Tooltip](https://github.com/wwayne/react-tooltip)** is a library with almost 3k stars on GitHub. Many developers rely on external solutions such as this one assuming the library will be well maintained and up-to-date. Unfortunately, myself and many others were running into **[compatibility issues between React Tooltip and React 18](https://github.com/wwayne/react-tooltip/issues/777)**. The repository had been struggling to find a maintainer and likely wouldn't be updated for the new version of React anytime soon.
 
-I decided to create **[a simple, reusable tooltip system](#custom-tooltips)** that complimented my project instead of relying on the inconsistencies of an external library. This solution was lightweight and allowed me to wrap icons within my `<Tooltip />` component and create custom tooltip styles.
+I decided to create **[a simple, reusable tooltip system](#custom-tooltips-1)** that complimented my project instead of relying on the inconsistencies of an external library. This solution was lightweight and allowed me to wrap icons within my `<Tooltip />` component and create custom tooltip styles.
+
+#### Data Fetching
+
+Fetching data in React is fairly straightforward using Async/Await and Axios (see **[Data Fetching code snippet](#data-fetching-1)**). The real challenge is distributing the returned data across a React project between parent and child components. To overcome this obstacle we can use **[React Context](#react-context)**.
+
+#### React Context
+
+The React Context API was introduced in React v16.3, allowing developers to pass data through component trees and share information at various levels in an application. Instead of passing props down through every single component on the tree, the components that require a prop can simply request it from `useContext()`. This feature circumvents the dreaded practice of **[prop drilling](https://blog.logrocket.com/react-context-api-deep-dive-examples/#reactpropdrilling)** and reduces unnecessary re-rendering.
+
+To use Context within our application we first establish a State Provider, essentially a higher order component that passes values to it's `{children}`, to use state within our application. Feel free to **[view my implementation of StateContext here](#react-context-1)** for a better understanding. You might notice that my code includes an additional implementation `useReducer()` which is an alternative to `useState()` and is used when the next state depends on the previous one. This allows us to implement features such as passing data or **[toggling themes](#theme-switcher)**.
+
+#### Reducer
+
+`useReducer()` works exactly like JavaScript's Array `reduce()` function by receiving an initial value of `state` and an `action`, and then returning a new state. I created two ``actionTypes`` within my application, ``SET_SEARCH_INPUT`` and ``SET_APPLICATION_THEME``, to pass input and theme values to various components (see **[Reducer](#reducer-1)** code snippet).
+
+#### Data Rendering
+
+#### Parsing Search Input
+
+Search engines are built with varying degrees of complexity to allow for detailed queries. Most users take advantage of basic keyword searching so I decided to implement **[a regex pattern that combines words and filters special characters](#parsing-search-input-1)**.
+
+For example, searching `cat memes` or `cat!@#$%-_memes` is parsed to `cat+memes` which is the appropriate format for Google's search engine parameters. The resulting URL becomes `https://google-search3.p.rapidapi.com/api/v1/search/q=cat+memes&num=10`.
 
 <!-- Code Examples -->
 
 ### 📸 Code Examples
 
-#### WindiCSS + External Stylesheet
+#### Styling Conventions
 
-![](assets/readme/styles__example__home-header.png)
+![](assets/readme/components__search-form.png)
+![](assets/readme/styles__example__search-page.png)
 
-#### Parsing Search Input
+#### Custom Tooltips
 
-![](assets/readme/utils__parse-input.png)
+![](assets/readme/components__tooltip.png)
+![](assets/readme/components__example__tooltip.png)
 
 #### Data Fetching
 
 ![](assets/readme/utils__fetch-data.png)
 
-#### Data Rendering
+#### React Context
 
-![](assets/readme/pages_example__rendering-data.png)
+![](assets/readme/contexts__state-context.png)
+![State Provider](assets/readme/contexts__app.png)
 
 #### Reducer
 
 ![](assets/readme/contexts__reducer.png)
 
-#### React Context
+#### Data Rendering
 
-![](assets/readme/contexts__state-context.png)
-
-#### Custom Tooltips
-
-![](assets/readme/components__tooltip.png)
+![](assets/readme/pages_example__rendering-data.png)
 
 #### Theme Switcher
 
-![](assets/readme/contexts__app.png)
 ![](assets/readme/components__theme-icons.png)
+
+#### Parsing Search Input
+
+![](assets/readme/utils__parse-input.png)
 
 #### Path Shorthand
 
