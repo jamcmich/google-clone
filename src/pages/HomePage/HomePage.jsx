@@ -10,7 +10,7 @@ const HomePage = () => {
 	const [{ theme }] = useStateValue();
 
 	return (
-		<div className={`home-page home-page--${theme}`}>
+		<div className={`home-page ${theme}`}>
 			<HomeHeader />
 			<HomeBody />
 			<HomeFooter />
