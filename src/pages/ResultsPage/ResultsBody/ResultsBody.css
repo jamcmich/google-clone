@@ -87,8 +87,10 @@
 }
 
 .three-dots.center {
-	@apply flex flex-row place-content-center items-center;
+	@apply flex flex-row place-content-start items-center;
 	@apply w-640px;
+
+	@apply <tablet:w-full <tablet:place-content-center;
 }
 
 .three-dots {

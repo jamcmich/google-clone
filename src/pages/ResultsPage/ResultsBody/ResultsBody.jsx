@@ -32,64 +32,61 @@ const ResultsBody = () => {
 				</div>
 			)}
 
-			{data
-				? [
-						<span
-							key={data?.total?.toLocaleString('en-US')}
-							className={`results-body__stats ${theme}`}
+			{data && (
+				<span
+					key={data?.total?.toLocaleString('en-US')}
+					className={`results-body__stats ${theme}`}
+				>
+					{`About ${data?.total?.toLocaleString(
+						'en-US'
+					)} results in (${parseFloat(data?.ts).toFixed(2)} seconds)`}
+				</span>
+			)}
+
+			{data &&
+				data?.results?.map((item, index) => (
+					<div key={index} className='results-body__item'>
+						<a
+							className='results-body__item-link'
+							href={item.cite?.link || item.link}
+							target='_blank'
 						>
-							{`About ${data?.total?.toLocaleString(
-								'en-US'
-							)} results in (${parseFloat(data?.ts).toFixed(
-								2
-							)} seconds)`}
-						</span>,
-						data?.results?.map((item, index) => (
-							<div key={index} className='results-body__item'>
-								<a
-									className='results-body__item-link'
-									href={item.cite?.link || item.link}
-									target='_blank'
+							<div className='results-body__item-domain-group'>
+								<span
+									className={`results-body__item-domain ${theme}`}
 								>
-									<div className='results-body__item-domain-group'>
-										<span
-											className={`results-body__item-domain ${theme}`}
-										>
-											{item.cite?.domain?.replace(
-												/(?<=\s).*$/gi,
-												''
-											) || item.link.replace(/\/+$/, '')}
-										</span>
+									{item.cite?.domain?.replace(
+										/(?<=\s).*$/gi,
+										''
+									) || item.link.replace(/\/+$/, '')}
+								</span>
 
-										<span
-											className={`results-body__item-tags ${theme}`}
-										>
-											{item.cite?.span}
-										</span>
-
-										<Dots
-											className={`results-body__item-dots ${theme}`}
-										/>
-									</div>
-
-									<h1
-										className={`results-body__item-title ${theme}`}
-										href={item.link}
-									>
-										{item.title}
-									</h1>
-								</a>
-
-								<p
-									className={`results-body__item-desc ${theme}`}
+								<span
+									className={`results-body__item-tags ${theme}`}
 								>
-									{item.description}
-								</p>
+									{item.cite?.span}
+								</span>
+
+								<Dots
+									className={`results-body__item-dots ${theme}`}
+								/>
 							</div>
-						)),
-						<ResultsFooter />,
-				  ]
-				: null}
+
+							<h1
+								className={`results-body__item-title ${theme}`}
+								href={item.link}
+							>
+								{item.title}
+							</h1>
+						</a>
+
+						<p className={`results-body__item-desc ${theme}`}>
+							{item.description}
+						</p>
+					</div>
+				))}
+
+			{data && <ResultsFooter />}
 		</div>
 	);
 };

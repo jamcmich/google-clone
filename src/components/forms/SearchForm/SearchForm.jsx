@@ -39,6 +39,13 @@ const SearchForm = () => {
 	};
 
 	const prependSearchInput = () => {
+		if (input && location.pathname === '/google-search-clone') {
+			dispatch({
+				type: actionTypes.SET_SEARCH_INPUT,
+				input: '',
+			});
+		}
+
 		if (input && location.pathname === '/google-search-clone/results')
 			setSearchInput(
 				input
@@ -53,7 +60,11 @@ const SearchForm = () => {
 	}, []);
 
 	return location.pathname === '/google-search-clone/results' ? (
-		<form className='search-page__form results' onSubmit={submitForm}>
+		<form
+			id='search-page__form'
+			className='search-page__form results'
+			onSubmit={submitForm}
+		>
 			<div className={`search-page__form-group results ${theme}`}>
 				<input
 					className={`search-page__input results ${theme}`}
@@ -89,53 +100,59 @@ const SearchForm = () => {
 			</div>
 		</form>
 	) : (
-		<form className='search-page__form' onSubmit={submitForm}>
-			<div className={`search-page__form-group ${theme}`}>
-				<Search style='search' onClick={submitForm} />
-				<input
-					className={`search-page__input ${theme}`}
-					type='text'
-					value={searchInput}
-					onChange={handleChange}
-				/>
+		<React.Fragment>
+			<form
+				id='search-page__form'
+				className='search-page__form'
+				onSubmit={submitForm}
+			>
+				<div className={`search-page__form-group ${theme}`}>
+					<Search style='search' onClick={submitForm} />
+					<input
+						className={`search-page__input ${theme}`}
+						type='text'
+						value={searchInput}
+						onChange={handleChange}
+					/>
 
-				<Tooltip
-					content='Clear'
-					direction='bottom'
-					type='sharp'
-					name='clear'
-				>
-					<Clear callClearInput={clearInput} style='search' />
-				</Tooltip>
+					<Tooltip
+						content='Clear'
+						direction='bottom'
+						type='sharp'
+						name='clear'
+					>
+						<Clear callClearInput={clearInput} style='search' />
+					</Tooltip>
 
-				<span className={`search-page__span ${theme}`}></span>
+					<span className={`search-page__span ${theme}`}></span>
 
-				<Tooltip
-					content='Search by Voice'
-					direction='bottom'
-					type='sharp'
-				>
-					<Mic style='search' />
-				</Tooltip>
-			</div>
+					<Tooltip
+						content='Search by Voice'
+						direction='bottom'
+						type='sharp'
+					>
+						<Mic style='search' />
+					</Tooltip>
+				</div>
+			</form>
 
 			<div className='search-form__buttons'>
-				<button
+				<input
 					className={`search-form__button ${theme}`}
-					type='submit'
+					type='button'
+					form='search-page__form'
+					value='Google Search'
 					onClick={submitForm}
-				>
-					Google Search
-				</button>
-				<button
+				/>
+				<input
 					className={`search-form__button ${theme}`}
-					type='submit'
+					type='button'
+					form='search-page__form'
+					value="I'm Feeling Lucky"
 					onClick={submitForm}
-				>
-					I'm Feeling Lucky
-				</button>
+				/>
 			</div>
-		</form>
+		</React.Fragment>
 	);
 };
 

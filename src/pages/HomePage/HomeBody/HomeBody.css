@@ -2,7 +2,7 @@
 	@apply flex flex-col place-content-center items-center space-y-7;
 	@apply mb-310px;
 
-	@apply <tablet:mb-200px;
+	@apply <tablet:mb-0px;
 }
 
 .home-body__image {
