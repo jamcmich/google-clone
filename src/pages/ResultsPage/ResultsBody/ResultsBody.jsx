@@ -55,10 +55,10 @@ const ResultsBody = () => {
 								<span
 									className={`results-body__item-domain ${theme}`}
 								>
-									{item.cite?.domain?.replace(
-										/(?<=\s).*$/gi,
-										''
-									) || item.link.replace(/\/+$/, '')}
+									{item.cite?.domain?.match(
+										/^(.*?)(\/\/.*?\/)/gi
+									) ||
+										item.link?.match(/^(.*?)(\/\/.*?\/)/gi)}
 								</span>
 
 								<span

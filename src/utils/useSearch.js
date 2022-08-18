@@ -32,6 +32,7 @@ const useSearch = (input) => {
 
 		try {
 			const response = await axios.get(url, options);
+			console.log(response.data);
 			console.log(
 				`Remaining API calls: ${response.headers['x-ratelimit-search-remaining']}`
 			);
