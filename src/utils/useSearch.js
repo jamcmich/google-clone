@@ -13,7 +13,7 @@ const useSearch = (input) => {
 		.replace(/[\W_]+/g, '+');
 
 	const url =
-		`https://google-search3.p.rapidapi.com/api/v1/search` +
+		`https://seo-api.p.rapidapi.com/v1/search` +
 		`/q=${parsedInput}` +
 		`&num=10`;
 
@@ -23,7 +23,7 @@ const useSearch = (input) => {
 			'X-User-Agent': 'desktop',
 			'X-Proxy-Location': 'US',
 			'X-RapidAPI-Key': API_KEY,
-			'X-RapidAPI-Host': 'google-search3.p.rapidapi.com',
+			'X-RapidAPI-Host': 'seo-api.p.rapidapi.com',
 		},
 	};
 
