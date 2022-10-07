@@ -18,13 +18,13 @@
 
 <!-- Demo -->
 
-### 🔍 Demo
+<h3 id="demo">🔍 Demo</h3>
 
 [https://jamcmich.github.io/google-search-clone/](https://jamcmich.github.io/google-search-clone/)
 
 <!-- Features -->
 
-### ✨ Features
+<h3 id="features">✨ Features</h3>
 
 > Note: This website has identical elements and styling to **[Google's search page](https://www.google.com/)** but includes only the essential search features.
 
@@ -35,19 +35,19 @@
 
 <!-- Technologies -->
 
-### 🧰 Technologies Used
+<h3 id="technologies-used">🧰 Technologies Used</h3>
 
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![Axios](https://img.shields.io/badge/Axios-671DDF?style=for-the-badge&logo=axios&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![WindiCSS](https://img.shields.io/badge/windicss-48B0F1.svg?style=for-the-badge&logo=windi-css&logoColor=white)
 
 <!-- Screenshots -->
 
-### 👀 Screenshots
+<h3 id="screenshots">👀 Screenshots</h3>
 
 ![](assets/readme/project-demo.gif)
 
 <!-- Problem Solving -->
 
-### 🚧 Problem Solving
+<h3 id="problem-solving">🚧 Problem Solving</h3>
 
 #### Styling Conventions
 
@@ -103,7 +103,7 @@ A neat trick I learned throughout the development of this project is using Webpa
 
 <!-- Code Examples -->
 
-### 📸 Code Examples
+<h3 id="code-examples">📸 Code Examples</h3>
 
 #### Styling Conventions
 
@@ -152,7 +152,7 @@ A neat trick I learned throughout the development of this project is using Webpa
 
 <!-- Improvements -->
 
-### 🧪 Future Improvements
+<h3 id="future-improvements">🧪 Future Improvements</h3>
 
 -   **[Pagination](https://www.educba.com/pagination-in-javascript/)**
 -   "I'm Feeling Lucky" button takes the user to a random page
